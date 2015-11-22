@@ -33,15 +33,3 @@ Parameter  |  Example  |  Description
 **`active`**  |  *`1`, `1,2`, `2`*  |  Filter by a CSV of status values **for tables with a status column** such as `active`
 **`columns_visible`**  |  *`title`, `date`*  |  Name of column shown in results. Can be chained such as: `columns_visible=title&columns_visibile=first_name`
 
-
-# Error Responses
-
-### Not Authenticated
-You must be logged in to Directus to access the API. Some high-level view permissions (ex. table-listing) are not *strictly* enforced by privileges, just general authentication.
-
-### Parse
-Any non-JSON response: Error
-
-### @TODO
-Additional error responses
-
