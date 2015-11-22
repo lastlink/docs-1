@@ -2,9 +2,53 @@
 The complete documentation of the Directus framework
 
 _We might want to split this at a high level into:_
-* User Guide (includes Hosted Docs)
-* Developer Docs
-* FAQ – Common issues, etc
+ 
+
+* Basics
+    * What is Directus
+    * Requirements
+    * Installation
+        * Link to advanced installation (dev)
+    * Configuration
+      * Global Settings
+      * Files & Thumbnail Settings
+      * Users, Groups, & Permissions **TODO: Should this go into a separate Access Control section?**
+      * Tables & Input Settings
+        * Link to advanced configuration (dev)
+* User Guide
+    * Pages
+      * Tables
+      * Item Listing
+      * Create & Edit
+      * ~Activity~ **Removed for now**
+      * Files
+      * Messages
+      * Users and Groups
+      * Settings
+         * [LINK] Should link to "Settings & Customization" sections
+* Developer
+    * Installation
+      * NGINX Configuration
+      * Vagrant Configuration
+    * Schema Guide
+    * Folder and File Guide
+    * Privileges & Access Control
+    * Inputs and Interfaces
+       * Core UI Listing...
+       * [LINK] to Custom UIs
+    * Extending Directus
+      * Custom UIs
+      * Custom Extensions
+      * Hooks
+      * Custom API Endpoints
+        * [LINK] To API section
+      * Custom Storage Adapters
+    * API
+* Troubleshooting
+    * Error (with solution)
+
+
+
 
 
 # GetDirectus.com
