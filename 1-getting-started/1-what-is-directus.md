@@ -1,5 +1,5 @@
 
-# Directus Overview
+# What is Directus?
 _Free and Open-Source MySQL Database GUI_
 
 Directus is a customer-facing MySQL database GUI for managing your project’s content – not your development process. Create database architectures based on specific project needs, design websites and applications without any limitations, and follow any development workflow you prefer.
