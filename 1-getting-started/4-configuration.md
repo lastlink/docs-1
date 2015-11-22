@@ -43,6 +43,7 @@ Clicking a table within _Settings > Tables & Inputs_ lets you customize its indi
 
 ### Creating New Tables
 _Note: You can always add Tables directly to your database – then follow the steps below to allow that table to be managed by Directus._
+
 1. Navigate to the _Settings > Tables & Inputs_
     * Access _Settings_ from the gear at the bottom of the sidebar
 2. Click the (+) button at the top of the page
@@ -51,6 +52,7 @@ _Note: You can always add Tables directly to your database – then follow the s
 
 ### Creating New Fields
 _Note: You can always add new Fields directly to your database – then refresh Directus and they will apear._
+
 1. Navigate to the _Settings > Tables & Inputs_
     * Access _Settings_ from the gear at the bottom of the sidebar
 2. Click on the table name you want to add the field to
