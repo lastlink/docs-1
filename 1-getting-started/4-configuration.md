@@ -1,64 +1,42 @@
-# Global Settings
+# Configuration
+Now that you have Directus installed, you can customize it for your specific project. The first Directus user is always an administrator, which gives you access to the Settings gear at the bottom of the sidebar. There are four sections within Settings:
+
+## Global Settings
 * **Site Name:** The name of your project that appears in the browser title
 * **Site URL:** Clicking the main logo takes you to this URL
-* **CMS User Auto Sign Out:** The number of minutes before a user is automatically logged out of Directus
+* **CMS User Auto Sign Out:** The number of minutes before users are automatically logged out of Directus
 * **Rows Per Page:** The number of items shown on each item listing page
-* **CMS Thumbnail URL:** Directus is minimally stylized and internally unbranded. This means that the system can be tailored to match the client/project with little effort. This is especially important when building a platform with user visible components such as a POS.*
+* **CMS Thumbnail URL:** Directus is minimally stylized and unbranded so it can be easily tailored to match your brand/project. Enter the URL to your **170×100px** logo image here – use a PNG with alpha-transparency for a more polished look.*
 
-### Changing/Adding your logo
-As an administrator you can tailor the system's label and logo (170x100) within `Settings > Global Settings`. Use a PNG with alpha-transparency for a more polished look.
+## Files & Thumbnail Settings
+_Note: Changing these values will **not** effect any files already uploaded into Directus._
+* **File Naming:** This determines the naming convention for files uploaded through Directus.
+    * *File Name*: Saves files using a cleaned-up version of the original file name. Duplicate file names are appended with an integer so no files are accidentally overwritten.
+    * *File ID* (default): Saves files with the database ID padded with leading zeros to a length of 11.
+    * *File Hash*: A unique hash of the file/upload datetime. This option is ideal when file URLs should not be predictable.
+* **Thumbnail Quality:** (0-100, 100 is default) – This is the jpg quality thumbnails within Directus. This value does not influence the actual files you upload through Directus, only the system's thumbnail.
+* **Thumbnail Crop Enabled:** When checked (default), Directus will generate system thumbnails for images as a square – other aspect ratios will be cropped to a square. If unchecked, Directus will generate scaled down system thumbnails that maintain their orignal aspect ratio (uncropped).
 
-# Files & Thumbnail Settings
-* **File File Naming:** Confusing title, this determines the filename for uploaded files.
-* **File Title Naming:** This is the method for creating a file's DB saved reference title.
-* **Thumbnail Quality:** 0-100 – This is the jpg quality for system thumbnails used within Directus (this value does not influence your original files)
-* **Thumbnail Crop Enabled:** When checked, Directus will generate system thumbnails for images as a square – other aspect ratios will be cropped to a square. If unchecked, Directus will generate scaled down system thumbnails that maintain their aspect ratio (uncropped).
+## Users, Groups, & Permissions
+Chances are that additional users will need to access Directus. You can add as many users as you want within Directus, each assigned to a user-group with specific access/permissions.
 
-# Users, Groups, & Permissions
-Directus is accessed by the authorized users within **`directus_users`**. Each user is assigned to a single group within **`directus_groups`**. Each user-group has its table/field access-control permissions set within **`directus_privileges`**.
+### Creating New User-Groups
+1. Navigate to the _Settings > Group Permissions_
+    * Access _Settings_ from the gear at the bottom of the sidebar
+2. Click the (+) button at the top of the page
+2. Type the name of the group and hit OK
+3. Click on the group within the listing to set its specific permissions.
 
-### IP Whitelisting for User-Groups
-If your project requires that certain user-groups have access limited to specific IP addresses you can set their **`directus_groups->restrict_to_ip_whitelist`** to `1`. Then enter any allowed IP addresses (and a brief description) into the **`directus_ip_whitelist`** table. 
-
-### Sidebar Navigation Blacklist for User-Groups
-By default, Directus shows all tables that the current user's group has `list` and `view` access to. To hide certain tables from this list on a group basis, simply enter a CSV of table names into **`directus_tab_privileges.directus_tab_blacklist`**.
-
-### Customizing the Sidebar Navigation for User-Groups
-By default, Directus displays all available tables alphabetically in the navigation sidebar under the "Tables" group header. To customize this you can build a tailored JSON string and save it within **`directus_tab_privileges->nav_override`** for the desired user group.
-
-```
-{
-    "Office": {
-        "Staff": {
-            "path": "/tables/staff"
-        },
-        "Locations": {
-            "path": "/tables/locations"
-        }
-    },
-    "Portfolio": {
-        "Projects/Work": {
-            "path": "/tables/projects"
-        },
-        "Clients (Brands)": {
-            "path": "/tables/clients"
-        }
-    }
-}
-```
-
-### Custom Data Workflow
-Tables containing a status column (default column name of `active`) track the publish state of their items/records. Initially, options of `Live`(1), `Draft`(2), and `Deleted`(0) are all options for all tables with a status column. These options, and their associated display-color and saved-value, are [editable and extendable within the configuration.php file](https://github.com/RNGR/directus6/wiki/1.-Installation-&-Configuration#apiconfigurationphp).
-
-Furthermore, all table permissions for user-groups can be assigned globally or for specific status states. The following should outline this extensive level of customization:
-
-* Every Directus `user` belongs to a single `user-group`
-* Each `user-group` has adjustable `view`, `add`, `edit`, and `delete` permissions (admins also have `alter`) every table
-* The `view`, `edit`, and `delete` permissions also have respective "big" variations able to distinguish between item's the *current user* created versus an item *any* user created. This gives the ability to restrict permissions based on if it's "yours". (This option requires a "magic owner column" which tells Directus which field in the table stores the creator's `directus_user.id`)
-* Each `user-group` also has control over `read` and `write` for every field within every table
-* All of the above permissions can be assigned at the global level, or, for tables with a status column, individually for each available status state (such as `draft` or `deleted`).
-
-To create a custom data workflow for your users simply set different permissions for each individual status state. This will allow you to restrict which status options are available to users, when they're editing an item of a given state.
+### Creating New Users
+1. Navigate to the _Users_ page from the sidebar
+2. Click the (+) button at the top of the page
+3. Fill in the applicable fields. Required fields include:
+    * First Name
+    * Last Name
+    * Email
+    * Password
+    * Group
+4. Save the user
 
 # Tables & Input Settings
 
