@@ -6,7 +6,7 @@
 #### Example Request
 **GET** http://directus.dev/api/1/privileges/0
 
-```
+```json
 [
   {
     "id": "23",
@@ -49,7 +49,7 @@ Parameter  |  Example  |  Description
 #### Example Request
 **GET** http://directus.dev/api/1/tables/directus_users/rows
 
-```
+```json
 {
   "active": 1,
   "inactive": 0,
