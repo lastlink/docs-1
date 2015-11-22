@@ -74,3 +74,46 @@ _Default Status Mapping:_
   'sort' => 2
 )
 ```
+
+### IP Whitelisting for User-Groups
+If your project requires that certain user-groups have access limited to specific IP addresses you can set their **`directus_groups->restrict_to_ip_whitelist`** to `1`. Then enter any allowed IP addresses (and a brief description) into the **`directus_ip_whitelist`** table. 
+
+### Sidebar Navigation Blacklist for User-Groups
+By default, Directus shows all tables that the current user's group has `list` and `view` access to. To hide certain tables from this list on a group basis, simply enter a CSV of table names into **`directus_tab_privileges.directus_tab_blacklist`**.
+
+### Customizing the Sidebar Navigation for User-Groups
+By default, Directus displays all available tables alphabetically in the navigation sidebar under the "Tables" group header. To customize this you can build a tailored JSON string and save it within **`directus_tab_privileges->nav_override`** for the desired user group.
+
+```
+{
+    "Office": {
+        "Staff": {
+            "path": "/tables/staff"
+        },
+        "Locations": {
+            "path": "/tables/locations"
+        }
+    },
+    "Portfolio": {
+        "Projects/Work": {
+            "path": "/tables/projects"
+        },
+        "Clients (Brands)": {
+            "path": "/tables/clients"
+        }
+    }
+}
+```
+
+### Custom Data Workflow
+Tables containing a status column (default column name of `active`) track the publish state of their items/records. Initially, options of `Live`(1), `Draft`(2), and `Deleted`(0) are all options for all tables with a status column. These options, and their associated display-color and saved-value, are [editable and extendable within the configuration.php file](https://github.com/RNGR/directus6/wiki/1.-Installation-&-Configuration#apiconfigurationphp).
+
+Furthermore, all table permissions for user-groups can be assigned globally or for specific status states. The following should outline this extensive level of customization:
+
+* Every Directus `user` belongs to a single `user-group`
+* Each `user-group` has adjustable `view`, `add`, `edit`, and `delete` permissions (admins also have `alter`) every table
+* The `view`, `edit`, and `delete` permissions also have respective "big" variations able to distinguish between item's the *current user* created versus an item *any* user created. This gives the ability to restrict permissions based on if it's "yours". (This option requires a "magic owner column" which tells Directus which field in the table stores the creator's `directus_user.id`)
+* Each `user-group` also has control over `read` and `write` for every field within every table
+* All of the above permissions can be assigned at the global level, or, for tables with a status column, individually for each available status state (such as `draft` or `deleted`).
+
+To create a custom data workflow for your users simply set different permissions for each individual status state. This will allow you to restrict which status options are available to users, when they're editing an item of a given state.
