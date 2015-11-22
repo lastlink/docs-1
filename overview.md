@@ -7,16 +7,20 @@ More simply, Directus is the best way to intuitively manage the content within a
 
 Now imagine you could allow anyone to manage that same database content through a simple, intuitive, and feature-rich interface – tailoring table/field access with granular user permissions. Innumerable Content Management Systems are probably coming to mind, but typically those bake-in entire front-end templating solutions, require complicated proprietary database schemas, and generally make a lot of assumptions about what you're doing and how to do it. Maybe the database isn't even _for_ a website – maybe it's for a native app, an inventory system, or internal project management. 
 
+_Below is a comparison of data/content management options_
 
 Feature                                       | Directus Framework    |  Database Clients |  Traditional CMS
 :-------------------------------------------- | :-------------------: | :---------------: | :----------------:
-Free and open-source                          | **✓**                 | **✓**             | **✓**
 Manages existing (custom-schema) databases    | **✓**                 | **✓**             | ✗
 Works for non-website projects                | **✓**                 | **✓**             | ✗
-Intuitive for non-developers                  | **✓**                 | ✗                 | **✓**
-Table/field level acccess permissions         | **✓**                 | ✗                 | **✓**
+Write simple SQL queries                      | **✓**                 | **✓**             | ✗
+Granular table/field user permissions         | **✓**                 | ✗                 | ✗<sup>✝</sup>
+Intuitive for non-developers                  | **✓**                 | ✗                 | **✓**<sup>✝✝</sup>
 Interface for relational data                 | **✓**                 | ✗                 | **✓**
 Interface for files/media                     | **✓**                 | ✗                 | **✓**
 Data API                                      | **✓**                 | ✗                 | **✓**
+Free and open-source                          | **✓**                 | **✓**             | **✓**
 
+<sup>✝</sup>High-level user permissions only<br>
+<sup>✝✝</sup>Often requires significant explanation or training
 
