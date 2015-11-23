@@ -25,3 +25,54 @@ Free and open-source                          | **✓**                 | **✓*
 <sup>✝</sup>High-level user permissions only<br>
 <sup>✝✝</sup>Often requires significant explanation or training
 
+
+### How do I connect my website or app?
+The short answer is: however you want!
+
+Directus only manages the content in your database, beyond that you can use whatever technologies best fit your project. Not accustomed to so much freedom? Here are three easy ways to access your data:
+
+* **API**: Use the Directus API to fetch data as JSON
+* **Directus Library**: Use the directus library of functions to interact with the database
+* **SQL Queries**: Ignore Directus altogether, connect directly to the database, and use custom SQL queries
+
+### Or don't connect anything at all!
+With the ability to create and manage any database schema you can dream up, maybe Directus **is** the project. Instead of paying $20/month for a rigid Project Management service, just throw together a quick schema with fields customized to your needs. Now you have a free solution that can easily grow to accommodate any new info you want to track.
+
+```
+database
+├── projects
+│   ├── id
+│   ├── active
+│   ├── title
+│   ├── description
+│   ├── url
+│   ├── client
+│   ├── date_started
+│   ├── project_manager
+│   └── sow_pdf
+├── clients
+│   ├── id
+│   ├── logo_image
+│   ├── name
+│   ├── hourly_rate
+│   ├── point_of_contact_email
+│   ├── point_of_contact_name
+│   └── point_of_contact_phone
+├── tasks
+│   ├── id
+│   ├── active
+│   ├── sort
+│   ├── title
+│   ├── category
+│   ├── assigned_user
+│   ├── created_by
+│   ├── date_created
+│   └── description
+├── task_categories
+│   ├── id
+│   └── title
+└── project_tasks (junction table)
+    ├── id
+    ├── project_id
+    └── task_id
+```
