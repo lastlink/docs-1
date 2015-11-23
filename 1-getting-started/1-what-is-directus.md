@@ -37,6 +37,8 @@ Directus only manages the content in your database, beyond that you can use what
 ### Or don't connect anything at all!
 With the ability to create and manage any database schema you can dream up, maybe Directus **is** the project. Instead of paying $20/month for a rigid Project Management service, just throw together a quick schema with fields customized to your needs. Now you have a free solution that can easily grow to accommodate any new info you want to track.
 
+
+**Project Management Schema Example**
 ```
 database
 ├── projects
