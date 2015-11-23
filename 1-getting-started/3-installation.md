@@ -8,6 +8,7 @@
 **Once you have completed the install, make sure to delete install folder for security purposes.**
 
 ### Troubleshooting
+If you're having problems with your Directus install, please head to our [troubleshooting section](docs/4-troubleshooting/).
 
-#### Server error occured!
-In case you find this error the first time you tried to login, it means you missconfigured Apache2. You might need to add *overrideAllow All* in your virtualHost.
+* [Server error occured!]()
+* [Enable mod_rewrite](docs/4-troubleshooting/enable_mod_rewrite.md)
