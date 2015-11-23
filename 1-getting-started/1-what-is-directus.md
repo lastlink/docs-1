@@ -12,15 +12,15 @@ _Below is a comparison of data/content management options_
 
 Feature                                       | Directus Framework    |  Database Clients |  Traditional CMS
 :-------------------------------------------- | :-------------------: | :---------------: | :----------------:
-Manages existing (custom-schema) databases    | **✓**                 | **✓**             | No
-Works for non-website projects                | **✓**                 | **✓**             | No
-Allows custom SQL queries                     | **✓**                 | **✓**             | No
-Granular table/field user permissions         | **✓**                 | No                | No<sup>✝</sup>
-Intuitive for non-developers                  | **✓**                 | No                | Maybe<sup>✝✝</sup>
-Interface for relational data                 | **✓**                 | No                | **✓**
-Interface for files/media                     | **✓**                 | No                | **✓**
-Data API                                      | **✓**                 | No                | **✓**
-Free and open-source                          | **✓**                 | **✓**             | Some
+Manages existing (custom-schema) databases    | **✓**                 | **✓**             | _No_
+Works for non-website projects                | **✓**                 | **✓**             | _No_
+Allows custom SQL queries                     | **✓**                 | **✓**             | _No_
+Granular table/field user permissions         | **✓**                 | _No_              | _No_<sup>✝</sup>
+Intuitive for non-developers                  | **✓**                 | _No_              | _Maybe_<sup>✝✝</sup>
+Interface for relational data                 | **✓**                 | _No_              | **✓**
+Interface for files/media                     | **✓**                 | _No_              | **✓**
+Data API                                      | **✓**                 | _No_              | **✓**
+Free and open-source                          | **✓**                 | **✓**             | _Some_
 
 <sup>✝</sup>High-level user permissions only<br>
 <sup>✝✝</sup>Often requires significant explanation or training
