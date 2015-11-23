@@ -26,14 +26,13 @@ Free and open-source                          | **✓**                 | **✓*
 <sup>✝✝</sup>Often requires significant explanation or training
 
 
-### How do I connect my website or app?
-The short answer is: however you want!
+### What about my website, app, or project?
+Directus only manages the content in your database, beyond that you can use whatever technologies best fit your project. Not accustomed to so much freedom? Here are three easy ways to connect/access your data:
 
-Directus only manages the content in your database, beyond that you can use whatever technologies best fit your project. Not accustomed to so much freedom? Here are three easy ways to access your data:
-
-* **API**: Use the Directus API to fetch data as JSON
+* **API**: Use the Directus API to add/update/delete records or fetch JSON data
 * **Directus Library**: Use the directus library of functions to interact with the database
 * **SQL Queries**: Ignore Directus altogether, connect directly to the database, and use custom SQL queries
+
 
 ### Or don't connect anything at all!
 With the ability to create and manage any database schema you can dream up, maybe Directus **is** the project. Instead of paying $20/month for a rigid Project Management service, just throw together a quick schema with fields customized to your needs. Now you have a free solution that can easily grow to accommodate any new info you want to track.
