@@ -49,7 +49,6 @@ Clicking a table within _Settings > Tables & Inputs_ lets you customize its indi
 * **Note** Use this to add additional field info or notes on the item edit page. Since Directus uses field names as input labels this can help add clarity for field use. It can help guide formatting or remind users of required pixel dimensions for image inputs. _Note: While notes allow for the use of HTML, please use caution and discretion._
 
 #### Creating New Tables
-> You can always add Tables directly to your database – then follow the steps below to allow that table to be managed by Directus.
 
 1. Navigate to the _Settings > Tables & Inputs_
     * Access _Settings_ from the gear at the bottom of the sidebar
@@ -57,8 +56,9 @@ Clicking a table within _Settings > Tables & Inputs_ lets you customize its indi
 3. Type the name of the table and hit OK
 4. Click on the table within the listing to add fields
 
+> You can always add Tables directly to your database – then follow the steps below to allow that table to be managed by Directus.
+
 #### Creating New Fields
-> You can always add new Fields directly to your database – then refresh Directus and they will apear.
 
 1. Navigate to the _Settings > Tables & Inputs_
     * Access _Settings_ from the gear at the bottom of the sidebar
@@ -66,6 +66,8 @@ Clicking a table within _Settings > Tables & Inputs_ lets you customize its indi
 3. Click the "Add New Field: button at the bottom of the page
 4. Choose a field name and UI Type and click save
     * Optionally, you can update the Data Type or Length
+
+> You can always add new Fields directly to your database – then refresh Directus and they will apear.
 
 ------
 
