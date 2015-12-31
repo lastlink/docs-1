@@ -1,6 +1,8 @@
 # Config & Configuration Files
 These files are automatically generated during the installation process, alternatively you can utilize the sample files to setup manually.
 
+----------
+
 ### api/config.php
 This file contains project-specific constants for the Directus framework. These values are typically not changed after initial setup.
 
@@ -39,6 +41,8 @@ You have the option to enter credentials for a slave database server. If set, Di
     * STATUS_DELETED_NUM => When utilizing the status column for soft-delete policy, this is the integer used for deleted items. This is important because Directus ignores deleted items system-wide as opposed to inactive or other status states.
     * STATUS_ACTIVE_NUM => Similarly, the active column has special meaning within the soft-delete policy as it is considered truly "active"
     * STATUS_COLUMN_NAME => (Default: "active") This is the adjustable column name for the status system. Adding a column of this name (datatype: INT/TINYINT) will enable a soft-delete policy for that table. The settings for the above active/deleted values (and any additional workflow stages) can be set within api/configuration.php.
+
+----------
 
 ### api/configuration.php
 This file contains the configuration arrays for the Directus framework.
