@@ -14,7 +14,9 @@ This “updates” the version of each dependency to the latest version. If for 
 #### Avoid modifying the composer.json file directly
 Always modify dependencies using composer.phar because it will modify the lock file directly. For example, to add a new dependency, run this command: 
 
-```composer.phar [require](https://getcomposer.org/doc/03-cli.md#require) vendor/package:version```
+```
+composer.phar [require](https://getcomposer.org/doc/03-cli.md#require) vendor/package:version
+```
 
 This command updates your JSON file and your lockfile without changing the versions of your other dependencies.
 
