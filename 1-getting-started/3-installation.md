@@ -8,6 +8,7 @@
 4. Upload the files to a public directory within your web-server
 5. Run the Directus installation script by accessing the URL where you uploaded the files
 
+----------
 
 ### Installation Walkthrogh
 1. **Project Info**
@@ -24,10 +25,12 @@
 3. **Confirmation**
   * If the database connection succeeds you'll be shown an installation summary page and given an opportunity to email these details to the admin user.
 
-**Once you have completed the install, make sure to delete install folder for security purposes.**
+> Once you have completed the install, make sure to delete install folder for security purposes.
+
+----------
 
 ### Troubleshooting
 If you're having problems with your Directus install, please visit our [troubleshooting section](docs/4-troubleshooting/).
 
-* [Server error occured!]()
+* [Server error occured!](#)
 * [Enable mod_rewrite](docs/4-troubleshooting/enable_mod_rewrite.md)
