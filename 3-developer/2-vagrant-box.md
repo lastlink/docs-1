@@ -1,8 +1,10 @@
-##Requirements
+# Vagrant Box Install
+
+### Requirements
 - [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 - [Vagrant](https://www.vagrantup.com/downloads.html)
 
-##Installation
+### Installation
 
 [Download and install VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
@@ -21,7 +23,7 @@ $ cd [vagrant dir]
 $ vagrant up
 ```
 
-## What's on the server?
+### What's on the server?
 - Ubuntu 14.04.2 LTS (GNU/Linux 3.13.0-51-generic x86_64)
 - Apache 2.4.7
 - MySQL 5.5.43
@@ -30,7 +32,7 @@ $ vagrant up
 - vim
 - Composer
 
-## Info
+### Info
 - Server IP: **192.168.33.6**
 - Directus user: **admin@admin.com** pass: **admin**
 - Database name: **directus**
