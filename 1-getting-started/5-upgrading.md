@@ -1,6 +1,6 @@
 # Upgrading
 
-## Step by Step
+### Step by Step
 
 1. **Backup your database**: In addition to scheduled backups, you should always create another complete database backup directly before making any broad CMS/database changes
 2. Download and unzip the newest Directus package from [here](https://github.com/RNGR/directus6/tree/build)
