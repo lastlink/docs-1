@@ -9,5 +9,7 @@
 * **BigDelete** – Same as delete but for other user’s items
 * **Alter** – Permission for making schema level changes such as field order
 
+----------
+
 ### IP Whitelist
 If turned on for a user-group, those users will only be able to connect to Directus when accessing over specific IP addresses. This is useful for ensuring a group of users can’t access the system from personal, public, or insecure networks/computers.
