@@ -1,5 +1,5 @@
 # Configuration
-Now that you have Directus installed, you can customize it for your specific project. The first Directus user is always an administrator, which gives you access to the Directus Settings by clicking on the gear at the bottom of the sidebar.
+Now that you have Directus installed, you can customize it for your specific project. The first Directus user is always an administrator, which gives you access to the Directus Settings by clicking on the gear at the bottom of the sidebar. 
 
 ------
 
