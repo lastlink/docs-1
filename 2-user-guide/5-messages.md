@@ -1,6 +1,8 @@
 # Messages
 There are two types of messages within Directus:
 
+----------
+
 ### Item Comments
 Every item within the system can contain comments attached within the Item History for associating specific feedback.
 
