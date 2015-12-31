@@ -1,7 +1,7 @@
 # Config & Configuration Files
 These files are automatically generated during the installation process, alternatively you can utilize the sample files to setup manually.
 
-## api/config.php
+### api/config.php
 This file contains project-specific constants for the Directus framework. These values are typically not changed after initial setup.
 
 * **Default timezone**
@@ -40,7 +40,7 @@ You have the option to enter credentials for a slave database server. If set, Di
     * STATUS_ACTIVE_NUM => Similarly, the active column has special meaning within the soft-delete policy as it is considered truly "active"
     * STATUS_COLUMN_NAME => (Default: "active") This is the adjustable column name for the status system. Adding a column of this name (datatype: INT/TINYINT) will enable a soft-delete policy for that table. The settings for the above active/deleted values (and any additional workflow stages) can be set within api/configuration.php.
 
-## api/configuration.php
+### api/configuration.php
 This file contains the configuration arrays for the Directus framework.
 
 * **Session Prefix** This value allows you to run multiple versions of Directus on the same server without the sessions conflicting.
@@ -56,7 +56,7 @@ This file contains the configuration arrays for the Directus framework.
     * color => (#c1272d, #5b5b5b, #bbbbbb) is a hex value that the option name will be displayed in, for instance deleted is red, Live is dark gray, and Draft is a light gray)
     * sort => (3, 1, 2) is the order the options will be shown in as determined by your specific content workflow
 
-_Default Status Mapping:_
+<small>Default Status Mapping</small>
 ```
 '0' => array(
   'name' => 'Deleted',
@@ -75,13 +75,13 @@ _Default Status Mapping:_
 )
 ```
 
-### IP Whitelisting for User-Groups
+#### IP Whitelisting for User-Groups
 If your project requires that certain user-groups have access limited to specific IP addresses you can set their **`directus_groups->restrict_to_ip_whitelist`** to `1`. Then enter any allowed IP addresses (and a brief description) into the **`directus_ip_whitelist`** table. 
 
-### Sidebar Navigation Blacklist for User-Groups
+#### Sidebar Navigation Blacklist for User-Groups
 By default, Directus shows all tables that the current user's group has `list` and `view` access to. To hide certain tables from this list on a group basis, simply enter a CSV of table names into **`directus_tab_privileges.directus_tab_blacklist`**.
 
-### Customizing the Sidebar Navigation for User-Groups
+#### Customizing the Sidebar Navigation for User-Groups
 By default, Directus displays all available tables alphabetically in the navigation sidebar under the "Tables" group header. To customize this you can build a tailored JSON string and save it within **`directus_tab_privileges->nav_override`** for the desired user group.
 
 ```
@@ -105,7 +105,7 @@ By default, Directus displays all available tables alphabetically in the navigat
 }
 ```
 
-### Custom Data Workflow
+#### Custom Data Workflow
 Tables containing a status column (default column name of `active`) track the publish state of their items/records. Initially, options of `Live`(1), `Draft`(2), and `Deleted`(0) are all options for all tables with a status column. These options, and their associated display-color and saved-value, are [editable and extendable within the configuration.php file](https://github.com/RNGR/directus6/wiki/1.-Installation-&-Configuration#apiconfigurationphp).
 
 Furthermore, all table permissions for user-groups can be assigned globally or for specific status states. The following should outline this extensive level of customization:
