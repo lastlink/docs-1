@@ -2,6 +2,8 @@
 # What is Directus?
 _Directus is a free and open-source SQL database GUI for intuitively managing your project’s content._
 
+----------
+
 ### So, is it a CMS or a Database Administration Tool?
 As a developer, you're probably already managing content directly through Sequel-Pro, phpMyAdmin, or the command line. These are excellent tools because you get complete control with no setup other than entering the database credentials... but you would never give that access to clients, designers, or even inexperienced engineers. Handling relational ids, media/file references, and data validation just isn't intuitive at that level – let alone the risk of accidentally deleting/truncating tables.
 
@@ -25,6 +27,7 @@ Free and open-source                          | **✓**                 | **✓*
 <sup>✝</sup>High-level user permissions only<br>
 <sup>✝✝</sup>Often requires significant explanation or training
 
+----------
 
 ### What about my website, app, or project?
 Directus only manages the content in your database, beyond that you can use whatever technologies best fit your project. Not accustomed to so much freedom? Here are three easy ways to connect/access your data:
@@ -33,6 +36,7 @@ Directus only manages the content in your database, beyond that you can use what
 * **Directus Library**: Use the directus library of functions to interact with the database
 * **SQL Queries**: Ignore Directus altogether, connect directly to the database, and use custom SQL queries
 
+----------
 
 ### Or don't connect anything at all!
 With the ability to create and manage any database schema you can dream up, maybe Directus **is** the project. Instead of paying $20/month for a rigid Project Management service, just throw together a quick schema with fields customized to your needs. Now you have a free solution that can easily grow to accommodate any new info you want to track.
