@@ -4,6 +4,8 @@ Now that you have Directus installed, you can customize it for your specific pro
 ------
 
 ### Global Settings
+Personalize this instance of Directus to fit your organization’s needs. Change colors, add a company logo, set the auto logout time, etc
+
 * **Site Name:** The name of your project that appears in the browser title
 * **Site URL:** Clicking the main logo takes you to this URL
 * **CMS User Auto Sign Out:** The number of minutes before users are automatically logged out of Directus
@@ -13,6 +15,7 @@ Now that you have Directus installed, you can customize it for your specific pro
 ------
 
 ### File & Thumbnail Settings
+Here you can adjust the size and quality of your automatic thumbnails, decide where to save uploaded files, and much more.
 
 * **File Naming:** This determines the naming convention for files uploaded through Directus.
     * *File Name*: Saves files using a cleaned-up version of the original file name. Duplicate file names are appended with an integer so no files are accidentally overwritten.
@@ -26,7 +29,7 @@ Now that you have Directus installed, you can customize it for your specific pro
 ------
 
 ### Tables & Inputs
-This is where the magic happens. Here you can create new tables and fields, or if managing an existing database, Directus provides intelligent default interfaces based on your datatypes. Either way, the real power comes from being able to customize each field's inputs/interface.
+Here you can create new tables and fields, or if managing an existing database, Directus provides intelligent default interfaces based on your datatypes. Either way, the real power comes from being able to make broad and granular adjustments to how Directus handles your inputs, interfaces, validation, and visualizations.
 
 #### Table Options
 * **Hidden:** Determines if the table is hidden (not restricted) from all users. This affects the sidebar navigation and table-listing page.
