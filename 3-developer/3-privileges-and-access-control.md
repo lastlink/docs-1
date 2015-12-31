@@ -19,8 +19,23 @@ The `nav_listed` boolean is used to hide certain tables from the Directus sideba
 
 ### Permissions
 The allow_[permission] columns determine which operations the group may perform on this table. Possible values are: `0` (not allowed), `1` (allowed for content you created), `2` (allowed for content anyone created). To differentiate between who created content (and take advantage of these granular privileges), you must set `directus_tables.user_create_column` to the field within that table which will track the Directus User-ID of the creator.
-* `allow_view` - [0,1,**2**] The ability to view a table. Without this permission, the table will be completely omitted from the schema of users in this group.
-* `allow_add` - [0,**1**] The ability to add new items to this table. A value of `2` is not an option since you can't _create_ someone else's content.
-* `allow_edit` - [0,1,**2**] The ability to edit items from this table.
-* `allow_delete` - [0,1,**2**] The ability to delete items from this table. 
-* `allow_alter` - [0,**1**] The ability to modify the table's schema.
+
+#### Access Control List (ACL)
+* `allow_view` - The ability to view a table. Without this permission, the table will be completely omitted from the schema of users in this group.
+  * `0` – **Off** – Can not view any items in this table or the table itself
+  * `1` – **User** – Can view items I created in the table
+  * `2` – **All** – Can view all items in the table (Default)
+* `allow_add` - The ability to add new items to this table. A value of `2` is not an option since you can't _create_ someone else's content.
+  * `0` – **Off** – Can add new items to this table
+  * `1` – **On** – Can not add new items to this table (Default)
+* `allow_edit` - The ability to edit items from this table
+  * `0` – **Off** – Can not view this table
+  * `1` – **User** – Can view items I created in the table
+  * `2` – **All** – Can view all items in the table (Default)
+* `allow_delete` - The ability to delete items from this table. 
+  * `0` – **Off** – Can not delete any items in this table
+  * `1` – **User** – Can delete items I created in the table
+  * `2` – **All** – Can delete all items in the table (Default)
+* `allow_alter` - The ability to modify the table's schema.
+  * `0` – **Off** – Can not alter this table
+  * `1` – **On** – Can alter this table (Default)
