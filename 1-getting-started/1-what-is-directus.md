@@ -1,6 +1,6 @@
 
 # What is Directus?
-_Directus is a free and open-source SQL database GUI for intuitively managing your project’s content._
+Directus is a free and open-source SQL database GUI for intuitively managing your project’s content.
 
 ----------
 
@@ -12,13 +12,13 @@ What if you want non-technical users to manage that same database content throug
 
 _Below is a comparison of data/content management options_
 
-Feature                                       | Directus Framework    |  Database Clients |  Traditional CMS
+Feature                                       | Directus              |  DB Client        |  Typical CMS
 :-------------------------------------------- | :-------------------: | :---------------: | :----------------:
 Manages existing (custom-schema) databases    | **✓**                 | **✓**             | _No_
 Works for non-website projects                | **✓**                 | **✓**             | _No_
 Allows custom SQL queries                     | **✓**                 | **✓**             | _No_
 Granular table/field user permissions         | **✓**                 | _No_              | _No_<sup>✝</sup>
-Intuitive for non-developers                  | **✓**                 | _No_              | _Maybe_<sup>✝✝</sup>
+Intuitive for non-developers                  | **✓**                 | _No_              | _Some_<sup>✝✝</sup>
 Interface for relational data                 | **✓**                 | _No_              | **✓**
 Interface for files/media                     | **✓**                 | _No_              | **✓**
 Data API                                      | **✓**                 | _No_              | **✓**
