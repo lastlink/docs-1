@@ -1,5 +1,7 @@
 # Requirements
-_Directus is a forward-looking framework and therefore may not support certain legacy systems. If your server is not compatible with the requirements below, please contact your host to upgrade._
+Directus is a forward-looking framework and therefore may not support certain legacy systems. If your server is not compatible with the requirements below, please contact your host to upgrade.
+
+----------
 
 * Apache HTTP Server
 * mod_rewrite ([help](docs/4-troubleshooting/enable_mod_rewrite.md))
