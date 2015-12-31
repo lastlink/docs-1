@@ -1,16 +1,12 @@
 # Schema Guide
-
-## Your Tables
-The fundamental purpose of Directus is to allow developers to design and create schemas specifically around the needs of their project's scale, performance, architecture, and extensibility. While Directus tries to make no assumptions about your data, there are a few standards which (as of now) should be followed:
-
-* `id`
-* `active`
-* `sort`
-
-
-## Directus Proprietary Tables
-
 This page will give an overview of the proprietary Directus tables that are included in each install. The purpose of these tables is simple – to decouple all Directus proprietary information from your data. This means that at any point you can delete the "directus_" tables and be left with a _pure_ database (schema and data) of your design.
+
+### Your Tables & Fields
+The fundamental purpose of Directus is to allow developers to design and create schemas specifically around the needs of their project's scale, performance, architecture, and extensibility. While Directus tries to make no assumptions about your data, there are a few standards which (as of now) should be followed when creating new Tables and Fields:
+
+* `id` – Currently Directus assumes an `id` field as the Primary Key.
+* `active` – "Active" is the default name for the status field. [Learn More](#)
+* `sort` – "Sort" is the default field name for storing drag-and-drop reordering values. [Learn More](#)
 
 ###`directus_activity`
 
