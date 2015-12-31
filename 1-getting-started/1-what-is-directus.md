@@ -10,7 +10,7 @@ As a developer, you're probably already managing content directly through Sequel
 What if you want non-technical users to manage that same database content through a simple, intuitive, and feature-rich interface – tailoring table/field access with granular permissions. Innumerable Content Management Systems probably come to mind, but typically those have steep learning curves, require complicated proprietary database schemas, and generally make assumptions about what you're doing and how to do it. On top of that, most CMS are tangled with entire website templating solutions – but maybe your database isn't even supporting a website... maybe it's for a native app, internal inventory tracking, or customizable project management. 
 
 
-_Below is a comparison of data/content management options_
+#### Comparison of data/content management options
 
 Feature                                       | Directus              |  DB Client        |  Typical CMS
 :-------------------------------------------- | :-------------------: | :---------------: | :----------------:
