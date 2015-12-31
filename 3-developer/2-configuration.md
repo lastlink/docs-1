@@ -1,8 +1,6 @@
 # Config & Configuration Files
 These files are automatically generated during the installation process, alternatively you can utilize the sample files to setup manually.
 
-----------
-
 ### api/config.php
 This file contains project-specific constants for the Directus framework. These values are typically not changed after initial setup.
 
