@@ -3,10 +3,10 @@
 ### Server Preparation
 1. Check that your server meets the [requirements](docs/1-getting-started/2-requirements.md)
 2. Download and unzip the Directus package from [here](https://github.com/directus/directus/tree/build)
-3. Create a database and MySQL user with access/modify privileges on your web server
+3. Create a database and MySQL user with access/modify privileges on your server
   * You can also use an existing database, but it's worth taking a look at the typical [Directus Schema](docs/3-developer/4-schema-guide.md)
-4. Upload the files to a public directory within your web-server
-5. Run the Directus installation script by accessing the URL where you uploaded the files
+4. Upload the files to a public directory on your server
+5. Run the installation script by accessing the URL where you uploaded the files
 
 ----------
 
@@ -27,7 +27,7 @@
 #### Step 3 – Confirmation
 * If the database connection succeeds you'll be shown an installation summary page and given an opportunity to email these details to the admin user.
 
-> Once you have completed the install, make sure to delete install folder for security purposes.
+> **Security Note:** Once you have completed the install, make sure to delete install folder.
 
 ----------
 
