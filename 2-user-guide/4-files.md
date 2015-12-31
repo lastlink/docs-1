@@ -4,7 +4,7 @@ This page provides a listing of _all_ files uploaded through the Directus system
 ----------
 
 ### Metadata
-IPTC: _location, caption, keywords_) is extracted from the files when they're uploaded and automatically stored with each file.
+**IPTC** – (_location, caption, keywords_) is extracted from the files when they're uploaded and automatically stored with each file.
 
 ----------
 
