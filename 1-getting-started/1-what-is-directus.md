@@ -1,6 +1,7 @@
 
 # What is Directus?
-Directus is a free and open-source SQL database GUI for intuitively managing your project’s content.
+
+##Directus is a free and open-source SQL database GUI for intuitively managing your project’s content.
 
 ----------
 
