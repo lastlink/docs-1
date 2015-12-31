@@ -13,7 +13,7 @@ Now that you have Directus installed, you can customize it for your specific pro
 ------
 
 ### File & Thumbnail Settings
-_Note: Changing these values will **not** effect any files already uploaded into Directus._
+> Changing these values will **not** effect any files already uploaded into Directus.
 * **File Naming:** This determines the naming convention for files uploaded through Directus.
     * *File Name*: Saves files using a cleaned-up version of the original file name. Duplicate file names are appended with an integer so no files are accidentally overwritten.
     * *File ID* (default): Saves files with the database ID padded with leading zeros to a length of 11.
@@ -49,7 +49,7 @@ Clicking a table within _Settings > Tables & Inputs_ lets you customize its indi
 * **Note** Use this to add additional field info or notes on the item edit page. Since Directus uses field names as input labels this can help add clarity for field use. It can help guide formatting or remind users of required pixel dimensions for image inputs. _Note: While notes allow for the use of HTML, please use caution and discretion._
 
 #### Creating New Tables
-_Note: You can always add Tables directly to your database – then follow the steps below to allow that table to be managed by Directus._
+> You can always add Tables directly to your database – then follow the steps below to allow that table to be managed by Directus.
 
 1. Navigate to the _Settings > Tables & Inputs_
     * Access _Settings_ from the gear at the bottom of the sidebar
@@ -58,7 +58,7 @@ _Note: You can always add Tables directly to your database – then follow the s
 4. Click on the table within the listing to add fields
 
 #### Creating New Fields
-_Note: You can always add new Fields directly to your database – then refresh Directus and they will apear._
+> You can always add new Fields directly to your database – then refresh Directus and they will apear.
 
 1. Navigate to the _Settings > Tables & Inputs_
     * Access _Settings_ from the gear at the bottom of the sidebar
