@@ -2,9 +2,7 @@
 
 Content inputs and interfaces (UIs) are how you interact with the different types of content in your database. Each field in your database has a data-type that determines what kind of content can be stored there – Directus uses this information to determine which UIs are used.
 
-# Core UIs
-
-## Text
+### Text
 #### Text Field
 A common, basic, single-line text field for almost any kind of shorter data. Characters remaining count on focus based on the field's length property.
 
@@ -28,7 +26,7 @@ A normal text field… that only accepts numbers (no decimal points)
 #### Color
 Accepts only 6 hexadecimal characters and provides a live colored square matching the value.
 
-## Dates and Times
+### Dates and Times
 #### Datetime
 The default (and only) input for the datetime datatype. It provides a dropdown for the month and numeric only fields for the day, year, hour, minute and second
 
@@ -41,7 +39,7 @@ The default (and only) input for the time datatype. It provides a numerical-only
 #### Year
 The default (and only) input for the year datatype. It provides a numerical-only, 4 character text field for entering a year in the yyyy (ISO 8601) format.
 
-## Other
+### Other
 #### Relational
 This input type allows for easy linking between fields/tables within Directus. Just write a quick MySQL query to return the allowed options and choose how you want the choices presented! This input type can give you an array of checkboxes, an array of radio buttons or our fancy selector (which allows for reordering). All values are saved as a comma delimited set of ids (or a field of your choice) with a comma at the beginning and end.
 
@@ -60,4 +58,5 @@ Thumbs on browse page: An integer of how many thumbnails should be visible on th
 #### Checkbox
 The default choice for the tinyint data type. It saves a boolean 1 or 0.
 
-# Custom UIs
+### Custom UIs
+TK
