@@ -8,15 +8,17 @@ Best practice [says](https://www.google.com/url?q=https%3A%2F%2Fgetcomposer.org%
 
 This is especially critical from the perspective of Directus code integration and inter-dependency integration. Case in point: the Slim package introduces in version 2.4 breaking changes in its integration with Twig. Therefore changes to the composer.lock file are extremely sensitive. Here are some guidelines on how to modify Directus’ composer dependencies.
 
-#### Never run composer.phar update
-* This “updates” the version of each dependency to the latest version.
-* If for whatever reason you need to re-install your vendors, always instead remove your vendor directory and re-run `composer.phar install`
+> **Never run composer.phar update**
+> * This “updates” the version of each dependency to the latest version.
+> * If for whatever reason you need to re-install your vendors, always instead remove your vendor directory and re-run `composer.phar install`
 
-#### Avoid modifying the composer.json file directly
-* Always modify dependencies using composer.phar because it will modify the lock file directly
-* For example, to add a new dependency, run this command:
-  * `composer.phar [require](https://getcomposer.org/doc/03-cli.md#require) vendor/package:version`
-  * This command updates your JSON file and your lockfile without changing the versions of your other dependencies.
+> **Avoid modifying the composer.json file directly**
+> * Always modify dependencies using composer.phar because it will modify the lock file directly
+> * For example, to add a new dependency, run this command:
+>   * `composer.phar [require](https://getcomposer.org/doc/03-cli.md#require) vendor/package:version`
+>   * This command updates your JSON file and your lockfile without changing the versions of your other dependencies.
+
+----------
 
 ### Requirements
 
@@ -26,26 +28,33 @@ This is especially critical from the perspective of Directus code integration an
 * Git
 * Composer
 
-### Development Installation Instructions
+----------
 
-#### Step 1: Setup a development environment
+### Step 1: Setup a development environment
 You will need to setup a local *AMP environment (Apache, MySQL and PHP) in order to test Directus. *AMP packages can be found for different platforms:
 
 * [MAMP](http://www.mamp.info/en/index.html) for Mac OS
 * [WAMP](http://www.wampserver.com/en/) for Windows
 * [LAMP](https://help.ubuntu.com/community/ApacheMySQLPHP) for Linux
 
-#### Step 2: Install git
+----------
+
+### Step 2: Install git
 You will need Git to keep your test version of Directus up to date. Unless you already have Git installed, you can download it from [here](http://git-scm.com/).
 
-#### Step 3: Pull down Directus from github
+----------
+
+### Step 3: Pull down Directus from github
 Create a directory named "directus" in the www root. Next, open the directory in the terminal and type:
 
 ```
 $ git init
 $ git clone https://github.com/RNGR/Directus.git directus
 ```
-#### Step 4: Install dependencies
+
+----------
+
+### Step 4: Install dependencies
 Directus uses composer to handle its php dependencies. Go to the `directus/api/` folder and install composer:
 
 ```
@@ -57,7 +66,9 @@ Then install the dependencies by executing:
 $ php composer.phar install
 ```
 
-#### Step 5: Setup the database
+----------
+
+### Step 5: Setup the database
 The AMP-packages listed above all include Phpmyadmin. The following three steps need to be completed in order to setup the database
 
 1. Create the database
@@ -72,14 +83,19 @@ The AMP-packages listed above all include Phpmyadmin. The following three steps 
    2. Open api/schema.sql
    3. Press Go
 
-#### Step 6: Setup Directus
+----------
+
+### Step 6: Setup Directus
 Open `directus/api/config_sample.php` Add the database username and password from Step 5 to *DB_USER* and *DB_PASSWORD*. Save the file as ```directus/api/config.php```
 
 ```
 define('DB_USER', 		'myusername');
 define('DB_PASSWORD',	'mypassword');
 ```
-#### Step 7: Setup Files Uploads
+
+----------
+
+### Step 7: Setup Files Uploads
 This requires configuring your Storage Adapters. Currently the best way to do this is to manually edit the `directus_storage_adapters` table using a SQL client.
 
 By default, `directus.sql` should contain two storage adapters out of the box, with the `DEFAULT` and `THUMBNAIL` roles, both using the `FileSystemAdapter` (meaning these will map to your local hard drive).
@@ -91,5 +107,7 @@ UPDATE  `directus_storage_adapters` SET  `destination` =  '/Applications/MAMP/ht
 UPDATE  `directus_storage_adapters` SET  `destination` =  '/Applications/MAMP/htdocs/directus-media-thumbnails/', `url` = 'http://localhost:8888/directus-media-thumbnails/' WHERE  `directus_storage_adapters`.`id` = 2;
 ```
 
-#### Step 8: Done!
+----------
+
+### Step 8: Done!
 Open directus by navigating to the path *directus* in your local host. Log in using the default user *admin@example.com* and password *password*
