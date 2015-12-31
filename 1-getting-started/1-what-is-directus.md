@@ -24,8 +24,10 @@ Interface for files/media                     | **✓**                 | _No_  
 Data API                                      | **✓**                 | _No_              | **✓**
 Free and open-source                          | **✓**                 | **✓**             | _Some_
 
-<small><sup>✝</sup>High-level user permissions only</small><br>
-<small><sup>✝✝</sup>Often requires significant explanation or training</small>
+<small>
+<sup>✝</sup>High-level user permissions only<br>
+<sup>✝✝</sup>Often requires significant explanation or training
+</small>
 
 ----------
 
