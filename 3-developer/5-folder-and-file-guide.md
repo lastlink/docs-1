@@ -36,8 +36,9 @@ Contains any proprietary extensions your project may use. Extensions are a catch
 
 ----------
 
-### installation
-Contains all the necessary files to install and setup Directus. Once completed, this entire folder can and should be removed. 
+###installation
+Contains all the necessary files to install and setup Directus. Once completed, this entire folder can and should be removed.
+
 ----------
 
 ### listviews
