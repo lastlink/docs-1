@@ -1,27 +1,25 @@
 # Users and Groups
-The access control layer was built in response to the need to maintain the privacy and integrity of certain pieces of data within the database, as managed by Directus. This functionality allows Directus administrators to prevent certain groups from reading and writing to specific fields, and from performing certain operations on given tables. 
+You need to authenticate (log in) as a user to access data through Directus or its API. Each user is assigned to a user-group which defines it's access privileges with Directus. When you install Directus your first user is in the admin group – the highest level possible – with unrestricted data access, the ability to create and edit users, and access to the [Settings](https://github.com/directus/docs/blob/master/1-getting-started/4-configuration.md) area.
 
-----------
+Each user is organized by group on the listing page and has the following default fields for storing information:
 
-### Access Control List (ACL)
-* `allow_view` - The ability to view a table. Without this permission, the table will be completely omitted from the schema of users in this group.
-  * **Off** – Can not view any items in this table or the table itself
-  * **User** – Can view items I created in the table
-  * **All** – Can view all items in the table (Default)
-* `allow_add` - The ability to add new items to this table. A value of `2` is not an option since you can't _create_ someone else's content.
-  * **Off** – Can add new items to this table
-  * **On** – Can not add new items to this table (Default)
-* `allow_edit` - The ability to edit items from this table
-  * **Off** – Can not view this table
-  * **User** – Can view items I created in the table
-  * **All** – Can view all items in the table (Default)
-* `allow_delete` - The ability to delete items from this table. 
-  * **Off** – Can not delete any items in this table
-  * **User** – Can delete items I created in the table
-  * **All** – Can delete all items in the table (Default)
-* `allow_alter` - The ability to modify the table's schema.
-  * **Off** – Can not alter this table
-  * **On** – Can alter this table (Default)
+* **First Name** – The user's first name
+* **Last Name** – The user's last name
+* **Email** –  The user's email address (used to log in)
+* **Email Messages** – A checkbox for if Directus messages should be forwarded to the above email address
+* **Password** – The user's password (used to log in)
+  * This is encrypted in the database – no one can see your actual password or tell it to you
+* **Group** – The permission group for the user – only admins can create new Groups [Learn More](https://github.com/directus/docs/blob/master/3-developer/3-privileges-and-access-control.md)
+* **Position** – The user's job title or role
+* **Phone** – The user's primary phone number (other fields can be added to store additional numbers)
+* **Location** – The user's primary location, or the office the user belongs to
+* **Avatar** – The user's image used throughout Directus, by default this is pulled from Gravatar
+* **Address** – The user's address
+* **City** –  The user's city
+* **State** –  The user's state
+* **Zip** –  The user's zip code
+
+> **Note:** Adding additional custom fields to the users table is a great way to quickly create a company directory.
 
 ----------
 
