@@ -1,16 +1,11 @@
-# Introduction
-At this point it is assumed that you already have installed and configured nginx and have a basic understanding of nginx.
+# NGINX Configuration
+At this point it is assumed that you already have installed and configured nginx and have a basic understanding of nginx. 
 
-This is an incomplete/rough guide, but it would guide you to configure Directus on nginx.
- 
-It was tested on:
-- Ubuntu 14.04.1 - nginx/1.4.6 (Ubuntu)
+>This is an incomplete/rough guide, but it should help you get Directus installed and set up on nginx. It was tested on: Ubuntu 14.04.1 - nginx/1.4.6 (Ubuntu)
 
-Since nginx doesn't use `.htaccess`, which does the url rewriting, we therefore need to do the rewrite within nginx itself.
+### Site configuration
 
-# Site configuration
-
-Now that we have nginx configured, we need to configure an nginx server block.
+Since nginx doesn't use `.htaccess`, which does the url rewriting, we therefore need to do the rewrite within nginx itself. Below we configure an nginx server block.
 
 Open the default server block file:
 ```
@@ -66,7 +61,7 @@ location ~ ^/media/.*\.(php|phps|php5|htm|shtml|xhtml|cgi.+)?$ {
 }
 ```
 
-## Extensions
+### Extensions
 To prevent direct access to extensions `api.php` file we need to edit `/etc/nginx/sites-available/default` and add a new location:
 
 ```
@@ -75,7 +70,7 @@ location ~* [^/]+/api\.php$ {
 }
 ```
 
-## Fonts Mime types
+### Fonts Mime types
 
 To serve fonts mime types correctly we need to edit `/etc/nginx/mime.types` and add these lines in it:
 ```
@@ -86,6 +81,6 @@ font/woff                        woff;
 ```
 
 
-## PHP Values **[TODO]**
+### PHP Values **[TODO]**
 
 The result of these two files (`/etc/nginx/mime.types`, `/etc/nginx/sites-available/default`) and  can be found in here [config/nginx](https://github.com/RNGR/directus-vagrant/tree/master/config/nginx)
