@@ -22,10 +22,12 @@ Contains all referenced less, js, css, font, and image files. The unbranded aspe
 ----------
 
 ### bin
+TK
 
 ----------
 
 ### dist
+TK
 
 ----------
 
@@ -44,10 +46,12 @@ Contains custom templates for proprietary item listing pages. As a primer, refer
 ----------
 
 ### media_auth_proxy
+TK
 
 ----------
 
 ### node_modules
+TK
 
 ----------
 
