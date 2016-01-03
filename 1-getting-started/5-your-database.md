@@ -26,18 +26,18 @@ Directus auto-formats all table and field names for presentation to the users, s
 * Underscores become spaces
 * Each word is capitalized
   * Edge-cases are handled by an editable array of overrides
-* `_id` is removed from the end of titles
-* Tables prepended with `directus_` are hiden within Directus
+* "_id" is removed from the end of titles
+* Tables prepended with "directus_" are hiden within Directus
 
 *Great:*
-* `publish_date` becomes `Publish Date`
-* `employee_number` becomes `Employee Number`
-* `faq_and_support` becomes `FAQ and Support`
+* `publish_date` becomes "Publish Date"
+* `employee_number` becomes "Employee Number"
+* `faq_and_support` becomes "FAQ and Support"
 
 *Not so great:*
-* `pubDate` becomes `Pubdate`
-* `EmpNo` becomes `Empno`
-* `FaqSupport` becomes `Faqsupport`
+* `pubDate` becomes "Pubdate"
+* `EmpNo` becomes "Empno"
+* `FaqSupport` becomes "Faqsupport"
 
 ### Primary Key
 Currently Directus requires that every table contains an auto-incremented primary key named `id`.
