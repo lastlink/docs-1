@@ -7,7 +7,7 @@ If you're looking to get up and running as quickly or possible, you may want to 
 ### Creating & Customizing Schemas
 Whether you're adapting a preexisting database or starting from scratch – the following guidelines will help you get the most out of Directus. Below is an example SQL query for generating a simple table that considers these guidelines:
 
-```
+```SQL
 CREATE TABLE `articles` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `active` tinyint(1) unsigned DEFAULT '2',
@@ -41,7 +41,7 @@ Directus auto-formats all table and field names for presentation to the users, s
 
 ### Primary Key
 Currently Directus requires that every table contains an auto-incremented primary key named `id`.
-```
+```SQL
 `id` int(11) unsigned NOT NULL AUTO_INCREMENT
 ```
 
@@ -51,7 +51,7 @@ Currently Directus requires that every table contains an auto-incremented primar
 If you would like the items of a table to track a "status" state, you can easily do that within Directus. A status could be used in many different ways, but the most common is: *Published*, *Draft*, or *Deleted*, but you could extend or customize this as needed.
 
 It is important when setting up an app to honor any Status states used by Directus. Typically this means only showing active/published content. Assuming you are using the default Status options, that would mean limiting all SQL queries to:
-```
+```SQL
 AND `active` = '1'
 ```
 
@@ -60,7 +60,7 @@ AND `active` = '1'
 ### Sort Field
 Adding a `sort(INT11)` field to a table turns on Directus' drag-and-drop sorting. Items on the Directus listing page will now have handles for dragging them into curated orders. When sorted, Directus will save ascending integers into the order field, thereby making it easy to return results in this order:
 
-```
+```SQL
 ORDER BY `sort` ASC
 ```
 
