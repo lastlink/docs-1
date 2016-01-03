@@ -99,8 +99,7 @@ VALUES
 #### Many-to-Many
 Again, these can be created within Directus or the database itself. In the example below, to create a slideshow interface we're adding in a relationship between the `articles` table we just created and the `directus_files` table.
 
-##### Create the junction table
-Remember to add the id column and two fields for holding the relational id.
+*Create the junction table* – remember to add the id column and two fields for holding the relational id.
 
 > Optional Note: You can add a `sort` column (see above) to allow the relational items to be manually sorted with drag-and-drop.
 
@@ -114,8 +113,7 @@ CREATE TABLE `article_images` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
 
-##### Setup the relationship
-Can be done within Directus or using the following query:
+*Setup the relationship* – can be done within Directus or using the following query:
 
 ```SQL
 INSERT INTO `directus_columns`
