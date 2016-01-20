@@ -2,7 +2,7 @@
 The complete documentation of the Directus framework
 
 _We might want to split this at a high level into:_
- 
+
 
 * Basics
     * What is Directus
@@ -104,6 +104,7 @@ _We might want to split this at a high level into:_
 
 ## API
 * **Endpoints**...
+* [_API Reference_](https://github.com/directus/api)
 
 ## Support
 * **FAQ**
