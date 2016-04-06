@@ -11,12 +11,20 @@ The fundamental purpose of Directus is to allow developers to design and create 
 ###`directus_activity`
 
 ###`directus_bookmarks`
+This table stores all of the left-nav bookmarks for Directus. This includes bookmarks that users create as well as the "System" bookmarks at the bottom. Each record is assigned to a specific user.
+
+* `user` - [Directus user id] This assigns the bookmark to a specific user (there's a ticket to allow for "global" bookmarks using `NULL`)
+* `title` - The text to display in the navigation menu
+* `url` - The path to navigate to when clicked, relative to the Directus root
+* `icon_class` - Deprecated
+* `section` - ["search" or "other"] Which nav section to show the link within. User generated bookmarks use "search", while all system links go within "other"
 
 ###`directus_columns`
 
 ###`directus_files`
 
 ###`directus_groups`
+
 
 ###`directus_messages`
 
