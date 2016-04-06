@@ -1,5 +1,5 @@
 # Users & Groups
-You need to authenticate (log in) as a user to access data through Directus or its API. Each user is assigned to a user-group which defines it's access privileges with Directus. When you install Directus your first user is in the admin group – the highest level possible – with unrestricted data access, the ability to create and edit users, and access to the [Settings](https://github.com/directus/docs/blob/master/1-getting-started/4-configuration.md) area.
+You need to authenticate (log in) as a user to access data through Directus or its API. Each user is assigned to a user-group which defines it's access privileges with Directus. When you install Directus your first user is in the admin group – the highest level possible – with unrestricted data access, the ability to create and edit users, and access to the [Settings](/03-interfaces) area.
 
 Each user is organized by group on the listing page and has the following default fields for storing information:
 
