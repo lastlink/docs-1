@@ -9,7 +9,7 @@ Each user is organized by group on the listing page and has the following defaul
 * **Email Messages** – A checkbox for if Directus messages should be forwarded to the above email address
 * **Password** – The user's password (used to log in)
   * This is encrypted in the database – no one can see your actual password or tell it to you
-* **Group** – The permission group for the user – only admins can create new Groups [Learn More](https://github.com/directus/docs/blob/master/3-developer/3-privileges-and-access-control.md)
+* **Group** – The permission group for the user – only admins can create new Groups [Learn More](/04-developer/05-privileges-and-access.md)
 * **Position** – The user's job title or role
 * **Phone** – The user's primary phone number (other fields can be added to store additional numbers)
 * **Location** – The user's primary location, or the office the user belongs to
