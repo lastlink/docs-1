@@ -1,7 +1,7 @@
 # Your Database
 
 ### Choosing an Existing Schema
-If you're looking to get up and running as quickly or possible, you may want to choose from our small but growing [library of schema boilerplates](#). Directus will also work with most SQL schemas you find elsewhere – though the formatting of some table/field names may be less intuitive to users.
+If you're looking to get up and running as quickly or possible, you may want to choose from our small but growing library of schema boilerplates. Directus will also work with most SQL schemas you find elsewhere – though the formatting of some table/field names may be less intuitive to users.
 
 
 ### Creating & Customizing Schemas

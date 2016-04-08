@@ -5,8 +5,8 @@ This page will give an overview of the proprietary Directus tables that are incl
 The fundamental purpose of Directus is to allow developers to design and create schemas specifically around the needs of their project's scale, performance, architecture, and extensibility. While Directus tries to make no assumptions about your data, there are a few standards which (as of now) should be followed when creating new Tables and Fields:
 
 * `id` – Currently Directus assumes an `id` field as the Primary Key.
-* `active` – "Active" is the default name for the status field. [Learn More](#)
-* `sort` – "Sort" is the default field name for storing drag-and-drop reordering values. [Learn More](#)
+* `active` – "Active" is the default name for the status field. [Learn More](/02-user-guide/02-item-listing.md#active-inactive--delete) or [Configure](/04-developer/03-configuration.md#apiconfigurationphp)
+* `sort` – "Sort" is the default field name for storing drag-and-drop reordering values. [Learn More](/02-user-guide/02-item-listing.md#reordering)
 
 ###`directus_activity`
 
