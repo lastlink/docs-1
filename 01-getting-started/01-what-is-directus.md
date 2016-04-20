@@ -1,15 +1,18 @@
 
 # What is Directus?
 
-##Directus is a free and open-source SQL database GUI for intuitively managing your project’s content.
+##Directus is a free and open-source headless CMS for intuitively managing custom-schema database content.
 
 ----------
 
-### So, is Directus a CMS or Database Administration Tool?
-As a developer, you're probably already managing content directly through Sequel-Pro, phpMyAdmin, or the command line. These are excellent tools because you get complete control with no setup other than entering the database credentials... but you would never give that access to clients, designers, or even inexperienced engineers. Handling relational ids, media/file references, and data validation just isn't intuitive at that level – let alone the risk of accidentally deleting/truncating tables.
+### A Familiar Problem
+As a developer, you're probably already managing database content directly through Sequel-Pro, phpMyAdmin, or the command line. These are excellent tools because you get complete control with little setup beyond entering the database credentials. But you would never give that access to clients, designers, or even inexperienced engineers – relationships, validation, media, and security can easily get unwieldy. Not to mention you'll either have to build within one of those piecemealed proprietary CMS designed for mostly for blogs or build a custom CMS for your custom database.
 
-What if you want non-technical users to manage that same database content through a simple, intuitive, and feature-rich interface – tailoring table/field access with granular permissions. Innumerable Content Management Systems probably come to mind, but typically those have steep learning curves, require complicated proprietary database schemas, and generally make assumptions about what you're doing and how to do it. On top of that, most CMS are tangled with entire website templating solutions – but maybe your database isn't even supporting a website... maybe it's for a native app, internal inventory tracking, or customizable project management. 
+### Custom Databases, No Workflow Assumptions
+Directus allows developers to build completely projects with custom, scalable, and decoupled databases. No more proprietary templating systems and plugin piecemealing. Build with whichever technologies are most appropriate and then either connect  directly to the database, via the Directus API, or use one of our SDKs. This makes it perfect for native-apps, web-apps, physical installations, and even projects that span multiple platforms.
 
+### Headless CMS
+Once you have a basic database you'll likely want to start creating, editing, and managing its content. Directus gives even the most novice users the ability to safely and intuitively manage database content directly. Since it pulls all of its architecture and configuration directly from the schema, there's no need for time-consuming setup.
 
 #### Comparison of data/content management options
 

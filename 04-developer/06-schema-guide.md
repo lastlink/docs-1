@@ -5,18 +5,26 @@ This page will give an overview of the proprietary Directus tables that are incl
 The fundamental purpose of Directus is to allow developers to design and create schemas specifically around the needs of their project's scale, performance, architecture, and extensibility. While Directus tries to make no assumptions about your data, there are a few standards which (as of now) should be followed when creating new Tables and Fields:
 
 * `id` – Currently Directus assumes an `id` field as the Primary Key.
-* `active` – "Active" is the default name for the status field. [Learn More](#)
-* `sort` – "Sort" is the default field name for storing drag-and-drop reordering values. [Learn More](#)
+* `active` – "Active" is the default name for the status field. [Learn More](/02-user-guide/02-item-listing.md#active-inactive--delete) or [Configure](/04-developer/03-configuration.md#apiconfigurationphp)
+* `sort` – "Sort" is the default field name for storing drag-and-drop reordering values. [Learn More](/02-user-guide/02-item-listing.md#reordering)
 
 ###`directus_activity`
 
 ###`directus_bookmarks`
+This table stores all of the left-nav bookmarks for Directus. This includes bookmarks that users create as well as the "System" bookmarks at the bottom. Each record is assigned to a specific user.
+
+* `user` - [Directus user id] This assigns the bookmark to a specific user (there's a ticket to allow for "global" bookmarks using `NULL`)
+* `title` - The text to display in the navigation menu
+* `url` - The path to navigate to when clicked, relative to the Directus root
+* `icon_class` - Deprecated
+* `section` - ["search" or "other"] Which nav section to show the link within. User generated bookmarks use "search", while all system links go within "other"
 
 ###`directus_columns`
 
 ###`directus_files`
 
 ###`directus_groups`
+
 
 ###`directus_messages`
 

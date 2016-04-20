@@ -1,7 +1,7 @@
 # Your Database
 
 ### Choosing an Existing Schema
-If you're looking to get up and running as quickly or possible, you may want to choose from our small but growing [library of schema boilerplates](#). Directus will also work with most SQL schemas you find elsewhere – though the formatting of some table/field names may be less intuitive to users.
+If you're looking to get up and running as quickly or possible, you may want to choose from our small but growing library of schema boilerplates. Directus will also work with most SQL schemas you find elsewhere – though the formatting of some table/field names may be less intuitive to users.
 
 
 ### Creating & Customizing Schemas
@@ -55,7 +55,7 @@ It is important when setting up an app to honor any Status states used by Direct
 AND `active` = '1'
 ```
 
-[Learn More](https://github.com/directus/docs/blob/master/3-developer/2-configuration.md)
+[Learn More](/04-developer/02-configuration.md)
 
 ### Sort Field
 Adding a `sort(INT11)` field to a table turns on Directus' drag-and-drop sorting. Items on the Directus listing page will now have handles for dragging them into curated orders. When sorted, Directus will save ascending integers into the order field, thereby making it easy to return results in this order:
