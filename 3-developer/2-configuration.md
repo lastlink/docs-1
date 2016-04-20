@@ -47,7 +47,21 @@ This file contains the configuration arrays for the Directus framework.
 
 * **Session Prefix** This value allows you to run multiple versions of Directus on the same server without the sessions conflicting.
 * **HTTP/HTTPS** Here you can set the _forceHttps_ variable (defaults to: false)
-* **SMTP** Allows you to configure the host, port, username, and password for your SMTP mail server. (Utilized by _messages_ and _forgot password_)
+* **SMTP** Allows you to configure the host, port, username, and password for your SMTP mail server. (Utilized by _messages_ and _forgot password_). _**This is going to be removed in future versions.**_
+* **Mail** Allows you to configure the mail transport and default `from` address.
+```php
+    'mail' => array(
+        'from' => array(
+            'john@directus.io' => 'John Doe'
+        ),
+        // Options available are `mail`, `sendmail` and `smtp`.
+        'transport' => 'smtp',
+        'host' => 'mail.host.domain',
+        'username' => 'user',
+        'password' => 'pass',
+        'port' => '123',
+    ),
+```
 * **Database Hooks** (dbHooks)
     * postInsert => A global function called after each database record insert
     * postUpdate => A global function called after each database record update
