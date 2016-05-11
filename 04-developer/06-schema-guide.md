@@ -62,7 +62,9 @@ All the users, including admins, are added within this table. Each user is assig
 * `active` - [Directus user id] This 
 * `active` - [Directus user id] This 
 * `active` - [Directus user id] This 
-`active` - [Directus user id] This 
+* `active` - [Directus user id] This 
+* `active` - [Directus user id] This 
+* `active` - [Directus user id] This 
 
 #### Manually Setting Passwords
 If you need to manually reset a user's password directly in the database you can use the following SQL snippet (remember to update the ID of the user to update):
