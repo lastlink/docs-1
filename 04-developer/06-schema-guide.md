@@ -63,8 +63,8 @@ All the users, including admins, are added within this table. Each user is assig
 * `email` - The (unique) email address for the user (used for login). Shown on the default user card listing
 * `password` - This is encrypted password for the user. It is a SHA1 hash of the random salt (below) and chosen password
 * `salt` - A randomly generated hash to more securely encrypt the password
-* `token` -  
-* `access_token` - 
+* `token` -  The API token for this user. Changing this hash may break any APIs using this user to authenticate
+* `access_token` - A Directus token/hash used to further secure the user's session identifiers, helping to prevent session hijacking
 * `reset_token` - A unique token hash used to identify and authorize password change requests
 * `reset_expiration` - The datetime that the above `reset_token` stops working – typically 24-48 hours after being emailed to the user's email address
 * `position` - A plain text field for storing the user's position or role. Shown on the default user card listing
