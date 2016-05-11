@@ -55,3 +55,20 @@ The allow_[permission] columns determine which operations the group may perform 
 ###`directus_ui`
 
 ###`directus_users`
+All the users, including admins, are added within this table. Each user is assigned to a single User Group (`directus_groups`), and that group determines the privileges (`directus_privileges`) for all of its users. 
+
+* `active` - [Directus user id] This 
+* `active` - [Directus user id] This 
+* `active` - [Directus user id] This 
+* `active` - [Directus user id] This 
+* `active` - [Directus user id] This 
+`active` - [Directus user id] This 
+
+#### Manually Setting Passwords
+If you need to manually reset a user's password directly in the database you can use the following SQL snippet (remember to update the ID of the user to update):
+
+```
+UPDATE `directus_users` 
+SET `salt` = SHA1(RAND()), `password` = SHA1(CONCAT(salt, 'new-password-here'))
+WHERE `id` = '1' 
+```
