@@ -57,14 +57,31 @@ The allow_[permission] columns determine which operations the group may perform 
 ###`directus_users`
 All the users, including admins, are added within this table. Each user is assigned to a single User Group (`directus_groups`), and that group determines the privileges (`directus_privileges`) for all of its users. 
 
-* `active` - [Directus user id] This 
-* `active` - [Directus user id] This 
-* `active` - [Directus user id] This 
-* `active` - [Directus user id] This 
-* `active` - [Directus user id] This 
-* `active` - [Directus user id] This 
-* `active` - [Directus user id] This 
-* `active` - [Directus user id] This 
+* `active` - [0,**1**] Determines if the user is active (`1`) or not (`0`)
+* `first_name` - The first name of the user
+* `last_name` - The last name of the user
+* `email` - The (unique) email address for the user (used for login). Shown on the default user card listing
+* `password` - This is encrypted password for the user. It is a SHA1 hash of the random salt (below) and chosen password
+* `salt` - A randomly generated hash to more securely encrypt the password
+* `token` -  
+* `access_token` - 
+* `reset_token` - A unique token hash used to identify and authorize password change requests
+* `reset_expiration` - The datetime that the above `reset_token` stops working – typically 24-48 hours after being emailed to the user's email address
+* `position` - A plain text field for storing the user's position or role. Shown on the default user card listing
+* `email_messages` - [0,**1**] A toggle for forwarding (`1`) or not forwarding (`0`) Directus messages to the user's email address
+* `last_login` - A datetime value of the last time the user logged into Directus
+* `last_access` - A datetime value of the last time the user was active within Directus
+* `last_page` - The path to the last page the user visited within Directus. This allows users to start where they left off previously
+* `ip` - The last known IP address the user accessed Directus from
+* `group` - The ID of this user's User Group (from `directus_groups`). The chosen group determines this users access privileges
+* `avatar` - The URL to an image avatar for this user. By default Directus saves the Gravatar image based on the email address
+* `avatar_file_id` - An override to the above default, this sets the avatar to a file ID from within `directus_files`
+* `location` - A plain text field for storing the user's location or office. Shown on the default user card listing
+* `phone` - A plain text field for storing the user's phone number. Shown on the default user card listing
+* `address` - A plain text field for storing the user's address
+* `city` - A plain text field for storing the user's city
+* `state` - A plain text field for storing the user's state
+* `zip` - A plain text field for storing the user's zip code
 
 #### Manually Setting Passwords
 If you need to manually reset a user's password directly in the database you can use the following SQL snippet (remember to update the ID of the user to update):
