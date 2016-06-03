@@ -1,6 +1,6 @@
 # Create & Edit
 ### Core and Custom UIs
-The create item and edit item pages are the same – the only difference is that one already has values entered into it. This page displays all the fields the current user has permission to view. You can change the field order, interface type, and comments/notes within _Settings > Tables & Inputs_. If your project would benefit from proprietary or otherwise custom data interfaces, it's easy to extend existing UIs or create new ones with no limitations in terms of styling or complexity.
+These pages display all the fields the current user has permission to view. Admins can change the field order, interface type, and field notes within _Settings > Tables & Inputs_. If your project would benefit from proprietary or otherwise custom data interfaces, it's easy to extend our Core interfaces or create new ones – there are no limits to what you can create!
 
 ----------
 

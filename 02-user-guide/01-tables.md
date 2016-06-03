@@ -1,2 +1,2 @@
 # Tables
-This straightforward page gives a listing of all tables your user has access to see. For ease of access, databases with fewer tables will list all tables in the sidebar. Tables that have been bookmarked will appear bold in this list.
+This straightforward page gives a listing of all tables your user has access to see. For ease of access, tables are listed directly in the Directus sidebar, so you will rarely need to visit this page. To manage a new database table within Directus, an admin must first add it to Directus and a user-group's privileges. If you think a table is missing, contact one of your Instance administrators.
