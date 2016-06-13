@@ -3,7 +3,7 @@
 Since SQL is a relational database, Directus has several UIs that can help clearly and easily manage relationships between items. An item can have related items from the same table (eg: *Project -> Related Project*) or a different table (eg: *Project -> Category*). An item can also have relationships to a single item (eg: *Shirt -> Size*) in a Many-to-One (or One-to-Many) relationship, or to multiple items (eg *Shirt -> Materials*) through Many-to-Many relationships.
 
 #### Many-to-One (M2O)
-Many-to-One relationships save the `id` from another item as it's value, creating a dynamic relationship to that item. 
+Many-to-One relationships save the `id` from another item as it's value, creating a dynamic relationship to that item.
 
 #### Many-to-Many (M2M)
 Many-to-Many relationships are quite a bit more complex, but very powerful. There are two things that are important to understand for M2Ms: Junction Tables, and Aliases. Let's use our *Shirt -> Materials* example from before to explore how this works:
@@ -65,7 +65,7 @@ This is a M2M relational UI that will make it easy to link the item being edited
 * `choose_button`: Toggles a "Choose" button that opens a modal with existing table items to choose from
 * `remove_button`: Toggles "Remove" buttons for each item that let's you delete it
 * `filter_type`: You have two options for how to filter this relational column from the Item Listing page depending on the size of your dataset:
-	* Dropdown: For small datasets, this gives a dropdown for easy filtering 
+	* Dropdown: For small datasets, this gives a dropdown for easy filtering
 	* Text Input: For larger datasets, this open field let's you filter by typing
 * `filter_column`: The column who's value is used for filtering
 * `visible_column_template`: Handlebars template notation for the fields to show in results. Eg: `{{first_name}} {{last_name}}`. All columns used here must be added to `visible_columns`
@@ -77,7 +77,7 @@ This is a M2M relational UI that will make it easy to link the item being edited
 ### Many-to-One (M2O)
 *Supported Datatypes: **`INT`***
 
-This is a M2O relational UI drop-down that links to a single item by storing the related item's ID in the column – which is why this UI only works with the INT datatype (also used for IDs). You could use this to relate each item in your `press` table to a `project`, or to relate 
+This is a M2O relational UI drop-down that links to a single item by storing the related item's ID in the column – which is why this UI only works with the INT datatype (also used for IDs). You could use this to relate each item in your `press` table to a `project`, or to relate
 
 * `readonly`: Disables editing of the field while still letting users see the value
 * `visible_column`: A column name (or CSV of column names) to show within the interface
@@ -86,7 +86,7 @@ This is a M2O relational UI drop-down that links to a single item by storing the
 * `visible_status_ids`: The values of the status column that will be shown/allowed in this UI. If the related table has a status column the default values are: `0 = deleted`, `1 = active`, `2 = draft`
 * `placeholder_text`: Grayed out default placeholder text in the input when it's empty
 * `filter_type`: You have two options for how to filter this relational column from the Item Listing page depending on the size of your dataset:
-	* Dropdown: For small datasets, this gives a dropdown for easy filtering 
+	* Dropdown: For small datasets, this gives a dropdown for easy filtering
 	* Text Input: For larger datasets, this open field let's you filter by typing
 * `filter_column`: The column who's value is used for filtering
 
@@ -97,7 +97,7 @@ This is a M2O relational UI drop-down that links to a single item by storing the
 
 Similar to the `Many-to-One` in function, the interface for this UI is a type-ahead (live search auto-complete) which is useful for large relational datasets that won't fit into a dropdown.
 
-* `visible_column`: The column name to show for items
+* `visible_column`: The column name used to search and show for items
 * `size`: Adjusts the max width of the input (Small, Medium, Large)
 * `template`: Handlebars template for displaying the items
 * `include_inactive`: Whether or not to include inactive (`2`) status items
