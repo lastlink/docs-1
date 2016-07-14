@@ -22,7 +22,7 @@ The allow_[permission] columns determine which operations the group may perform 
 
 #### Access Control List (ACL)
 * `allow_view` - The ability to view a table. Without this permission, the table will be completely omitted from the schema of users in this group.
-  * ![no-priv](http://getdirectus.com/assets/imgs/docs/no-priv.png) – **Off (`0`)** – Can not view any items in this table or the table itself
+  * ![no-priv](http://rngr.org/assets/imgs/no-priv2.png) – **Off (`0`)** – Can not view any items in this table or the table itself
   * ![partial-priv](http://getdirectus.com/assets/imgs/docs/partial-priv.png) – **User (`1`)** – Can view items I created in the table
   * ![big-priv](http://getdirectus.com/assets/imgs/docs/big-priv.png) – **All (`2`)** – Can view all items in the table (Default)
 * `allow_add` - The ability to add new items to this table. A value of `2` is not an option since you can't _create_ someone else's content.
