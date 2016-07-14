@@ -47,7 +47,7 @@ This is a M2O relational UI that links a single file (and YouTube/Vimeo video em
 ### Multiple Files (M2M)
 *Supported Datatypes: **`MANYTOMANY` (an alias datatype)***
 
-This is a M2M relational UI that links multiple files (and YouTube/Vimeo video embeds). If you have a `album` table you could use this to store mp3s within `tracks`, for a `projects` table this would be the UI used for columns like: `hero_slideshow`, `youtube_playlist`, and `press_pdfs`. Basically any column that needs to store multiple files.
+This is a M2M relational UI that links multiple files (and YouTube/Vimeo video embeds). If you have an `album` table you could use this to store mp3s within `tracks`, for a `projects` table this would be the UI used for columns like: `hero_slideshow`, `youtube_playlist`, and `press_pdfs`. Basically any column that needs to store multiple files. Currently only Directus Files are accepted by this UI, so `directus_columns.table_related` must always be set to `directus_files`.
 
 * `add_button`: Toggles an "Add" button for adding new files directly into the UI
 * `choose_button`: Toggles a "Choose" button that opens a modal with all existing Directus files to choose from
