@@ -22,3 +22,6 @@ If you get "Server error occured!" the first time you try to login, it likely me
 #### Windows (WAMP)
 
 1. `wamp tray icon > apache > apache module > rewrite_module`
+
+#### How do I reset a password manually?
+[This section](https://github.com/directus/docs/blob/master/04-developer/06-schema-guide.md#manually-setting-passwords) of the Docs explains how to update a password with a SQL command.
