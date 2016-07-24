@@ -113,3 +113,28 @@ Similar to Many-to-One, this UI is an interface for the opposite direction. Inst
 * `result_limit`: A maximum number of results to be returned before truncating results
 * `add_button`: Toggles an "Add" button for adding new items directly into the UI
 * `remove_button`: Toggles "Remove" buttons for each item that let's you delete it
+
+----------
+
+### Translation (O2M)
+*Supported Datatypes: **`ONETOMANY` (an alias datatype)***
+
+This relational UI allows for field translations to be stored in a related table. For example, if you have a `projects` table you could create a `projects_translations` table to relationally store the `name` and `description` columns in other languages. Some data, such as `hero_image` or `featured` may not need to be translated and can be added directly to the `projects` table.
+
+*Example Schema*
+* `projects`
+    * `id` – ID of the project
+    * `active` – (optional) Status column that determines active/draft/deleted
+    * `hero_image` – This would be for a non-language dependent image
+    * `featured` – Non-language dependent checkbox for featuring this project on the homepage
+* projects_translations
+    * `id` – ID of the translation
+    * `project_id` – ID of the project this is related to
+    * `language_id` – ID of the language this is written in (PK of `languages` table)
+    * `name` – Project name which can be translated into multiple languages
+    * `description` – Project description which can be translated into multiple languages
+* languages
+    * `id` – "primary key" – Can be an ID (eg "1"), or a language identifier (eg "en")
+    * `language` – Is the written-out name of the language (eg "English")
+
+@TODO
