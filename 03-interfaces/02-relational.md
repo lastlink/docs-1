@@ -124,7 +124,7 @@ This relational UI allows for field translations to be stored in a related table
 *Example Schema*
 * `projects` Table
     * `id` – ID of the project
-    * `active` – (optional) Status column that determines active/draft/deleted
+    * `active` – Status column that determines if project is active/draft/deleted
     * `hero_image` – This would be for a non-language dependent image
     * `featured` – Non-language dependent checkbox for featuring this project on the homepage
 * `projects_translations` Table
