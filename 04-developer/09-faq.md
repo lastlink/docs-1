@@ -1,5 +1,10 @@
 #FAQ
 
+### Bug Reporting and Feature Requests
+**Report bugs directly on [GitHub Issues](https://github.com/directus/directus/issues/new) – request and vote for new features on [FeatHub](http://feathub.com/directus/directus).**
+
+-------------
+
 ### Server Error: Automatically populating $http_raw_post_data is deprecated
 Within PHP 5.6.x `$HTTP_RAW_POST_DATA` is deprecated, but sometimes isn't on individual installs (php bug bug#66763)
 
