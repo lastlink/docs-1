@@ -21,7 +21,7 @@ table.drop:before       | Before a table is being dropped. Table name is passed.
 table.drop:after        | After a table has been dropped. Table name is passed.
 table.drop              | Alias for table.drop:after
 table.insert:before     | Before new record is being added to a table. Table name and record data passed.
-table.insert:after      | After new record has been added to a table. Table name and record data passed.
+table.insert:after      | After new record has been added to a table. Table name and record data inserted passed.
 table.insert            | Alias for table.insert:after
 table.insert.[table-name]:before     | Before new record is being added to [table-name]. Record data passed.
 table.insert.[table-name]:after      | After new record has been added to [table-name]. Record data passed.
