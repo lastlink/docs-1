@@ -4,10 +4,11 @@ Directus is a forward-looking framework and therefore may not support certain le
 * Apache HTTP Server
 * mod_rewrite ([help](/05-troubleshooting/01-faq.md))
 * PHP 5.5+
-* curl
-* gd
+  * curl
+  * gd
+  * finfo
+  * pdo_mysql
+  * mcrypt
 * MySQL 5.2+
-* pdo_mysql
-* mcrypt
 
 > **Optional Enhancement:** Installing *Imagick* adds thumbnail support for TIFF, PSD, and PDF files
