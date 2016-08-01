@@ -24,7 +24,7 @@ table.insert:before     | Before new record is being added to a table. Table nam
 table.insert:after      | After new record has been added to a table. Table name and record data inserted passed.
 table.insert            | Alias for table.insert:after
 table.insert.[table-name]:before     | Before new record is being added to [table-name]. Record data passed.
-table.insert.[table-name]:after      | After new record has been added to [table-name]. Record data passed.
+table.insert.[table-name]:after      | After new record has been added to [table-name]. Record data inserted passed.
 table.insert.[table-name]            | Alias for table.insert.[table-name]:after
 table.update:before     | Before a table record is being updated. Table name and record data passed.
 table.update:after      | After a table record has been updated. Table name and record data passed.
