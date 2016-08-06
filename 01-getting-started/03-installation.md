@@ -11,6 +11,10 @@
 ----------
 
 ### Installation Walkthrogh
+
+#### Step 0 – Requeriments
+The pre-installation step, it will only be shown if a requirements wasn't found.
+
 #### Step 1 – Project Info
 * _Project Name_ – The name of this project
 * _Project Path_ – This should auto-fill, but it's the path of this install
@@ -18,11 +22,13 @@
 * _Admin Password / Confirm_ – The password for your first Directus user/admin
 
 #### Step 2 – Database
-* _Host Name_ – Typically `localhost`
-* _Username_ – MySQL user with access and modify privileges
-* _Password_ – The password for that MySQL user
-* _Database Name_ – The name of the new or existing database to be managed
-* _Install Sample Data_ – Check this to import the example schema
+* _Database Type_ – The Database type to be used. (Only MySQL is supported, including MariaDB, Percona Server or equivalent).
+* _Host Name_ – The database host, Typically `localhost`.
+* _Host Port_ - The database host port.
+* _Username_ – The database user with access and modify privileges.
+* _Password_ – The password for that database user.
+* _Database Name_ – The name of an existing database to be managed.
+* _Install Schema_ – List of boilerplate schemas to be imported.
 
 #### Step 3 – Confirmation
 * If the database connection succeeds you'll be shown an installation summary page and given an opportunity to email these details to the admin user.
