@@ -22,7 +22,7 @@ The pre-installation step, it will only be shown if a requirements wasn't found.
 * _Admin Password / Confirm_ – The password for your first Directus user/admin
 
 #### Step 2 – Database
-* _Database Type_ – The Database type to be used. (Only MySQL is supported, including MariaDB, Percona Server or equivalent).
+* _Database Type_ – The Database type to be used. (Only MySQL is supported, including MariaDB, Percona Server or equivalent). _SQLite and PostgreSQL support are under Development at the moment_
 * _Host Name_ – The database host, Typically `localhost`.
 * _Host Port_ - The database host port.
 * _Username_ – The database user with access and modify privileges.
