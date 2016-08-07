@@ -33,7 +33,7 @@ This command updates your JSON file and your lockfile without changing the versi
 ----------
 
 ### Step 1: Setup a development environment
-You will need to setup a local *AMP (Apache, MySQL and PHP) or *EMP (nginx, MySQL and PHP) environment in order to test Directus. *AMP packages can be found for different platforms:
+You will need to setup a local \*AMP (Apache, MySQL and PHP) or \*EMP (nginx, MySQL and PHP) environment in order to test Directus. \*AMP packages can be found for different platforms:
 
 * [MAMP](http://www.mamp.info/en/index.html) for Mac OS
 * [WAMP](http://www.wampserver.com/en/) for Windows
