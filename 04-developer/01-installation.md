@@ -24,16 +24,16 @@ This command updates your JSON file and your lockfile without changing the versi
 
 ### Requirements
 
-* Apache HTTP Server
-* MySQL Server
-* PHP >5.2
+* Apache HTTP Server / Nginx Server
+* MySQL Server / Percona Server / MariaDB or equivalent
+* PHP >= 5.5.0
 * Git
 * Composer
 
 ----------
 
 ### Step 1: Setup a development environment
-You will need to setup a local *AMP environment (Apache, MySQL and PHP) in order to test Directus. *AMP packages can be found for different platforms:
+You will need to setup a local *AMP (Apache, MySQL and PHP) or *EMP (nginx, MySQL and PHP) environment in order to test Directus. *AMP packages can be found for different platforms:
 
 * [MAMP](http://www.mamp.info/en/index.html) for Mac OS
 * [WAMP](http://www.wampserver.com/en/) for Windows
@@ -50,14 +50,13 @@ You will need Git to keep your test version of Directus up to date. Unless you a
 Create a directory named "directus" in the www root. Next, open the directory in the terminal and type:
 
 ```
-$ git init
-$ git clone https://github.com/RNGR/Directus.git directus
+$ git clone https://github.com/directus/directus.git directus
 ```
 
 ----------
 
 ### Step 4: Install dependencies
-Directus uses composer to handle its php dependencies. Go to the `directus/api/` folder and install composer:
+Directus uses composer to handle its php dependencies. Go to the `directus/` folder and install composer:
 
 ```
 $ curl -s https://getcomposer.org/installer | php
@@ -68,11 +67,14 @@ Then install the dependencies by executing:
 $ php composer.phar install
 ```
 
+Read more at the official site on [how to download and install composer](https://getcomposer.org/download/), or [how to install composer globally](https://getcomposer.org/doc/00-intro.md#globally).
+
 ----------
 
 ### Step 5: Setup the database
 The AMP-packages listed above all include Phpmyadmin. The following three steps need to be completed in order to setup the database
 
+#### Using PHPMyAdmin
 1. Create the database
    1. Databases -> Create Database
    2. Type *directus* as name and select *utf8_general_ci* as Collation.
@@ -80,36 +82,62 @@ The AMP-packages listed above all include Phpmyadmin. The following three steps 
    1. Once you've created the database it will be visible in the left column – open it by clicking it.
    2. Privileges -> Add user
    3. Fill in *username* and *password*. Leave the other fields as defaults.
-3. Import the database schema
+3. Import the Directus core database schema
    1. Import->File to Import->Choose file
    2. Open api/schema.sql
    3. Press Go
 
+#### Using Command line
+1. Connect to MySQL Server
+
+   ```bash
+   $ mysql -u <mysql-user-name> -p
+   # mysql will ask to type the server password.
+   $ Enter password: ****
+   ```
+   
+   Change **<mysql-user-name>** with the database username, typically is **root** by default.
+
+2. Create the database 
+   After successfuly connect to the MySQL Server, create a database by typing
+   ```bash
+   mysql> CREATE DATABASE <database-name>`;
+   ```
+   
+   Change **<database-name>** with the desired name for the database.
+   
+   And you can exit the server by typing `exit`.
+   
+3. Install Directus
+   1. Go to `http://your-directus-host.local/installation` and follow the steps and skip Step 6
+   2. Or Import Directus core database schema and do Step 6
+      ```bash
+      $ mysql -u <mysql-user-name> -p <database-name> < api/schema.sql
+      # mysql will ask to type the server password.
+      $ Enter password: ****
+      ```
+
 ----------
 
 ### Step 6: Setup Directus
-Open `directus/api/config_sample.php` Add the database username and password from Step 5 to *DB_USER* and *DB_PASSWORD*. Save the file as ```directus/api/config.php```
+Open `api/config_sample.php` Add the database username and password from Step 5 to *DB_NAME*, *DB_USER* and *DB_PASSWORD*. Save the file as ```directus/api/config.php```
 
 ```
 define('DB_USER', 		'myusername');
 define('DB_PASSWORD',	'mypassword');
+define('DB_NAME',       'mydatabase');
 ```
 
 ----------
 
-### Step 7: Setup Files Uploads
-This requires configuring your Storage Adapters. Currently the best way to do this is to manually edit the `directus_storage_adapters` table using a SQL client.
+### Step 7: (Optionally) Setup Files Uploads
+Directus supports different storage adapters, by default all files are uploaded to `/media` directory on the server local filesystem. 
 
-By default, `directus.sql` should contain two storage adapters out of the box, with the `DEFAULT` and `THUMBNAIL` roles, both using the `FileSystemAdapter` (meaning these will map to your local hard drive).
-
-Simply define the `destination` (absolute path) and `url` (equivalent URL to the same directory) parameters of each of these records. For example, using a MAMP setup, you might define them this way:
-
-```
-UPDATE  `directus_storage_adapters` SET  `destination` =  '/Applications/MAMP/htdocs/directus-media/', `url` = 'http://localhost:8888/directus-media/' WHERE  `directus_storage_adapters`.`id` = 1;
-UPDATE  `directus_storage_adapters` SET  `destination` =  '/Applications/MAMP/htdocs/directus-media-thumbnails/', `url` = 'http://localhost:8888/directus-media-thumbnails/' WHERE  `directus_storage_adapters`.`id` = 2;
-```
+Under `api/configuration.php` there's a `filesystem` array key-value where you configure your storage. [Read more](https://github.com/directus/directus/blob/build/api/configuration_sample.php)
 
 ----------
 
 ### Step 8: Done!
-Open directus by navigating to the path *directus* in your local host. Log in using the default user *admin@example.com* and password *password*
+Open directus by navigating to the path where *directus* was installed in your local host.
+
+If Directus was installed manually, log in using the default user *admin@example.com* and password *password*
