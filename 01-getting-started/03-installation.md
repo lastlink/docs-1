@@ -12,8 +12,8 @@
 
 ### Installation Walkthrogh
 
-#### Step 0 – Requeriments
-The pre-installation step, it will only be shown if a requirements wasn't found.
+#### Step 0 – Requirements
+This pre-installation step will only be shown if the server requirements are not met.
 
 #### Step 1 – Project Info
 * _Project Name_ – The name of this project
@@ -22,13 +22,13 @@ The pre-installation step, it will only be shown if a requirements wasn't found.
 * _Admin Password / Confirm_ – The password for your first Directus user/admin
 
 #### Step 2 – Database
-* _Database Type_ – The Database type to be used. (Only MySQL is supported, including MariaDB, Percona Server or equivalent). _SQLite and PostgreSQL support are under Development at the moment_
-* _Host Name_ – The database host, Typically `localhost`.
-* _Host Port_ - The database host port.
-* _Username_ – The database user with access and modify privileges.
-* _Password_ – The password for that database user.
-* _Database Name_ – The name of an existing database to be managed.
-* _Install Schema_ – List of boilerplate schemas to be imported.
+* _Database Type_ – The database type to be used. (Only MySQL is supported, including MariaDB, Percona Server or equivalent). _SQLite and PostgreSQL support are under development at the moment_
+* _Host Name_ – The database host, typically `localhost`
+* _Host Port_ - The database host port
+* _Username_ – The database user with access and modify privileges
+* _Password_ – The password for that database user
+* _Database Name_ – The name of an existing database to be managed
+* _Install Schema_ – List of optional boilerplate schemas
 
 #### Step 3 – Confirmation
 * If the database connection succeeds you'll be shown an installation summary page and given an opportunity to email these details to the admin user.
@@ -40,5 +40,5 @@ The pre-installation step, it will only be shown if a requirements wasn't found.
 ### Troubleshooting
 If you're having problems with your Directus install, please visit our [troubleshooting section](/05-troubleshooting).
 
-* [Server error occured!](#)
+* [Server error occurred!](#)
 * [Enable mod_rewrite](/05-troubleshooting)
