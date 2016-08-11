@@ -107,12 +107,25 @@ Similar to the `Many-to-One` in function, the interface for this UI is a type-ah
 ### One-to-Many (O2M)
 *Supported Datatypes: **`ONETOMANY` (an alias datatype)***
 
-Similar to Many-to-One, this UI is an interface for the opposite direction. Instead of saving the `id` of a related item in an actual column, the One-to-Many is an Alias column that performs actions on related items.
+Similar to Many-to-One, this UI is an interface for the opposite direction. Instead of saving the `id` of a related item in an actual column, the One-to-Many is an Alias column that saves a FK on the related items.
 
 * `visible_columns`: Which columns to show for related items
 * `result_limit`: A maximum number of results to be returned before truncating results
 * `add_button`: Toggles an "Add" button for adding new items directly into the UI
-* `remove_button`: Toggles "Remove" buttons for each item that let's you delete it
+* `choose_button`: Toggles a "Choose" button for finding and selecting existing related items
+* `remove_button`: Toggles "Remove" buttons for each item that let's you delete it (see below)
+* `only_unassigned`: Toggles if you can choose any existing related items (reassigns ID when saving), or only ones not assigned to other items (already have an ID)
+
+_When deleting these related O2M items, the following rules apply to the related table:_
+* **HAS STATUS COLUMN + FK ALLOW NULL**
+    * Status = NO CHANGE (SAME STATUS), FK = NULL
+* **HAS STATUS COLUMN + FK DOESN'T ALLOW NULL**
+    * Status = 0 (SOFT DELETE), FK = NO CHANGE (SAME ID)
+* **NO STATUS COLUMN + FK ALLOW NULL**
+    * FK = NULL
+* **NO STATUS COLUMN + FK DOESN'T ALLOW NULL**
+    * HARD DELETE ROW (PERMANENT)
+
 
 ----------
 
