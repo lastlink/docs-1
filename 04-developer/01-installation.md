@@ -32,7 +32,7 @@ This command updates your JSON file and your lockfile without changing the versi
 
 ----------
 
-### Step 1: Setup a development environment
+### Step 1: Setup a Development Environment
 You will need to setup a local \*AMP (Apache, MySQL and PHP) or \*EMP (nginx, MySQL and PHP) environment in order to test Directus. \*AMP packages can be found for different platforms:
 
 * [MAMP](http://www.mamp.info/en/index.html) for Mac OS
@@ -46,7 +46,7 @@ You will need Git to keep your test version of Directus up to date. Unless you a
 
 ----------
 
-### Step 3: Pull down Directus from github
+### Step 3: Pull down Directus from GitHub
 Create a directory named "directus" in the www root. Next, open the directory in the terminal and type:
 
 ```
@@ -55,7 +55,7 @@ $ git clone https://github.com/directus/directus.git directus
 
 ----------
 
-### Step 4: Install dependencies
+### Step 4: Install Dependencies
 Directus uses composer to handle its php dependencies. Go to the `directus/` folder and install composer:
 
 ```
@@ -71,8 +71,10 @@ Read more at the official site on [how to download and install composer](https:/
 
 ----------
 
-### Step 5: Setup the database
+### Step 5: Setup the Database
 The AMP-packages listed above all include Phpmyadmin. The following three steps need to be completed in order to setup the database
+
+> Please disable MySQL Strict Mode before installation. Directus does not fully support Strict Mode due to limitations with the PDO and MySQL Drivers.
 
 #### Using PHPMyAdmin
 1. Create the database
@@ -87,7 +89,7 @@ The AMP-packages listed above all include Phpmyadmin. The following three steps 
    2. Open api/schema.sql
    3. Press Go
 
-#### Using Command line
+#### Using Command Line
 1. Connect to MySQL Server
 
    ```bash
@@ -98,7 +100,7 @@ The AMP-packages listed above all include Phpmyadmin. The following three steps 
    
    Change **<mysql-user-name>** with the database username, typically is **root** by default.
 
-2. Create the database 
+2. Create the Database 
    After successfuly connect to the MySQL Server, create a database by typing
    ```bash
    mysql> CREATE DATABASE <database-name>`;
