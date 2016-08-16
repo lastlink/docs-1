@@ -14,6 +14,16 @@ To solve this add/use/update this on your php.ini
 ### Server error occured!
 If you get "Server error occured!" the first time you try to login, it likely means that you missconfigured Apache2. Try adding *overrideAllow All* into your virtualHost.
 
+### MySQL Strict Mode
+Directus does not fully support Strict Mode due to limitations with the PDO and MySQL Drivers. Please disable MySQL Strict Mode before installation.
+
+You can check to see if your database is in strict mode with the following queries:
+```
+SELECT @@GLOBAL.sql_mode;
+SELECT @@SESSION.sql_mode;
+SHOW VARIABLES LIKE 'sql_mode';
+```
+
 ### How to Enable `mod_rewrite`
 
 #### Unix (MAMP)
