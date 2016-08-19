@@ -150,4 +150,16 @@ This relational UI allows for field translations to be stored in a related table
     * `id` – "primary key" – Can be an ID (eg "1"), or a language identifier (eg "en")
     * `language` – Is the written-out name of the language (eg "English")
 
-@TODO
+* `languages_table`: The name of the table that holds the language options
+* `languages_name_column`: The name of the column in the languages_table with the title of the language option
+* `default_language_id`: The default ID to use/show from the languages_table
+* `left_column_name`: The name of the column on the table (eg `projects`) that stores the language ID (foreign key)
+
+*Relational Options*
+
+When creating the translation column within Directus you'll need to enter some info about the relationship. These are some helpful reminders:
+
+* `user_interface`: This should be set to `translations, obviously
+* `data_type`: This will automatically be set to `ALIAS` since this is not an actual field and the data is stored relationally
+* `related_table`: This should be the table that will hold the translations (eg `project_translations`)
+* `junction_column`: This is the column that stores your table ID (eg the `projects` ID) in the related_table
