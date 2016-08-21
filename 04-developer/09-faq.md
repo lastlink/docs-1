@@ -26,13 +26,20 @@ SHOW VARIABLES LIKE 'sql_mode';
 
 ### How to Enable `mod_rewrite`
 
-#### Unix (MAMP)
+#### Unix
 1. In the terminal run `a2enmod rewrite`
 2. Restart *apache2* with `/etc/init.d/apache2 restart` or `service apache2 restart`
 
 #### Windows (WAMP)
 
 1. `wamp tray icon > apache > apache module > rewrite_module`
+
+### `mod_rewrite` is enabled and still getting 404 error.
+
+If you are using VirtualDocumentRoot `RewriteBase` needs to be set.
+
+1. Go to `/directus/path/.htaccess` and add `RewriteBase /` just below `RewriteEngine On`.
+2. Go to `/directus/path/api/.htaccess` and add `RewriteBase /api` just below `RewriteEngine On`.
 
 ### How do I reset a password manually?
 [This section](https://github.com/directus/docs/blob/master/04-developer/06-schema-guide.md#manually-setting-passwords) of the Docs explains how to update a password with a SQL command.
