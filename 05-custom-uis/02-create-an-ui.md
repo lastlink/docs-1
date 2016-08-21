@@ -101,4 +101,4 @@ define(['core/UIComponent', 'core/UIView'], function(UIComponent, UIView) {
 ```
 
 ## Enabling an UI
-To use this UI just copy the file into your `/customs/ui` directory.
+To use this UI just copy the file into your `/customs/uis` directory.
