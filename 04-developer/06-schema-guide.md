@@ -9,6 +9,22 @@ The fundamental purpose of Directus is to allow developers to design and create 
 * `sort` – "Sort" is the default field name for storing drag-and-drop reordering values. [Learn More](/02-user-guide/02-item-listing.md#reordering)
 
 ###`directus_activity`
+This table stores all changes made to item's through Directus. It stores a complete item snapshot, the changes, editor, and other information used in the item history.
+
+* `type` - @TODO
+* `action` - @TODO
+* `identifier` - @TODO
+* `table_name` - @TODO
+* `row_id` - @TODO
+* `user` - @TODO
+* `data` - @TODO
+* `delta` - @TODO
+* `parent_id` - @TODO
+* `parent_table` - @TODO
+* `parent_changed` - @TODO
+* `datetime` - @TODO
+* `logged_ip` - @TODO
+* `user_agent` - @TODO
 
 ###`directus_bookmarks`
 This table stores all of the left-nav bookmarks for Directus. This includes bookmarks that users create as well as the "System" bookmarks at the bottom. Each record is assigned to a specific user.
@@ -24,7 +40,7 @@ This tables stores all the info about columns managed by Directus. Namely UI, re
 
 * `table_name` - The name of the table containing the column being edited
 * `column_name` – The name of the column being edited
-* `data_type` – The MySQL datatype of the column. Other database types such as SQLite have limited datatypes and this more granular value is used to know exactly how to format/type API responses. If you change the datatype directly in the database be sure to update this value. Some Directus fields are not actual columns (such as `ONETOMANY`), these are saved as an `ALIAS` and represent the ghost column.
+* `data_type` – The datatype of the column. Other database types (eg SQLite) have limited datatypes and this more granular value is used to know exactly how to format/type API responses. If you change the datatype directly in the database be sure to update this value. Some Directus fields are not actual columns (such as `ONETOMANY`), these are saved as an `ALIAS` and represent the ghost column.
 * `ui` – This stores the current User-Interface ID.
 * `relationship_type` – This column stores the relationship type (`NULL` if non-relational). As an ENUM there are three options:
     * `MANYTOONE`
@@ -41,18 +57,71 @@ This tables stores all the info about columns managed by Directus. Namely UI, re
 * `hidden_list` – [0,1] Whether or not this **listing page value** will be hidden from all users. This is global and overrides any user group permissions.
 * `required` – [0,1] Whether or not the field is required before saving the edit item page.
 * `sort` – [1,2,3...] This stores the sort order for the Directus fields. This is based on the database column order but can be changed since column order is tied to lookup/optimizations and the CMS view shouldn't impact that. New items are stored with a `9999` until they are sorted with the drag-and-drop Settings interface.
-* `comment` – This stores a note to be displayed beside the field on the edit page. This is based on the database column comment but has been decoupled since some database types (SQLite) don't natively support comments.
+* `comment` – This stores a note to be displayed beside the field on the edit page. This is based on the database column comment but has been decoupled since some database types (eg SQLite) don't natively support comments.
 
 ###`directus_files`
+This table stores the metadata for all files uploaded through Directus. Because files are an integral part of the framework and its interfaces, Directus does not currently support using other tables to manage files. However, you can create your own "File" tables as a "wrapper" by using the Single/Multiple File UIs.
+
+* `active` - @TODO
+* `name` - @TODO
+* `url` - @TODO
+* `title` - @TODO
+* `location` - @TODO
+* `caption` - @TODO
+* `type` - @TODO
+* `charset` - @TODO
+* `tags` - @TODO
+* `width` - @TODO
+* `height` - @TODO
+* `size` - @TODO
+* `embed_id` - @TODO
+* `user` - @TODO
+* `date_uploaded` - @TODO
+* `storage_adapter` - @TODO
 
 ###`directus_groups`
+This table stores the User Groups for the Directus privileges system.
 
+* `name` - The name of the user group. "Administrator" is the first/default group and should always be ID = 1.
+* `description` – Stores a description to help remember the group's purpose.
+* `restrict_to_ip_whitelist` - Ignored when `NULL`, a CSV of IP addresses can be entered to limit this group's access.
+* `nav_override` - @TODO
+* `show_activity` - [0,1] Whether or not the Activity nav item is visible/available to this group.
+* `show_messages` - [0,1] Whether or not the Messages nav item is visible/available to this group.
+* `show_users` - [0,1] Whether or not the Users nav item is visible/available to this group.
+* `show_files` - [0,1] Whether or not the Files nav item is visible/available to this group.
+* `nav_blacklist` - A CSV of nav item titles that should not be displayed to this group.
 
 ###`directus_messages`
+This table stores all user/group messages and item comments used by the framework.
+
+* `from` - Directus user ID of who sent the message.
+* `subject` - The subject of the message.
+* `message` - The body of the message. This allows for @user commenting.
+* `datetime` - The date and time the message was sent.
+* `attachment` - The Directus file ID for an attached file (???) @TODO
+* `response_to` - If this message is a threaded response to another, the parent's ID will be stored here.
+* `comment_metadata` - @TODO
 
 ###`directus_messages_recipients`
+This table tracks all the recipients of each message to know if the message was "read" or not.
+
+* `message_id` - The ID of the message
+* `recipient` - The ID of the individual recipient
+* `read` - [0,1] A boolean for if the message has been viewed/read.
+* `group` - @TODO
 
 ###`directus_preferences`
+This table stores all of the individual user preferences which allows a user's experience to remain the same between sessions/devices.
+
+* `user` - The user's ID
+* `table_name` - The table that the preferences will be saved for
+* `title` - A user-generated title for the preferences (used for Bookmarks only)
+* `columns_visible` - An ordered CSV of the column names that this user has visible on the table's Item Listing page
+* `sort` - The column name to sort by
+* `sort_order` - The sort direction for the `sort` column. Available options: `ASC`, `DESC`
+* `status` - A CSV of the status IDs (`active` column by default) to be shown. Eg: `1,2` would show active and draft, but not deleted (`0`)
+* `search_string` - A string saving any enabled search filters. Eg: `location%3Alike%3ABrooklyn%2Ctitle%3Alike%3A2016`
 
 ###`directus_privileges`
 Each row on this table is associated with a table (`table_name`) and a Directus user group (`group_id`). Optionally, you can increase the fidelity of your privileges by setting the `status_id` to a an allowed status integer. For instance, you can define a user-group's view privileges for a table specifically  when the _status_ of a record is in draft mode. This might be useful if you'd like your "intern" user-group to only see draft content (not live/published).
@@ -69,12 +138,42 @@ The allow_[permission] columns determine which operations the group may perform 
 * `allow_alter` - [0,**1**] The ability to modify the table's schema.
 
 ###`directus_schema_migrations`
+This system table tracks your current Directus version and the database schema migrations you have run to ensure your database architecture is up to date.
+
+* `version` - @TODO
 
 ###`directus_settings`
+This table stores the global Directus settings for this instance.
+
+* `collection` - @TODO
+* `name` - @TODO
+* `value` - @TODO
 
 ###`directus_tables`
+This is where information is stored about all tables managed by Directus.
+
+* `table_name` - @TODO
+* `hidden` - @TODO
+* `single` - @TODO
+* `default_status` - @TODO
+* `footer` - @TODO
+* `list_view` - @TODO
+* `column_groupings` - @TODO
+* `primary_column` - @TODO
+* `user_create_column` - @TODO
+* `user_update_column` - @TODO
+* `date_create_column` - @TODO
+* `date_update_column` - @TODO
+* `filter_column_blacklist` - @TODO
 
 ###`directus_ui`
+This tables stores all of the global options/settings for the column User Interfaces (UIs). Since you can change UIs, you may have values within this table that are no longer used – however this allows switching between UIs without losing the saved options therein.
+
+* `table_name` - The table that contains the column
+* `column_name` - The column that uses the UI
+* `ui_name` - The UI being edited
+* `name` - The name of the UI option being saved
+* `value` - The value of the UI option being saved
 
 ###`directus_users`
 All the users, including admins, are added within this table. Each user is assigned to a single User Group (`directus_groups`), and that group determines the privileges (`directus_privileges`) for all of its users. 
