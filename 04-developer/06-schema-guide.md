@@ -20,6 +20,28 @@ This table stores all of the left-nav bookmarks for Directus. This includes book
 * `section` - ["search" or "other"] Which nav section to show the link within. User generated bookmarks use "search", while all system links go within "other"
 
 ###`directus_columns`
+This tables stores all the info about columns managed by Directus. Namely UI, relationships, and other metadata.
+
+* `table_name` - The name of the table containing the column being edited
+* `column_name` – The name of the column being edited
+* `data_type` – The MySQL datatype of the column. Other database types such as SQLite have limited datatypes and this more granular value is used to know exactly how to format/type API responses. If you change the datatype directly in the database be sure to update this value. Some Directus fields are not actual columns (such as `ONETOMANY`), these are saved as an `ALIAS` and represent the ghost column.
+* `ui` – This stores the current User-Interface ID.
+* `relationship_type` – This column stores the relationship type (`NULL` if non-relational). As an ENUM there are three options:
+    * `MANYTOONE`
+    * `MANYTOMANY`
+    * `ONETOMANY`
+* `related_table` – Only for relational columns, this value holds the table containing the related data.
+* `junction_table` – Only for `MANYTOMANY` relational columns, this value holds the junction/bridge/associative table name. This is the table that stores two foreign keys which link related items between two tables.
+* `junction_key_left` – Only for `MANYTOMANY` relational columns, this value holds the column name (in the junction table) that stores "this" item's ID.
+* `junction_key_right` – Only for relational columns, this value stores the column name that stores the "right" key:
+    * `MANYTOMANY` – The column name (in the junction table) that stores the related item's ID.
+    * `MANYTOONE` – The column name (in the this table) that stores the related item's ID. Should be the same value as `column_name`.
+    * `ONETOMANY` – The column name (in the related table) that stores this item's ID.
+* `hidden_input` – [0,1] Whether or not this **edit page field** will be hidden from all users. This is global and overrides any user group permissions.
+* `hidden_list` – [0,1] Whether or not this **listing page value** will be hidden from all users. This is global and overrides any user group permissions.
+* `required` – [0,1] Whether or not the field is required before saving the edit item page.
+* `sort` – [1,2,3...] This stores the sort order for the Directus fields. This is based on the database column order but can be changed since column order is tied to lookup/optimizations and the CMS view shouldn't impact that. New items are stored with a `9999` until they are sorted with the drag-and-drop Settings interface.
+* `comment` – This stores a note to be displayed beside the field on the edit page. This is based on the database column comment but has been decoupled since some database types (SQLite) don't natively support comments.
 
 ###`directus_files`
 
