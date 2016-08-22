@@ -6,14 +6,14 @@ Directus Command-Line Interface (CLI) provides commands that allow you to perfor
 You can use the `help` command at any time to learn about available CLI actions:
 
 ```bash
-# this will give you information about the current modules
+# this will provide information about the current modules
 php bin/directus help
 ```
 
 To get more information on an specific command you can type "help" followed by the command:
 
 ```bash
-# this will give you information about the **install** modules
+# this provide information about the **install** module
 php bin/directus help install
 ```
 
