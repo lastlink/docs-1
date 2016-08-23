@@ -207,8 +207,10 @@ All the users, including admins, are added within this table. Each user is assig
 #### Manually Setting Passwords
 If you need to manually reset a user's password directly in the database you can use the following SQL snippet (remember to update the ID of the user to update):
 
+> **Important Note:** Replace the `id` value with the user's id you need to change the password.
+
 ```
 UPDATE `directus_users` 
 SET `salt` = SHA1(RAND()), `password` = SHA1(CONCAT(salt, 'new-password-here'))
-WHERE `id` = '1' 
+WHERE `id` = 1
 ```
