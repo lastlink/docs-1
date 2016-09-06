@@ -90,3 +90,12 @@ Example:
 ```bash
 php bin/directus user:password -e admin@directus.local -p newpassword
 ```
+
+## Language Module
+Includes commands to manage Directus languages files
+
+#### See all the missing locale keys compared to English:
+
+```bash
+php bin/directus language:diff
+```
