@@ -1,7 +1,7 @@
 # Custom User Interfaces
 Use the following steps to create your own custom user interfaces using the above as starter templates.
 
-1. Copy a Core UI file from `/app/core-ui` into the custom UI directory: `/ui`
+1. Copy a Core UI file from `/app/core/uis` into the custom UI directory: `/customs/uis`
 2. Set a unique name for the UI: `Module.id`
 3. Choose which SQL datatypes this UI will support: `Module.dataTypes`
 4. Optionally, add UI Options that admin users can adjust per column: `Module.variables`
