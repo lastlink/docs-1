@@ -1,17 +1,17 @@
 # UI Options
-In the [previous chapter](05-custom-uis/01-create-an-ui.md) we explain how to create an UI that limits the users on how many characters can they type in a text area while showing the remaining characters.
+In the [previous section](05-custom-uis/01-create-an-ui.md) we explained how to create a UI that limits how many characters they can type into a text area while showing the characters remaining.
 
-In the example we directly create a variable with a limitation of 100 characters, what if this limitation changed? what if you want to use different limitation on different field you may ask? the solution to this is using UI options.
+In the example, we directly create a variable with a 100 character limit – but what if this limit is changed? What if you want to use different limit on a different field? The solution to this is UI options.
  
-UI options are settings used on each field in the columns settings section. These options values are not shared between UIs, but only for an specific field.
+UI options are settings for each interface found within the Setting panel. These values are not shared between UIs, but are specific to each column.
 
 ### Adding options
 Add a new property inside **Component** object named `variables`.
 
-**variables** property is a array of object that each will represents a settings inside this column in the column settings editor.
+**variables** property is an array of objects that will each represent a setting inside the column settings editor.
 
 ### Options structure
-the structure of each options is the following:
+The structure of each option is the following:
 
 ```js
 {
@@ -22,7 +22,7 @@ the structure of each options is the following:
 }
 ```
 
-Now let's add a new option for our new Text Area characters limitation UI.
+Now let's add a new option for our Text Area characters limitation UI:
 ```js
 var Component = UIComponent.extend({
     id: 'textlimit',
