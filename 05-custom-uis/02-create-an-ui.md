@@ -1,16 +1,16 @@
 # Create a UI
 
-UIs depends on two objects, `UIComponent` and `BaseUIView` (optionally).
+UIs depends on two objects, `UIComponent` and `CustomUIView` (optionally).
 
 - **UIComponent** is the base object for a UI. It takes care of the validation, representation values, its Input view (UIView), and everything in between.
-- **BaseUIView** is a Backbone.View object that represents the Input, what the user will see while editing an entry. Anything you can do on a Backbone View you can do in the UIView. To be more specific, here we are extending from [Backbone Layout Manager](https://github.com/tbranyen/backbone.layoutmanager) which extends the Backbone View, so anything that backbone.layoutmanager does you can do it too. _**Note**_: `BaseUIView` is the same as `UIView` the only difference is that the template prefix is set to `customs/uis/` instead of `app/core/uis`.
+- **CustomUIView** is a Backbone.View object that represents the Input, what the user will see while editing an entry. Anything you can do on a Backbone View you can do in the UIView. To be more specific, here we are extending from [Backbone Layout Manager](https://github.com/tbranyen/backbone.layoutmanager) which extends the Backbone View, so anything that backbone.layoutmanager does you can do it too. _**Note**_: `CustomUIView` is the same as `UIView` the only difference is that the template prefix is set to `customs/uis/` instead of `app/core/uis`.
 
 As an example we are going to create a _Text Area_ with a limited character-count, and will update the remaining characters as the user add or remove characters from the interface.
 
 ## Input
  
 ```js
-define(['core/UIComponent', 'core/BaseUIView'], function(UIComponent, UIView) {
+define(['core/UIComponent', 'core/CustomUIView'], function(UIComponent, UIView) {
     var charactersLimit = 100;
     var Input = UIView.extend({        
         templateSource: '<textarea maxLength="{{maxLength}}"></textarea><span id="count">{{charactersRemaining}}</span>',
@@ -69,7 +69,7 @@ This is the input view for the component.
 ## Complete UI code
 
 ```js
-define(['core/UIComponent', 'core/BaseUIView'], function(UIComponent, UIView) {
+define(['core/UIComponent', 'core/CustomUIView'], function(UIComponent, UIView) {
     var charactersLimit = 100;
     var Input = UIView.extend({        
         templateSource: '<textarea maxLength="{{maxLength}}"></textarea><span id="count">{{charactersRemaining}}</span>',
