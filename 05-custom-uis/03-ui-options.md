@@ -37,7 +37,7 @@ var Component = UIComponent.extend({
 ## Result
 
 ```js
-define(['core/UIComponent', 'core/UIView'], function(UIComponent, UIView) {
+define(['core/UIComponent', 'core/CustomUIView'], function(UIComponent, UIView) {
   var Input = UIView.extend({
     templateSource: '<textarea maxLength="{{maxLength}}"></textarea><span id="count">{{charactersRemaining}}</span>',
     events: {
