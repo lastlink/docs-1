@@ -31,12 +31,16 @@ SHOW VARIABLES LIKE 'sql_mode';
 2. Restart *apache2* with `/etc/init.d/apache2 restart` or `service apache2 restart`
 
 #### Windows (WAMP)
-
 1. `wamp tray icon > apache > apache module > rewrite_module`
 
 #### Mac (MAMP PRO)
 1. Click on `modules` tab.
 2. Look for and check `rewrite_module`.
+
+### `mod_rewrite` is enabled and still not working
+1. Go to your apache configuration (httpd.conf or apache.conf)
+2. Look for the `<Directory>` directive that matches the Directus path.
+3. Add `OverrideAllow All`, If `OverrideAllow None` exists change `None` to `All` to allow `.htaccess` files.
 
 ### `mod_rewrite` is enabled and still getting 404 error.
 
