@@ -34,6 +34,10 @@ SHOW VARIABLES LIKE 'sql_mode';
 
 1. `wamp tray icon > apache > apache module > rewrite_module`
 
+#### Mac (MAMP PRO)
+1. Click on `modules` tab.
+2. Look for and check `rewrite_module`.
+
 ### `mod_rewrite` is enabled and still getting 404 error.
 
 If you are using VirtualDocumentRoot `RewriteBase` needs to be set.
