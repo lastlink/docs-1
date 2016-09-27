@@ -3,6 +3,8 @@ At this point it is assumed that you already have installed and configured nginx
 
 >This is an incomplete/rough guide, but it should help you get Directus installed and set up on nginx. It was tested on: Ubuntu 14.04.1 - nginx/1.4.6 (Ubuntu)
 
+[See the Directus nginx configuration](https://github.com/RNGR/directus-vagrant/tree/master/config/nginx)
+
 ### Site configuration
 
 Since nginx doesn't use `.htaccess`, which does the url rewriting, we therefore need to do the rewrite within nginx itself. Below we configure an nginx server block.
