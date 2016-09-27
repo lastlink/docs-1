@@ -40,6 +40,15 @@ SHOW VARIABLES LIKE 'sql_mode';
 ### `mod_rewrite` is enabled and still not working
 1. Go to your apache configuration (httpd.conf or apache.conf)
 2. Look for the `<Directory>` directive that matches the Directus path.
+
+    Ex:
+    ```
+    <Directory "/var/www/html">
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+    ```
 3. Add `OverrideAllow All`, If `OverrideAllow None` exists change `None` to `All` to allow `.htaccess` files.
 
 ### `mod_rewrite` is enabled and still getting 404 error.
