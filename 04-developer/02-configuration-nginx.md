@@ -42,7 +42,6 @@ server {
 Change `location /` to this:
 ```
 location / {
-    rewrite media_auth_proxy/([^/]+)/(.+)$ /media_auth_proxy/index.php last;
     try_files $uri $uri/ /index.php$args;
 }
 ```
@@ -50,15 +49,16 @@ location / {
 Add a new location:
 ```
 location /api {
-    try_files $uri $uri/;
-    rewrite ^/1/extensions/([^/]+) /api/api.php?run_extension=$1 last;
-    rewrite ^ /api/api.php?run_api_router=1 last;
+	if (!-e $request_filename) {
+		rewrite ^/1/extensions/([^/]+) /api/api.php?run_extension=$1 last;
+	}
+	rewrite ^ /api/api.php?run_api_router=1 last;
 }
 ```
 
 Add another location to prevent uploaded php/html files to execute.
 ```
-location ~ ^/media/.*\.(php|phps|php5|htm|shtml|xhtml|cgi.+)?$ {
+location ~ ^/(media|storage)/.*\.(php|phps|php5|htm|shtml|xhtml|cgi.+)?$ {
     add_header Content-Type text/plain;
 }
 ```
@@ -67,8 +67,17 @@ location ~ ^/media/.*\.(php|phps|php5|htm|shtml|xhtml|cgi.+)?$ {
 To prevent direct access to extensions `api.php` file we need to edit `/etc/nginx/sites-available/default` and add a new location:
 
 ```
-location ~* [^/]+/api\.php$ {
+location ~* [^/]+/customs/extensions/api\.php$ {
     return 403;
+}
+```
+
+### Custom endpoints
+Prevent direct access to api endpoint files.
+
+```
+location ~* /customs/endpoints/ {
+	deny all;
 }
 ```
 
