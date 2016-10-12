@@ -49,12 +49,41 @@ This file contains the configuration arrays for the Directus framework.
 * **HTTP/HTTPS** Here you can set the _forceHttps_ variable (defaults to: false)
 * **SMTP** Allows you to configure the host, port, username, and password for your SMTP mail server. (Utilized by _messages_ and _forgot password_). _**This is going to be removed in future versions.**_
 * **Mail** Allows you to configure the mail transport and default `from` address.
+
+Supported transport:
+   - **mail**
+   
+      Example:
+   
 ```php
     'mail' => array(
         'from' => array(
             'john@directus.io' => 'John Doe'
         ),
-        // Options available are `mail`, `sendmail` and `smtp`.
+        'transport' => 'mail'
+    ),
+```
+   - **sendmail**
+   
+      Example:
+
+```php
+    'mail' => array(
+        'from' => array(
+            'john@directus.io' => 'John Doe'
+        ),
+        'transport' => 'sendmail'
+    ),
+```
+   - **smtp**
+   
+      Example:
+
+```php
+    'mail' => array(
+        'from' => array(
+            'john@directus.io' => 'John Doe'
+        ),
         'transport' => 'smtp',
         'host' => 'mail.host.domain',
         'username' => 'user',
@@ -62,6 +91,7 @@ This file contains the configuration arrays for the Directus framework.
         'port' => '123',
     ),
 ```
+
 * **Database Hooks** (dbHooks)
     * postInsert => A global function called after each database record insert
     * postUpdate => A global function called after each database record update
