@@ -1,0 +1,5 @@
+{
+    "plugins": [
+        "directusplugin@git+https://github.com/directus/docs-template.git#1.0.0"
+    ]
+}
