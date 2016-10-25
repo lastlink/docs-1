@@ -1,6 +1,21 @@
 # Installation
 
-### Server Preparation
+## Requirements
+Directus is a forward-looking framework and therefore may not support certain legacy systems. If your server is not compatible with the requirements below, please contact your host to upgrade.
+
+* Apache HTTP Server
+* mod_rewrite ([help](/05-troubleshooting/01-faq.md))
+* PHP 5.5+
+  * curl
+  * gd
+  * finfo
+  * pdo_mysql
+  * mcrypt
+* MySQL 5.2+
+
+> **Optional Enhancement:** Installing *Imagick* adds thumbnail support for TIFF, PSD, and PDF files
+
+## Server Preparation
 1. Check that your server meets the [requirements](/01-getting-started/02-requirements.md)
 2. Download and unzip the Directus package from [here](https://github.com/directus/directus/tree/build)
 3. Create a database and MySQL user with access/modify privileges on your server
@@ -10,7 +25,7 @@
 
 ----------
 
-### Installation Walkthrogh
+## Installation Walkthrogh
 
 #### Step 0 – Requirements
 This pre-installation step will only be shown if the server requirements are not met.
@@ -35,9 +50,7 @@ This pre-installation step will only be shown if the server requirements are not
 
 > **Security Note:** Once you have completed the install, make sure to delete install folder.
 
-----------
-
-### Troubleshooting
+#### Troubleshooting
 If you're having problems with your Directus install, please visit our [troubleshooting section](/05-troubleshooting).
 
 * [Server error occurred!](#)
