@@ -18,7 +18,7 @@
 ### Developer
   * [Installation](04-developer/01-installation.md)
   * [Configuration](04-developer/03-configuration.md)
-    * [Configuration NGINX](04-developer/02-configuration-nginx.md)
+    * [NGINX](04-developer/02-configuration-nginx.md)
   * [Vagrant Box](04-developer/04-vagrant-box.md)
   * [Privileges and Access](04-developer/05-privileges-and-access.md)
   * [Schema Guide](04-developer/06-schema-guide.md)
