@@ -1,5 +1,8 @@
 {
     "plugins": [
-        "directusplugin@git+https://github.com/directus/docs-template.git#1.0.0"
+        {
+            "name": "theme-directus",
+            "version": "git+https://github.com/directus/docs-template.git"
+        }
     ]
 }
