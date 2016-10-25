@@ -7,7 +7,7 @@
   * [Installation](01-getting-started/03-installation.md)
   * [Settings](01-getting-started/04-settings.md)
   * [Your Database](01-getting-started/05-your-database.md)
-  * [Updateing](01-getting-started/06-updating.md)
+  * [Upgrading](01-getting-started/06-upgrading.md)
   * [Hosted](01-getting-started/07-hosted.md)
 
 
@@ -27,7 +27,7 @@
   * [Core](03-interfaces/01-core.md)
   * [Relational](03-interfaces/02-relational.md)
   * [Custom](03-interfaces/03-custom.md)
-    * [Introduction](05-custom-uis/01-introduction.md)
+    * [Introduction](05-custom-uis/01-Introduction.md)
     * [Create a UI](05-custom-uis/02-create-an-ui.md)
     * [UI Options](05-custom-uis/03-ui-options.md)
     * [UI Global Options](05-custom-uis/04-ui-global-options.md)
