@@ -1,4 +1,3 @@
-```
 # Summary
 
 * [Part I](README.md)
@@ -7,5 +6,3 @@
 * [Part II](README.md)
     * [We love feedback](01-getting-started/01-what-is-directus.md)
     * [Better tools for authors](01-getting-started/01-what-is-directus.md
-```
-
