@@ -1,7 +1,7 @@
 {
     "plugins": [
         {
-            "name": "theme-directus",
+            "name": "gitbook-theme-directus",
             "version": "git+https://github.com/directus/docs-template.git"
         }
     ]
