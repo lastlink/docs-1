@@ -1,4 +1,5 @@
 # Summary
+* [Directus Documentation](README.md)
 
 ## Getting Started
   * [What is Directus](01-getting-started/01-what-is-directus.md)
@@ -9,13 +10,13 @@
   * [User Guide](01-getting-started/06-user-guide.md)
   * [Hosted](01-getting-started/07-hosted.md)
 
-### Interfaces
+## Interfaces
   * [Core](02-interfaces/01-core.md)
   * [Relational](02-interfaces/02-relational.md)
   * [Custom](02-interfaces/03-custom.md)
   * [System and Other](02-interfaces/04-system-and-other.md)
 
-#### Developer
+## Developer
   * [Installation](03-developer/01-installation.md)
   * [Configuration](03-developer/03-configuration.md)
     * [NGINX](03-developer/02-configuration-nginx.md)
