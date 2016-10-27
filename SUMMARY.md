@@ -1,7 +1,6 @@
 # Summary
-* [Directus Documentation](README.md)
 
-## Getting Started
+## [Getting Started](README.md)
   * [What is Directus](01-getting-started/01-what-is-directus.md)
   * [Installation](01-getting-started/02-installation.md)
   * [Settings](01-getting-started/03-settings.md)
