@@ -139,6 +139,7 @@ This relational UI allows for field translations to be stored in a related table
     * `id` – ID of the project
     * `active` – Status column that determines if project is active/draft/deleted
     * `hero_image` – This would be for a non-language dependent image
+    * `date_published` – Non-language dependent data
     * `featured` – Non-language dependent checkbox for featuring this project on the homepage
 * `projects_translations` Table
     * `id` – ID of the translation
@@ -146,9 +147,12 @@ This relational UI allows for field translations to be stored in a related table
     * `language_id` – ID of the language this is written in (PK of `languages` table)
     * `name` – Project name which can be translated into multiple languages
     * `description` – Project description which can be translated into multiple languages
+    * `locale_image` – An image that is language specific (rasterized text or culture-specific)
 * `languages` Table
     * `id` – "primary key" – Can be an ID (eg "1"), or a language identifier (eg "en")
     * `language` – Is the written-out name of the language (eg "English")
+
+*UI Options*
 
 * `languages_table`: The name of the table that holds the language options
 * `languages_name_column`: The name of the column in the languages_table with the title of the language option
