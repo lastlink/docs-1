@@ -1,12 +1,14 @@
 
 # What is Directus?
 
-##Directus is a free and open-source headless CMS for intuitively managing custom-schema database content.
+##Directus is a free and open-source headless CMS and API for intuitively managing custom-schema database content.
 
 ----------
 
+As a developer, your projects require content that needs to be managed.
+
 ### A Familiar Problem
-As a developer, you're probably already managing database content directly through Sequel-Pro, phpMyAdmin, or the command line. These are excellent tools because you get complete control with little setup beyond entering the database credentials. But you would never give that access to clients, designers, or even inexperienced engineers – relationships, validation, media, and security can easily get unwieldy. Not to mention you'll either have to build within one of those all-encompassing proprietary CMS designed for blogs, or build a _custom_ CMS from the ground-up.
+As a developer, you're probably already managing your project's database content directly through Sequel-Pro, phpMyAdmin, or the command line. These are excellent tools because you get complete control with little setup beyond entering the database credentials. But you would never give that access to clients, designers, or even inexperienced engineers – relationships, validation, media, and security can easily get unwieldy. Not to mention you'll either have to build within one of those all-encompassing proprietary CMS designed for blogs, or build a _custom_ CMS from the ground-up.
 
 ### Custom Databases, No Workflow Assumptions
 Directus allows developers to build projects with custom, scalable, and decoupled databases. No more proprietary templating systems and plugin piecemealing. Build with whichever technologies are most appropriate and then either connect  directly to the database, via the Directus API, or use one of our SDKs. This makes it perfect for native-apps, web-apps, physical installations, and even projects that span multiple platforms.

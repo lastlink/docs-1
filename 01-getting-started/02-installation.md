@@ -25,7 +25,7 @@ Directus is a forward-looking framework and therefore may not support certain le
 
 ----------
 
-## Installation Walkthrogh
+## Installation Walkthrough
 
 #### Step 0 – Requirements
 This pre-installation step will only be shown if the server requirements are not met.
