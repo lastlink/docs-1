@@ -14,43 +14,76 @@ If you’re using Directus' API endpoints (possibly feeding a mobile app or prov
 
 ### Custom File Storage Adapters
 
-Beyond local storage, Directus comes with the ability to connect to a number of popular file storage systems such as CDNs. As with most things within Directus, if you need something more specific the tools exist to easily implement a custom adapter. Storage Adapters enable a Directus instance to configure the destination for writing and reading the media which is loaded into the application. Within the database, they are defined by the `directus_storage_adapters` table. (Currently there is not an application-level interface to view or edit these.)
+Beyond local storage, Directus comes with the ability to connect to a number of popular file storage systems such as CDNs, Amazon S3, Rackspace, Azure and Dropbox.
 
-The PHP namespace for this logic is `\Directus\Media\Storage`. As of writing, three adapters exist:
+As with most things within Directus, if you need something more specific the tools exist to easily implement a custom adapter. Directus uses [Flysystem](https://github.com/thephpleague/flysystem), you can read [how to create new custom adaptes](https://flysystem.thephpleague.com/creating-an-adapter/) on their site.
 
-* `AmazonS3Adaper` - Maps to Amazon S3 CDN Buckets
-* `FileSystemAdapter` - Maps to local filesystem of the application server which hosts the Directus instance
-* `RackspaceOpenCloudAdapter` - Maps to Rackspace OpenCloud CDN Containers
+Storage Adapters enable a Directus instance to configure the destination for writing and reading the files which is loaded into the application. Within the `configuration.php` file, they are defined by the `filesystem` attribute. (Currently there is not an application-level interface to view or edit these.)
 
-All adapters have these configurable parameters - each of which corresponds to a column on the `directus_storage_adapters` table:
+As of writing, these are the adapters can be used out of the box:
 
-`key` - A unique name for the storage adapter.
-adapter_name” - The storage driver which this adapter should use (e.g. FileSystemAdapter, AmazonS3Adapter, etc).
-`role` - Either “DEFAULT”, “THUMBNAIL”, or null. “DEFAULT” and “THUMBNAIL” should only occur once.
-`public` - Either 1 or 0 (yes or no): should the contents of this storage adapter be accessible to non-Directus users?
-`destination` - This value varies depending on the storage adapter
-`url` - URL which maps to the contents of the storage adapter (trailing slash is required).
-`params` - Optional JSON encoded set of additional parameters to be passed to the adapter.
+- Local – Maps to local filesystem of the application server which hosts the Directus instance
+- Ftp **TODO**
 
-#### Roles
+These are the supported adapters (Installation required):
+- [Amazon Web Services - S3 V2](https://github.com/thephpleague/flysystem-aws-s3-v2) – Maps to Amazon S3 v2 CDN Buckets
+- [Amazon Web Services - S3 V3](https://github.com/thephpleague/flysystem-aws-s3-v3) – Maps to Amazon S3 v3 CDN Buckets
 
-When Directus accepts a file upload, it will send the unaltered file to the storage adapter with the role “DEFAULT”. It will send the rendered thumbnail to the storage adapter with the role “THUMBNAIL”. These should only occur once within the table.
+These are also available (Installation required): **TODO**
+- [Rackspace Cloud Files](https://github.com/thephpleague/flysystem-rackspace) – Maps to Rackspace OpenCloud CDN Containers
+- [Dropbox](https://github.com/thephpleague/flysystem-dropbox)
+- [Amazon Cloud Drive](https://github.com/nikkiii/flysystem-acd)
+- [OneDrive](https://github.com/jacekbarecki/flysystem-onedrive)
+- [Sftp (through phpseclib)](https://github.com/thephpleague/flysystem-sftp)
+- [Zip (through ZipArchive)](https://github.com/thephpleague/flysystem-ziparchive)
+- [WebDAV (through SabreDAV)](https://github.com/thephpleague/flysystem-webdav)
+- [PHPCR](https://github.com/thephpleague/flysystem-phpcr)
+- [Redis (through Predis)](https://github.com/danhunsaker/flysystem-redis)
+- [Fallback](https://github.com/Litipk/flysystem-fallback-adapter)
+- [Memory](https://github.com/thephpleague/flysystem-memory)
+- [Google Cloud Storage](https://github.com/Superbalist/flysystem-google-storage)
+- [SinaAppEngine Storage](https://github.com/litp/flysystem-sae-storage)
+- [Gaufrette](https://github.com/jenkoian/flysystem-gaufrette)
+- [OpenStack Swift](https://github.com/nimbusoftltd/flysystem-openstack-swift)
 
-_As of writing, no other roles are in use._
+These are the ones listed on the flysystem page, if the one you are looking for is not listed above, it can be found on GitHub, otherwise you have to create a custom one.
 
-#### Adapter configuration
+All adapters have different configurable parameters.
 
-The significance and values of the destination and params options vary from adapter to adapter.
+```php
+'filesystem' => [
+    // adapter name
+    'adapter' => 'local',
+    // By default media directory are located at the same level of directus root
+    // To make them a level up outsite the root directory
+    // use this instead
+    // Ex: 'root' => realpath(BASE_PATH.'/../storage/uploads'),
+    // Note: BASE_PATH constant doesn't end with trailing slash
+    'root' => BASE_PATH . '/storage/uploads',
+    // This is the url where all the media will be pointing to
+    // here all assets will be (yourdomain)/storage/uploads
+    // same with thumbnails (yourdomain)/storage/uploads/thumbs
+    'root_url' => '/storage/uploads',
+    'root_thumb_url' => '/storage/uploads/thumbs',
+    //   'key'    => 's3-key',
+    //   'secret' => 's3-key',
+    //   'region' => 's3-region',
+    //   'version' => 's3-version',
+    //   'bucket' => 's3-bucket'
+],
+```
 
-* FileSystemAdapter
-  * `destination` - Absolute path on filesystem, no trailing slash
-  * `params` - None
-* AmazonS3Adapter (optional, must be included with composer)
-  * `destination` - Name of S3 Bucket
-  * `params` (required) - `api_key`, `api_secret`
-* RackspaceOpenCloudAdapter (optional, must be included with composer)
-  * `destination` - Name of OpenCloud Container
-  * `params` (required) - `api_user`, `api_key`, `region`, `endpoint`
+#### Installing an adapter
+
+Installing a new adapter using composer can be done executing the command below in a terminal:
+
+Ex: Installing Amazon S3 v3 Adapter.
+
+```
+composer require league/flysystem-aws-s3-v3
+```
+
+You can read on each adapter GitHub page on how to install each one if you are having issues related to the installation process.
 
 #### Code samples
 
