@@ -50,6 +50,7 @@ These are also available (Installation required):
 - [SinaAppEngine Storage](https://github.com/litp/flysystem-sae-storage)
 - [Gaufrette](https://github.com/jenkoian/flysystem-gaufrette)
 - [OpenStack Swift](https://github.com/nimbusoftltd/flysystem-openstack-swift)
+- Google Drive
 
 These are the ones listed on the flysystem page, if the one you are looking for is not listed above, it can be found on GitHub, otherwise you have to create a custom one.
 
