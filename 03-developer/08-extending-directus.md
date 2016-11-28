@@ -29,7 +29,12 @@ These are the supported adapters (Installation required):
 - [Amazon Web Services - S3 V2](https://github.com/thephpleague/flysystem-aws-s3-v2) – Maps to Amazon S3 v2 CDN Buckets
 - [Amazon Web Services - S3 V3](https://github.com/thephpleague/flysystem-aws-s3-v3) – Maps to Amazon S3 v3 CDN Buckets
 
-These are also available (Installation required): **TODO**
+### @TODO (Supporting)
+
+_This adapter is planned for an upcoming release._
+
+These are also available (Installation required):
+
 - [Rackspace Cloud Files](https://github.com/thephpleague/flysystem-rackspace) – Maps to Rackspace OpenCloud CDN Containers
 - [Dropbox](https://github.com/thephpleague/flysystem-dropbox)
 - [Amazon Cloud Drive](https://github.com/nikkiii/flysystem-acd)
