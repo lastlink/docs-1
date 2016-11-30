@@ -12,7 +12,7 @@ To solve this add/use/update this on your php.ini
 `always_populate_raw_post_data = -1`
 
 ### Server error occured!
-If you get "Server error occured!" the first time you try to login, it likely means that you missconfigured Apache2. Try adding *overrideAllow All* into your virtualHost.
+If you get "Server error occured!" the first time you try to login, it likely means that you missconfigured Apache2. Try adding *AllowOverride All* into your virtualHost.
 
 ### MySQL Strict Mode
 Directus does not fully support Strict Mode due to limitations with the PDO and MySQL Drivers. Please disable MySQL Strict Mode before installation.
