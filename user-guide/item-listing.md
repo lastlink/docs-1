@@ -5,7 +5,7 @@ This page lists all items within the selected table. It provides several views f
 ## Filtering
 The “Filter” input allows you to quickly search for things. For more advanced column filters click the triangle on the right of the input to expand a dropdown. Each column filter you add is considered an “AND” (not "OR") – so if two filters are added, items are shown that match both. Clicking the "×" on the right-side will remove that filter.
 
-## Active, Inactive, & Delete
+## Changing Item Status
 By selecting the checkbox to the left of an item you are given the option to delete it. Deleting items is permanent and should be done with care. If the table has *Status* enabled then items are "soft-deleted" – meaning they are permanently removed but can be retrieved by an Administrator. Tables with Status enabled may also have additional options for items such as "Draft".
 
 *Default Status Options:*
@@ -24,7 +24,7 @@ While sorting simply changes the current view of the items, reordering actually 
 
 > **Developer Note:** While reordering is an excellent way to curate the order of items, for tables with large datasets it becomes unwieldy and should not be used.
 
-## Bulk Edit
+## Bulk Editing
 When selecting the checkboxes for multiple items an option to “Batch Edit” will appear. Clicking this button will take you to a blank edit page where bulk edits can be made. When bulk editing, you must enable each field you wish to edit – all enabled fields will save that value for _all_ selected items.
 
 > **Caution:** Use this feature with care as it is easy to overwrite data for a large number of items.

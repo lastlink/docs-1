@@ -18,7 +18,7 @@ In the bottom-left corner of the platform is your avatar and name – hovering o
 * **Logout** – Logs you out of the Directus platform
 
 ## Breadcrumb
-In the top header of the platform is a set of links that show which page you are on, and any parent pages. Clicking on any of these breadcrumbs will take you to that page. On smaller screens this collapses down to only show the current page.
+In the platform's header there is a set of links that show which page you are on, and any parent pages. Clicking on any of these breadcrumbs will take you to that page. On smaller screens this collapses down to only show the current page.
 
 ## Bookmarking
 Bookmarks are an easy way for users to save specific pages/views for quick access. Clicking the bookmark icon directly to the right of the breadcrumb prompts the user for a custom name, and saves the current page into the navigation. Bookmarks can be deleted by hovering over them and clicking the "X" icon that appears.

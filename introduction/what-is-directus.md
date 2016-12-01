@@ -1,6 +1,6 @@
 # What is Directus?
 
-> Open-Source Headless CMS & Content Delivery API
+> **Open-Source Headless CMS & Content Delivery API**
 
 Directus Core is a free and open-source self-hosted platform published under the GNU (v3) license. It provides a simple and intuitive web interface for managing database content with completely custom architectures.
 

@@ -24,26 +24,38 @@ There is no limit to how many users or groups you can add within Directus. Your 
 Group have granular permissions for each table saved into `directus_privileges`, below are the possible settings:
 
 #### View
-* `All` – The user can view all table items (Value: `3`) 
-* `Group` – The user can only view table items created by users within their group (Value: `2`) 
-* `User` – The user can only view table items they created themselves (Value: `1`) 
-* `None` – The user can not see any of this table's items (Value: `0`) 
+
+| Access	| Value		| Description
+|-----		|-----		|-----
+| `All`  		| `3` 		| The user can view all table items
+| `Group`  	| `2` 		| The user can only view table items created by users within their group
+| `User`  	| `1` 		| The user can only view table items they created themselves
+| `None`  	| `0` 		| The user can not see any of this table's items
 
 #### Add
-* `All` – The user can add new items to this table (Value: `1`) 
-* `None` – The user can not add new items to this table (Value: `0`) 
+
+| Access	| Value		| Description
+|-----		|-----		|-----
+| `All`  		| `1` 		| The user can add new items to this table
+| `None`  	| `0` 		| The user can not add new items to this table
 
 #### Edit
-* `All` – The user can edit all table items (Value: `3`) 
-* `Group` – The user can only edit table items created by users within their group (Value: `2`) 
-* `User` – The user can only edit table items they created themselves (Value: `1`) 
-* `None` – The user can not edit any of this table's items (Value: `0`) 
+
+| Access	| Value		| Description
+|-----		|-----		|-----
+| `All`  		| `3` 		| The user can edit all table items
+| `Group`  	| `2` 		| The user can only edit table items created by users within their group
+| `User`  	| `1` 		| The user can only edit table items they created themselves
+| `None`  	| `0` 		| The user can not edit any of this table's items
 
 #### Delete
-* `All` – The user can delete all table items (Value: `3`) 
-* `Group` – The user can only delete table items created by users within their group (Value: `2`) 
-* `User` – The user can only delete table items they created themselves (Value: `1`) 
-* `None` – The user can not delete any of this table's items (Value: `0`) 
+
+| Access	| Value		| Description
+|-----		|-----		|-----
+| `All`  		| `3` 		| The user can delete all table items
+| `Group`  	| `2` 		| The user can only delete table items created by users within their group
+| `User`  	| `1` 		| The user can only delete table items they created themselves
+| `None`  	| `0` 		| The user can not delete any of this table's items
 
 > **Note:** User/Group options require the table having a `directus_tables.user_create_column` set.
 
