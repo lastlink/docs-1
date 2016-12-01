@@ -1,4 +1,4 @@
-# Custom User Interfaces (UIs)
+# Custom Interfaces
 
 ## UI Structure
 For most content types the Directus Core User-Interfaces should work well. However if you're looking for a specific interface or have proprietary or custom content types to manage – you may need or want to create something more tailored. Directus UIs are modular Javascript files (or dedicated sub-directories for complex interfaces) that allow you to create new ways of interfacing with database content.

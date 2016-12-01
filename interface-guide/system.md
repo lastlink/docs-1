@@ -1,7 +1,5 @@
-# Other Inputs
-
-### System UIs
-*These are Core UIs that are used exclusively by the Directus framework for internal purposes.*
+# System Interfaces
+These are Core UIs that are used primarily by the Directus framework for internal purposes.
 
 * directus_activity
 * directus_columns
@@ -13,13 +11,11 @@
 * directus_user_activity
 * directus_user_avatar
 
-----------
 
-### Other UIs to Document
+## Other Interfaces
 * blob
 * enum
 * random
 * system – **TODO: Rename to `status`**
 * template_chooser
-* translation
 * user

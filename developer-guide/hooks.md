@@ -1,6 +1,6 @@
 # Hooks
 
-Hooks allow you to _hook_ function to be called in a specific time during the executing of Directus.
+Hooks allow project-specific code to interact directly with Directus Core events. The hooks are very simple to implement: just add custom logic to the (untracked) config file at `/directus/api/configuration.php`.
 
 ## Hooks list
 

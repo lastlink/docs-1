@@ -1,6 +1,6 @@
-# Upgrading
+# Versions & Updating
 
-### Step by Step
+> **Note:** Only Administrators have access to these pages and settings.
 
 Below is the process for manually updating Directus. Directus Hosted Instances are automatically updated.
 
@@ -10,4 +10,4 @@ Below is the process for manually updating Directus. Directus Hosted Instances a
 4. Run the migration script to update your database/schema (@TODO)
 
 
-> Developers who installed Directus by cloning the git repository directly to their server can simply `pull` the newest stable version. Typically this is as simple as navigating to the Directus folder and running: `git pull origin build`
+> **Note:** Developers who installed Directus by cloning the git repository directly to their server can simply `pull` the newest stable version. Typically this is as simple as navigating to the Directus folder and running: `git pull origin build`

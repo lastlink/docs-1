@@ -1,11 +1,4 @@
-# What is Directus Hosted?
-
-## Directus Hosted is a highly scalable DBaaS (Database as a Service) platform for developers looking to easily give their clients an intuitive cloud-based interface for managing app/website content.
-
-With a Directus Hosted account you can manage all your instances in one place, creating new Directus instances in seconds. Simply choose a name and size for your instance and within seconds you'll have a new SQL database ready to completely customize with your project's specific data architecture. Use the dynamic RESTful API to pull data into your app or website – or just use Directus as a standalone tool, similar to FileMaker. Either way, an unlimited number of users can upload files and manage database content, all based on granular group permissions.
-
-### Your Account Dashboard
-From here you can manage your account info, including your email, password, and payment details. From this panel you can also review your account's billing history, see any outstanding balance you might have, and close your account.
+# Hosted Instances
 
 ### Creating Instances
 Once you have added payment info into your account you can easily and quickly add new instances. Just click on the "Create Instance" button in the header, fill in an instance name, and choose a plan – that's it. Names should be lowercase alphanumeric with dashes instead of spaces – choose your instance name carefully as that will determine your database name and API URL. It should only take a few second for your database and Directus CMS to be set up. Then, once you've created a schema and content, your dynamic API will be available.
