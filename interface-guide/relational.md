@@ -95,6 +95,8 @@ _When deleting these related O2M items, the following rules apply to the related
 
 This relational UI allows for field translations to be stored in a related table. For example, if you have a `projects` table you could create a `projects_translations` table to relationally store the `name` and `description` columns in other languages. Some data, such as `hero_image` or `featured` may not need to be translated and can be added directly to the `projects` table.
 
+> **Warning:** There's a known issue where the translation UI will stop working if you add UIs/Relationships to the junction table columns.
+
 *Example Schema*
 * `projects` Table
     * `id` – ID of the project
@@ -128,3 +130,58 @@ When creating the translation column within Directus you'll need to enter some i
 * `data_type`: This will automatically be set to `ALIAS` since this is not an actual field and the data is stored relationally
 * `related_table`: This should be the table that will hold the translations (eg `project_translations`)
 * `junction_column`: This is the column that stores your table ID (eg the `projects` ID) in the related_table
+
+
+*And here is the SQL to create the above example:*
+
+``` SQL
+# Create the table that stores supported languages
+CREATE TABLE `languages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `language` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+# Add the supported languages
+INSERT INTO `languages` (`id`, `language`)
+VALUES
+	(1,'English'),
+	(2,'German'),
+	(3,'Spanish');
+
+# Add a `projects` table with language-agnostic columns
+CREATE TABLE `projects` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `active` tinyint(1) DEFAULT '2',
+  `sort` int(11) DEFAULT NULL,
+  `title` varchar(100) DEFAULT NULL,
+  `client` varchar(100) DEFAULT NULL,
+  `tags` text,
+  `date` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+# Add a table for the translated columns
+CREATE TABLE `projects_translations` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) DEFAULT NULL,
+  `description` text,
+  `language_id` int(11) DEFAULT NULL,
+  `project_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+# Add the relationship data for the translation column
+INSERT INTO `directus_columns` (`table_name`, `column_name`, `data_type`, `ui`, `relationship_type`, `related_table`, `junction_key_right`)
+VALUES
+  ('projects', 'translations', 'ONETOMANY', 'translation', 'ONETOMANY', 'projects_translations', 'project_id');
+
+# Add the UI options for the translation column
+INSERT INTO `directus_ui` (`table_name`, `column_name`, `ui_name`, `name`, `value`)
+VALUES
+  ('projects', 'translations', 'translation', 'id', 'translation'),
+  ('projects', 'translations', 'translation', 'languages_table', 'languages'),
+  ('projects', 'translations', 'translation', 'languages_name_column', 'language'),
+  ('projects', 'translations', 'translation', 'default_language_id', '1'),
+  ('projects', 'translations', 'translation', 'left_column_name', 'language_id');
+```

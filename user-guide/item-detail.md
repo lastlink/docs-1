@@ -15,3 +15,6 @@ You can leave comments on items within the right sidebar. You can mention specif
 
 ## Revisions & Rollbacks
 Every change made by users within Directus is tracked to comprehensive accountability. You can view the following details of each revision in the right-sidebar: The user, their IP address and user-agent, and the date/time of the change. Any changed data (delta) and a _complete_ item backup are all saved for all revisions – you can Rollback to any previously saved state.
+
+## Translations
+**@TODO**

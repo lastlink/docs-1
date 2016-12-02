@@ -1,9 +1,9 @@
 # NGINX Configuration
 At this point it is assumed that you already have installed and configured nginx and have a basic understanding of nginx. 
 
->This is an incomplete/rough guide, but it should help you get Directus installed and set up on nginx. It was tested on: Ubuntu 14.04.1 - nginx/1.4.6 (Ubuntu)
+[Directus NGINX Configuration](https://github.com/directus/directus-vagrant/tree/master/config/nginx)
 
-[See the Directus nginx configuration](https://github.com/RNGR/directus-vagrant/tree/master/config/nginx)
+> **Important:** This is an incomplete guide, but it should help you get Directus installed and set up on nginx. It was tested on: Ubuntu 14.04.1 - nginx/1.4.6 (Ubuntu)
 
 ### Site configuration
 
@@ -92,6 +92,8 @@ font/woff                        woff;
 ```
 
 
-### PHP Values **[TODO]**
+### PHP Values
 
-The result of these two files (`/etc/nginx/mime.types`, `/etc/nginx/sites-available/default`) and  can be found in here [config/nginx](https://github.com/RNGR/directus-vagrant/tree/master/config/nginx)
+The result of these two files (`/etc/nginx/mime.types`, `/etc/nginx/sites-available/default`) and  can be found in here [config/nginx](https://github.com/directus/directus-vagrant/tree/master/config/nginx)
+
+**[TODO]**
