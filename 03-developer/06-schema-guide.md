@@ -159,7 +159,7 @@ This is where system information is stored about all tables managed by Directus.
 * `footer` - [**0**,1] Determines if a table footer should be shown on the  Item Listing page with helper functions for INT columns such as: Average, Min, Max, etc.
 * `list_view` - Allows for the Item Listing page to be overridden with a custom view template. @TODO
 * `column_groupings` - Soon to be deprecated, this column was used to group columns on the Item Edit page.
-* `primary_column` - This stores the column name for the table's unique primary key. As of now Directus requires all tables to use an `id` column here. 
+* `primary_column` - Soon to be deprecated, This stores the column name that represents a table item/record. 
 * `user_create_column` - Optional. Enter the name of a column to store the Directus User ID that created the item.
 * `user_update_column` - Optional. Enter the name of a column to store the datetime that the item was created.
 * `date_create_column` - Optional. Enter the name of a column to store the Directus User ID that last modified the item.
