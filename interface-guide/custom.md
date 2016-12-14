@@ -31,6 +31,7 @@ Of course you're going to want to ensure that data is saved correctly into the c
 The easiest way to get started is to take one of the existing Core UIs and duplicate it. If possible, try to find one with similar functionality that supports the same datatype(s). Here are the steps for using an existing UI as a starter template to create your new UI:
 
 1. Copy a Core UI file from `/app/core/uis` into the custom UI directory: `/customs/uis`, giving it a new name.
+2. On `define` Change `core/UIView` to `core/CustomUIView`.
 2. Set a unique name for the UI: `Module.id`
 3. Choose which SQL datatypes this UI will support: `Module.dataTypes`
 4. Optionally, add UI Options that admin users can adjust per column: `Module.variables`
