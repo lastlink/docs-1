@@ -7,4 +7,4 @@ Directus Documentation & User-Guide
 This is the complete documentation of the Directus framework. Available with a history of changes from version 6.0 on. For those interested in helping build, correct, or clarify the Directus documentation – please submit pull-requests to this repo.
 
 
-**[Web Formatted Version](http://getdirectus.com/docs)** – _The web version of this repository_
+**[Web Formatted Version](https://getdirectus.com/docs)** – _The web version of this repository_
