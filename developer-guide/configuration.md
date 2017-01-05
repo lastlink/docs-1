@@ -28,9 +28,11 @@ You have the option to enter credentials for a slave database server. If set, Di
     * `ROOT_URL` => Based off the $host, this is scheme-less (agnostic to http/https)
     * `ROOT_URL_WITH_SCHEME` => Same as ROOT_URL but explicitly defines the scheme (https://). Use this for emailing URLs(links, images etc) as some clients will trip on the scheme agnostic ROOT_URL
     * `APPLICATION_PATH` => Absolute path to application
-* **Memcached**
-    * `MEMCACHED_SERVER` => Memcached Server, operates on default 11211 port. i.e. "127.0.0.1"
-    * `MEMCACHED_ENV_NAMESPACE` => Namespaced memcached keys so branches/databases to not collide. Options are:
+* **Memcache**
+
+    **Note**: Although the constant is prefixed `MEMCACHED_` with a D, Directus uses memcache without it.
+    * `MEMCACHED_SERVER` => Memcache (without D) Server, operates on default 11211 port. i.e. "127.0.0.1"
+    * `MEMCACHED_ENV_NAMESPACE` => Namespaced memcache keys so branches/databases to not collide. Options are:
         * `prod`
         * `staging`
         * `testing`
