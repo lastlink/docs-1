@@ -96,6 +96,8 @@ Includes commands to manage Directus database schema
 
 **_Note_**: This require that Directus has a valid connection configured in `api/config.php`. [Read more](/developer-guide/configuration.md#apiconfigphp)
 
+**IMPORTANT: Always backup your database before run the database module to prevent data loss.**
+
 #### Install Directus schema:
 
 ```bash
