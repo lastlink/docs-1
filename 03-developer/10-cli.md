@@ -91,6 +91,23 @@ Example:
 php bin/directus user:password -e admin@directus.local -p newpassword
 ```
 
+## Database Module
+Includes commands to manage Directus database schema
+
+**_Note_**: This require that Directus has a valid connection configured in `api/config.php`. [Read more](/03-developer/03-configuration.md#apiconfigphp)
+
+#### Install Directus schema:
+
+```bash
+php bin/directus db:install
+```
+
+#### Upgrade Directus schema:
+
+```bash
+php bin/directus db:upgrade
+```
+
 ## Language Module
 Includes commands to manage Directus languages files
 
