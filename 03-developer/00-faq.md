@@ -49,7 +49,7 @@ SHOW VARIABLES LIKE 'sql_mode';
         Allow from all
     </Directory>
     ```
-3. Add `OverrideAllow All`, If `OverrideAllow None` exists change `None` to `All` to allow `.htaccess` files.
+3. Add `AllowOverride All`, If `AllowOverride None` exists change `None` to `All` to allow `.htaccess` files.
 
 ### `mod_rewrite` is enabled and still getting 404 error.
 
