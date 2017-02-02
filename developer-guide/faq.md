@@ -15,7 +15,7 @@ To solve this add/use/update this on your php.ini
 
 
 ## Server Error Occurred!
-If you get "Server error occurred!" the first time you try to login, it likely means that you misconfigured Apache2. Try adding *overrideAllow All* into your virtualHost.
+If you get "Server error occurred!" the first time you try to login, it likely means that you misconfigured Apache2. Try adding *AllowOverride All* into your virtualHost.
 
 
 ## MySQL Strict Mode
@@ -53,7 +53,7 @@ SHOW VARIABLES LIKE 'sql_mode';
         Allow from all
     </Directory>
     ```
-3. Add `OverrideAllow All`, If `OverrideAllow None` exists change `None` to `All` to allow `.htaccess` files.
+3. Add `AllowOverride All`, If `AllowOverride None` exists change `None` to `All` to allow `.htaccess` files.
 
 ### `mod_rewrite` is enabled and still getting 404 error.
 
