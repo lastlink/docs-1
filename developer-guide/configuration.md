@@ -94,11 +94,15 @@ Supported transport:
     ),
 ```
 
-* **Database Hooks** (dbHooks)
+* **Action/Event Hooks** (hooks)
    Hooks allow you to hook function to be called in a specific time during the executing of Directus.
    Ex: Execute a function after a new post was created.
+
+* **Filter Hooks** (filters)
+   Same as Action/Event Hooks, with the different that the data passed can be altered.
+   Ex: Format post published data into a specific timezone
    
-   Read the [hook complete list](/04-developer/10-hooks-list.md)
+   Read the [hook complete list](/developer-guide/hooks.md)
 * **Database Table Blacklist** (tableBlacklist) Is an array of table names that will be ignored by the Directus framework
 * **Status Mapping** (statusMapping) Is a multi-dimensional array of options for the status system (soft-delete policy) allowing for a customizable workflow to be defined. The following options exist as illustrated by the framework defaults:
     * key => (0, 1, and 2) represents the value to be saved in the status field (defined above) if that option is selected

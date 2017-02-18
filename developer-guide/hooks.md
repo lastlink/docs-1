@@ -2,7 +2,98 @@
 
 Hooks allow project-specific code to interact directly with Directus Core events. The hooks are very simple to implement: just add custom logic to the (untracked) config file at `/directus/api/configuration.php`.
 
-## Hooks list
+All the logic you need to implement that will perform an action, such as send  an email to users when a post is created, it should be defined under `hooks` in the configuration file.
+
+All the logic you need to implement that will modify the data being used, such as change the post published date time based on timezone, it should be defined under `filters` in the configuration file.
+
+## Creating an Action Hook
+
+This hook will be executed every time a record is inserted in any table.
+
+Add the event name `table.insert` to the configuration (`api/configuration.php`) `hooks` key, _if the key does not exists, add it_.
+
+### Using a function
+
+```php
+[
+    'hooks' => [
+        'table.insert' => function ($table, $data) {
+            // execute any code
+        }
+    ];
+];
+```
+
+You can also you any class that implement the `__invoke` method instead of a function.
+
+### Using a class implementing __invoke
+
+```
+<?php
+
+namespace \App\Events;
+
+class InsertEvent
+{
+    public function __invoke($table, $data)
+    {
+        // execute any code
+    }
+}
+```
+```php
+[
+    'hooks' => [
+        'table.insert' => '\App\Events\InsertEvent'
+    ];
+];
+```
+
+### Using a class implementing HookInterface
+
+```
+<?php
+
+namespace \App\Events;
+
+class InsertEvent implements \Directus\Hook\HookInterface
+{
+    public function handle($table, $data)
+    {
+        // execute any code
+    }
+}
+```
+
+```php
+[
+    'hooks' => [
+        'table.insert' => '\App\Events\InsertEvent'
+    ];
+];
+```
+
+## Creating an Filter Hook
+
+If you need to add a custom secret random generated key to each of your users data before being inserted into the table, you need filters hook.
+
+Add the filter name `table.insert.[table-name]:before` to the configuration (`api/configuration.php`) `filters` key, _if the key does not exists, add it_.
+
+The filter can be add it the same way as the action hook, anonymous function, classes implementing `__invoke` or implementing `HookInterface` interface.
+
+```php
+[
+    'filters' => [
+        'table.insert.users:before' => function ($data) {
+            $data['secret_key'] => rand();
+            
+            return $data;
+        }
+    ];
+];
+```
+
+## Action/Event Hooks list
 
 Name                    | Description
 ----------------------- | ------------
@@ -48,3 +139,15 @@ Name                    | Description
 `files.thumbnail.deleting:after`      | After a file thumbnail has been deleted. File info is passed.
 `directus.index.start`    | Index page starts.
 `directus.login.start`    | Login page starts.
+
+## Filter Hooks list
+
+Name                    | Description
+----------------------- | ------------
+`response`              | Before adding the content into the HTTP Response body
+`response.[method]`     | Same as `response` but it only executes on a specific method, such as `GET, POST, DELETE, PATCH, PUT, OPTIONS`
+`response.[table-name]`              | Same as `response` but it only executes on a specific table
+`response.[table-name].[method]`              | Same as `response.[method]` but it only executes on a specific table
+`table.insert:before`   | Before inserting a record into any table
+`table.select`          | After a table query was executed in any table
+`table.[table-name].select` | After a table query was executed in the specific table
