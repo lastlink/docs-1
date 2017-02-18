@@ -149,5 +149,6 @@ Name                    | Description
 `response.[table-name]`              | Same as `response` but it only executes on a specific table
 `response.[table-name].[method]`              | Same as `response.[method]` but it only executes on a specific table
 `table.insert:before`   | Before inserting a record into any table
+`table.insert.[table-name]:before`   | Before inserting a record into `[table-name]` table
 `table.select`          | After a table query was executed in any table
 `table.[table-name].select` | After a table query was executed in the specific table
