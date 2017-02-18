@@ -28,7 +28,7 @@ You can also you any class that implement the `__invoke` method instead of a fun
 
 ### Using a class implementing __invoke
 
-```
+```php
 <?php
 
 namespace \App\Events;
@@ -51,7 +51,7 @@ class InsertEvent
 
 ### Using a class implementing HookInterface
 
-```
+```php
 <?php
 
 namespace \App\Events;
