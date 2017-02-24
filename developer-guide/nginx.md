@@ -34,10 +34,14 @@ server {
         fastcgi_split_path_info ^(.+\.php)(/.+)$;
         fastcgi_pass unix:/var/run/php5-fpm.sock;
         fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
         include fastcgi_params;
     }
 }
 ```
+
+**IMPORTANT**: Some NGINX packages are distributed without `SCRIPT_FILENAME` param inside their `fastcgi_params`
+to avoid problems please add `fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;` before `include fastcgi_params;`.
 
 Change `location /` to this:
 ```
