@@ -16,7 +16,7 @@ Directus is a forward-looking framework and therefore may not support certain le
 > **Optional Enhancement:** Installing *Imagick* adds thumbnail support for TIFF, PSD, and PDF files
 
 ## Server Preparation
-1. Check that your server meets the [requirements](/01-getting-started/02-requirements.md)
+1. Check that your server meets the [requirements](/01-getting-started/02-installation.md#requirements)
 2. Download and unzip the Directus package from [here](https://github.com/directus/directus/tree/build)
 3. Create a database and MySQL user with access/modify privileges on your server
   * You can also use an existing database, but it's worth taking a look at the typical [Directus Schema](/04-developer/06-schema-guide.md)
