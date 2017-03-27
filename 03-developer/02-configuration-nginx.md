@@ -71,7 +71,7 @@ location ~ ^/(media|storage)/.*\.(php|phps|php5|htm|shtml|xhtml|cgi.+)?$ {
 To prevent direct access to extensions `api.php` file we need to edit `/etc/nginx/sites-available/default` and add a new location:
 
 ```
-location ~* [^/]+/customs/extensions/api\.php$ {
+location ~* ^/customs/extensions/api\.php$ {
     return 403;
 }
 ```
