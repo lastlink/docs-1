@@ -4,7 +4,7 @@
 Directus is an excellent alternative to traditional CMS. Small sites have less bloat to deal with and worry about. Large sites get total control over database architecture for optimizing performance. Complex sites are more attainable since you're no longer limited to the technologies, libraries, and languages of an all-in-one solution. And because everything's decoupled you'll be prepared for the future should you need to support additional clients such as a native app.
 
 ## Native Apps
-Directus is a CMS that wasn't built exclusively for websites – so there's no more struggling to find a good way to manage content or even raw data from your Native App(s). But that doesn't mean you're stuck with a highly technical datastore interface, you and your clients can interact with data though intuitive and safe interfaces.
+Directus is a CMS that wasn't built exclusively for websites – so there's no more struggling to find a good way to manage content or even raw data from your Native App(s). But that doesn't mean you're stuck with a highly technical datastore interface, you and your clients can interact with data through intuitive and safe interfaces.
 
 ## Multi-Client Projects
 Perhaps you know in advance that your project will require a website, native app, *and* kiosk – Directus has you covered. With agnostic data you can connect any and all facets of your project to a single, centralized source of content. Use our API or SDKs to connect each client in the appropriate language.
