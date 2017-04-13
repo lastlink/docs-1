@@ -22,7 +22,7 @@ Directus is a forward-looking framework and therefore may not support certain le
 4. Upload the files to a public directory on your server
 5. Run the installation script by accessing the URL where you uploaded the files
 
-> **Existing Databases:** You can also use an existing database, but should look at the typical [Directus Schema](/04-developer/06-schema-guide.md)
+> **Existing Databases:** You can also use an existing database, but should look at the typical [Directus Schema](/developer-guide/directus-tables.md)
 
 ## Installation Wizard
 A pre-installation check will run but will only be shown if the server requirements are not met.
