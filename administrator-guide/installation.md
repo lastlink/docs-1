@@ -4,7 +4,7 @@
 Directus is a forward-looking framework and therefore may not support certain legacy systems. If your server is not compatible with the requirements below, please contact your host to upgrade.
 
 * Apache HTTP Server
-* mod_rewrite ([help](/05-troubleshooting/01-faq.md))
+* mod_rewrite ([help](/developer-guide/faq.md))
 * PHP 5.5+
   * curl
   * gd
@@ -16,7 +16,7 @@ Directus is a forward-looking framework and therefore may not support certain le
 > **Optional Enhancement:** Installing *Imagick* adds thumbnail support for TIFF, PSD, and PDF files
 
 ## Server Preparation
-1. Check that your server meets the [requirements](/01-getting-started/02-installation.md#requirements)
+1. Check that your server meets the [requirements](/administrator-guide/installation.md#requirements) above
 2. Download and unzip the Directus package from [here](https://github.com/directus/directus/tree/build)
 3. Create a database and MySQL user with access/modify privileges on your server.
 4. Upload the files to a public directory on your server
@@ -50,4 +50,4 @@ A pre-installation check will run but will only be shown if the server requireme
 > **Security Note:** Once you have completed the install, make sure to delete install folder.
 
 ### Troubleshooting
-If you're having problems with your Directus install, please visit our [troubleshooting section](/05-troubleshooting).
+If you're having problems with your Directus install, please visit our [troubleshooting section](/developer-guide/faq.md).
