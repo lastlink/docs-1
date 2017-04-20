@@ -60,3 +60,23 @@ If you are using VirtualDocumentRoot `RewriteBase` needs to be set.
 
 1. Go to `/directus/path/.htaccess` and add `RewriteBase /` just below `RewriteEngine On`.
 2. Go to `/directus/path/api/.htaccess` and add `RewriteBase /api` just below `RewriteEngine On`.
+
+### Expecting 'OPEN_ENDBLOCK', got 'EOF'
+
+Getting this error is more likely you are using PageSpeed module, which means it's rewriting the templates html files, making them corrupted as valid Handlebars template.
+
+The solution is to disallowing PageSpeed to rewrite the html files in `app` directory.
+
+See the solution for Apache [here](https://github.com/directus/directus/blob/master/.htaccess) and NGINX [here](https://github.com/directus/directus-vagrant/blob/master/config/nginx/pagespeed.conf).
+
+Apache:
+```
+ModPagespeedDisallow "*/app/**/*.html"
+```
+
+NGINX:
+```
+pagespeed Disallow */app/**/*.html;
+```
+
+*AWS Lightsail has PageSpeed enabled by default.*
