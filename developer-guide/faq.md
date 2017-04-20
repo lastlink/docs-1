@@ -1,4 +1,4 @@
-#FAQ
+# FAQ
 
 ## Bug Reporting and Feature Requests
 **Report bugs directly on [GitHub Issues](https://github.com/directus/directus/issues/new) – request and vote for new features on [FeatHub](http://feathub.com/directus/directus). For all security related issues, please chat with us directly through [getdirectus.com](http://getdirectus.com/)**
