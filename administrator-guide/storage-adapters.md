@@ -89,6 +89,19 @@ composer require league/flysystem-aws-s3-v3
 ],
 ```
 
+#### Switching Storage adapters
+
+In order to switch from adapter to another, follow the next steps:
+
+- Configure the new adapter in Directus `api/configuration.php` (filesystem) [read s3 example above](/administrator-guide/storage-adapters.md#configuring-s3)
+- Backup your `directus_files` table.
+- Update all the records in `directus_files` with the storage_adapter to s3  instead of local.
+  ```sql
+  UPDATE `directus_files` SET `storage_adapter` = "<your-new-adapter-name>" WHERE `storage_adapter` = "<your-old-adapter-name>";
+  ```
+
+All files should be pointing to the S3 server now.
+
 #### Code Samples
 
 When extending the functionality of Directus Core or your project, it may be necessary to invoke the storage adapter component. Listed below are some references to code samples which demonstrate various ways of deploying storage adapters.
