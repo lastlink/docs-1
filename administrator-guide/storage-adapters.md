@@ -95,7 +95,7 @@ In order to switch from adapter to another, follow the next steps:
 
 - Configure the new adapter in Directus `api/configuration.php` (filesystem) [read s3 example above](/administrator-guide/storage-adapters.md#configuring-s3)
 - Backup your `directus_files` table.
-- Update all the records in `directus_files` with the storage_adapter to s3  instead of local.
+- Update all the records in `directus_files` with the storage_adapter to **the new storage adapter**  instead of **current storage adapter**.
   ```sql
   UPDATE `directus_files` SET `storage_adapter` = "<your-new-adapter-name>" WHERE `storage_adapter` = "<your-old-adapter-name>";
   ```
