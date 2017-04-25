@@ -1,6 +1,6 @@
 # Storage Adapters
 
-Beyond local storage, Directus comes with the ability to connect to a number of popular file storage systems such as CDNs, Amazon S3, Rackspace, Azure and Dropbox. Directus uses [Flysystem](https://github.com/thephpleague/flysystem), so you can easily implement other custom adapters. 
+Beyond local storage, Directus comes with the ability to connect to a number of popular file storage systems such as CDNs, Amazon S3, Rackspace, Azure and Dropbox. Directus uses [Flysystem](https://github.com/thephpleague/flysystem), so you can easily implement other custom adapters.
 
 > [Learn more about creating new custom adapters on Flysystem's site](https://flysystem.thephpleague.com/creating-an-adapter/).
 
@@ -65,6 +65,28 @@ Each adapter's GitHub page explains how to install, but generally you use compos
 
 ```
 composer require league/flysystem-aws-s3-v3
+```
+
+#### Configuring S3
+
+```php
+'filesystem' => [
+    // adapter name
+    'adapter' => 's3',
+    // this path within the S3 Bucket
+    // where the files are going to be uploaded to
+    'root' => '/storage/uploads',
+    // This is the url where all the media will be pointing to
+    // here all assets will be (yourdomain)/storage/uploads
+    // same with thumbnails (yourdomain)/storage/uploads/thumbs
+    'root_url' => '<your-s3-url>/storage/uploads',
+    'root_thumb_url' => '<your-s3-url>/storage/uploads/thumbs',
+    'key'    => '<your-s3-key>',
+    'secret' => '<your-s3-secret-key>',
+    'region' => '<your-s3-region>',
+    'version' => '<your-s3-version>',
+    'bucket' => '<your-s3-bucket-name>'
+],
 ```
 
 #### Code Samples
