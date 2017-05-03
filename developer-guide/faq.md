@@ -16,6 +16,8 @@ To solve this add/use/update this on your php.ini
 ## Server Error Occurred!
 If you get "Server error occurred!" the first time you try to login, it likely means that you misconfigured Apache2. Try adding *AllowOverride All* into your virtualHost.
 
+## Internal Server Error
+This error can be anything, but when you are using Directus for the first time and you are able to see the installation page or the login page, but as soon as you try to log in see this error, it might be that your hosting provider doesn't allow to use `Option SymLinksIfOwnerMatch` which can be solve by whether make your hosting allow you to use or simple remove that line in `api/.htaccess`. Make sure this is the issue by checking the apache logs, try looking for something like: `Option SymLinksIfOwnerMatch not allowed here`
 
 ## MySQL Strict Mode
 Directus does not fully support Strict Mode due to limitations with the PDO and MySQL Drivers. Please disable MySQL Strict Mode before installation.
