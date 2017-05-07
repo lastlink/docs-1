@@ -155,6 +155,10 @@ define(['core/UIComponent', 'core/CustomUIView'], function(UIComponent, UIView) 
 ### Enabling an UI
 To use a UI simply copy it into your `/customs/uis` directory.
 
+In Directus 6.4, there is a minor change, all UIs must be inside a directory, and the entry point file must be named `component.js`.
+
+Copy the file `component.js` into `/customs/interfaces/myinterface` instead.
+
 ## UI Options
 In the [previous section](05-custom-uis/01-create-an-ui.md) we explained how to create a UI that limits how many characters they can type into a text area while showing the characters remaining.
 
