@@ -26,7 +26,7 @@ Creates the `config.php` and `configuration.php` files.
 > **IMPORTANT:** This command will overwrite any existing `config.php` and `configuration.php` files.
 
 ```bash
-php bin/directus install:config -h <db_host> -n <db_name> -u <db_user> -p <db_pass> -r <directus_root> -d <directus_path>
+php bin/directus install:config -h <db_host> -n <db_name> -u <db_user> -p <db_pass> -r <directus_root> -d <directus_path> -e <directus_email>
 ```
 
 * `db_host` - The database host
@@ -35,6 +35,7 @@ php bin/directus install:config -h <db_host> -n <db_name> -u <db_user> -p <db_pa
 * `db_pass` - The database user's password
 * `directus_root` - (Optional) The Directus root path in your server. Ex: `/var/www/html`
 * `directus_path` - (Optional) The Directus path inside the host. If Directus is installed within a subdirectory of the main host, that subdirectory is the <directus_path>
+* `directus_email` - (Optional) The Directus email that will be used as sender in the mailing process
 
 Example: http://example.local
 
