@@ -10,4 +10,6 @@ By design, Directus keeps things simple. Only key features utilized by the major
 * Integrated Point-of-Sale System
 
 ## Creating an Extension
-@TODO
+
+ ### Tutorials
+ - [How To Setup A Custom Extension](https://medium.com/directus/how-to-setup-a-custom-extension-770d6ea48551)

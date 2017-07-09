@@ -17,26 +17,14 @@ This file contains project-specific constants for the Directus framework. These 
     * `DB_USER` => MySQL database user with appropriate permissions
     * `DB_PASSWORD` => The password for the above MySQL user
     * `DB_PREFIX` => An optional table prefix. If set, only tables with prefix will be managed
-* **Slave Database Connection Settings**
-You have the option to enter credentials for a slave database server. If set, Directus will fall back to a slave database if the master fails.
-    * `DB_HOST_SLAVE` => MySQL slave hostname, often "localhost"
-    * `DB_USER_SLAVE` => MySQL slave database user with appropriate permissions
-    * `DB_PASSWORD_SLAVE` => The password for the above MySQL slave user
+    * `DB_CHARSET` => Tells the server what character set the connection will send the information
 * **Paths and URLs**
     * `DIRECTUS_PATH` => Directus Application Path, i.e. "/"
     * `$host` => Server Name i.e. "www.example.com"
     * `ROOT_URL` => Based off the $host, this is scheme-less (agnostic to http/https)
     * `ROOT_URL_WITH_SCHEME` => Same as ROOT_URL but explicitly defines the scheme (https://). Use this for emailing URLs(links, images etc) as some clients will trip on the scheme agnostic ROOT_URL
     * `APPLICATION_PATH` => Absolute path to application
-* **Memcache**
 
-    **Note**: Although the constant is prefixed `MEMCACHED_` with a D, Directus uses memcache without it.
-    * `MEMCACHED_SERVER` => Memcache (without D) Server, operates on default 11211 port. i.e. "127.0.0.1"
-    * `MEMCACHED_ENV_NAMESPACE` => Namespaced memcache keys so branches/databases to not collide. Options are:
-        * `prod`
-        * `staging`
-        * `testing`
-        * `development`
 * **Status Options**
     * `STATUS_DELETED_NUM` => When utilizing the status column for soft-delete policy, this is the integer used for deleted items. This is important because Directus ignores deleted items system-wide as opposed to inactive or other status states.
     * `STATUS_ACTIVE_NUM` => Similarly, the active column has special meaning within the soft-delete policy as it is considered truly "active"
@@ -112,21 +100,39 @@ Supported transport:
 
 <small>Default Status Mapping</small>
 ```
-'0' => array(
-  'name' => 'Deleted',
-  'color' => '#c1272d',
-  'sort' => 3
-),
-'1' => array(
-  'name' => 'Live',
-  'color' => '#5b5b5b',
-  'sort' => 1
-),
-'2' => array(
-  'name' => 'Draft',
-  'color' => '#bbbbbb',
-  'sort' => 2
-)
+0 => [
+    'name' => 'Deleted',
+    'text_color' => '#FFFFFF',
+    'background_color' => '#F44336',
+    'subdued_in_listing' => true,
+    'show_listing_badge' => true,
+    'hidden_globally' => true,
+    'hard_delete' => false,
+    'published' => false,
+    'sort' => 3
+],
+1 => [
+    'name' => 'Published',
+    'text_color' => '#FFFFFF',
+    'background_color' => '#3498DB',
+    'subdued_in_listing' => false,
+    'show_listing_badge' => false,
+    'hidden_globally' => false,
+    'hard_delete' => false,
+    'published' => true,
+    'sort' => 1
+],
+2 => [
+    'name' => 'Draft',
+    'text_color' => '#999999',
+    'background_color' => '#EEEEEE',
+    'subdued_in_listing' => true,
+    'show_listing_badge' => true,
+    'hidden_globally' => false,
+    'hard_delete' => false,
+    'published' => false,
+    'sort' => 2
+]
 ```
 
 #### IP Whitelisting for User-Groups
