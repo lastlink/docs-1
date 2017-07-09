@@ -17,7 +17,7 @@ Directus is a forward-looking framework and therefore may not support certain le
 
 ## Server Preparation
 1. Check that your server meets the [requirements](/administrator-guide/installation.md#requirements) above
-2. Download and unzip the latest Directus package version from [here](https://github.com/directus/directus/releases/download/6.4.0/directus-build-6.4.0-20170709132446.tar.gz)
+2. Download and unzip the latest Directus package version from [here](https://github.com/directus/directus/releases/download/6.4.0/directus-build-6.4.0-20170709143459.tar.gz)
 3. Create a database and MySQL user with access/modify privileges on your server.
 4. Upload the files to a public directory on your server
 5. Run the installation script by accessing the URL where you uploaded the files
