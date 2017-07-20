@@ -82,3 +82,27 @@ pagespeed Disallow */app/**/*.html;
 ```
 
 *AWS Lightsail has PageSpeed enabled by default.*
+
+### Missing PHP Extension ext-dom
+
+While installing composer the error below will show up if you are missing the php-dom extension required by phpunit.
+
+```
+phpunit/phpunit 3.7.38 requires ext-dom * -> the requested PHP extension dom is missing from your system.
+```
+
+An option is to not install it, if you don't want to use phpunit as it is a library for development.
+
+Running `composer install --no-dev` will skip the phpunit installation.
+
+If you want to still install the dependency, below are example how to do it.
+
+#### Ubuntu
+
+Look for the package with `apt`: 
+
+```
+apt-cache search php dom
+```
+
+Look through the list for you php version extension name, example: `php5.6-xml` or `php7.0-xml`. After finding the correct name install the package `apt-get install php7.0-xml` and the package should be installed.
