@@ -106,3 +106,55 @@ apt-cache search php dom
 ```
 
 Look through the list for you php version extension name, example: `php5.6-xml` or `php7.0-xml`. After finding the correct name install the package `apt-get install php7.0-xml` and the package should be installed.
+
+Don't forget to run `sudo service apache2 restart` to restart if you are using apache or `sudo service php-fpm restart` if you are using PHP FPM.
+
+### Installing PHP GD Library extension
+
+#### PHP 5.6.x
+
+Ubuntu:
+```
+sudo apt-get install php5.6-gd
+```
+
+#### PHP 7.x
+
+Ubuntu:
+```
+sudo apt-get install php7.0-gd
+```
+
+Without specifying a version will install the latest version.
+
+Ubuntu:
+```
+sudo apt-get install php-gd
+```
+
+Don't forget to run `sudo service apache2 restart` to restart if you are using apache or `sudo service php-fpm restart` if you are using PHP FPM.
+
+### Installing PHP cURL extension
+
+#### PHP 5.x
+
+Ubuntu:
+```
+sudo apt-get install php5.6-curl
+```
+
+#### PHP 7.x
+
+Ubuntu:
+```
+sudo apt-get install php7.0-curl
+```
+
+Without specifying a version will install the latest version.
+
+Ubuntu:
+```
+sudo apt-get install php-curl
+```
+
+Don't forget to run `sudo service apache2 restart` to restart if you are using apache or `sudo service php-fpm restart` if you are using PHP FPM.
