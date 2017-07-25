@@ -75,22 +75,55 @@ class InsertEvent implements \Directus\Hook\HookInterface
 
 ## Creating an Filter Hook
 
-If you need to add a custom secret random generated key to each of your users data before being inserted into the table, you need filters hook.
+If you need to add a custom data before being inserted into a table, you need filters hook.
 
-Add the filter name `table.insert.[table-name]:before` to the configuration (`api/configuration.php`) `filters` key, _if the key does not exists, add it_.
+Add the filter name `table.insert.[table-name]:before` to the configuration (`api/configuration.php`) `filters` key, _if the `filters` key does not exists, please add it_.
 
 The filter can be add it the same way as the action hook, anonymous function, classes implementing `__invoke` or implementing `HookInterface` interface.
 
 ```php
 [
     'filters' => [
-        'table.insert.users:before' => function ($data) {
-            $data['secret_key'] => rand();
+        'table.insert.users:before' => function (\Directus\Hook\Payload $payload) {
+            $payload->set('secret_key', rand());
             
-            return $data;
+            return $payload;
         }
     ];
 ];
+```
+
+The filters passes a `Payload` object as paramter, which contain the data and attribute information related to the filter hook, such as the table name the record belong to.
+
+## Payload Object
+
+All filters hook now passes a `Payload` object as parameter instead of an array to represent the data being filtered, using the `Payload` object make easier to pass the data over multiple filters. Each filter function must return the `Payload` so other filters can interact with the updated data.
+
+### Useful methods
+
+Name                    | Description
+----------------------- | ------------
+`getData()`             | Get the payload data
+`attribute($key)`       | Get an attribute key. Ex `$payload->attribute('tableName')`
+`get($key)`             | Get an element by its key
+`set($key, $value)`     | Set or update new value into the given key
+`has($key)`             | Check whether or not the payload data has the given key set
+`remove($key)`          | Remove an element with the given key
+`isEmpty()`             | Check whether the payload data is empty
+`replace($newDataArray)`| Replace the payload data with a new data array
+`clear()`               | Remove all data from the payload
+
+**NOTE:** `get()` and `has()` method can use dot-notation to access child elements. ex `get('data.email')`.
+
+`Payload` object is `Arrayable` which means you can interact with the data as an array `$payload['data']['email]`, but you can't do `\Directus\Util\ArrayUtils::get($payload, 'data.email')`.
+
+**IMPORTANT:** All these filters are triggered to Directus core tables as well, so make sure if you don't want to interact with directus tables omit them by checking for them first, as right now all tables are prefixed with `directus_` in front of them.
+
+```php
+$table = $payload->attribute('tableName');
+if (\Directus\Util\StringUtils::startsWith($table, 'directus_')) {
+    return $payload;
+}
 ```
 
 ## Action/Event Hooks list
