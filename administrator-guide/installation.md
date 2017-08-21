@@ -7,7 +7,7 @@ Directus is a forward-looking framework and therefore may not support certain le
 * Apache HTTP Server with mod_rewrite enabled ([help](/developer-guide/faq.md))
 * or NGINX HTTP Server
 * MySQL Server 5.2+ / Percona Server / MariaDB or equivalent
-* PHP 5.5+
+* PHP 5.6+
   * curl
   * gd
   * finfo

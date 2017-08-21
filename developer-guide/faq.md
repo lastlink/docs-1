@@ -19,6 +19,16 @@ If you get "Server error occurred!" the first time you try to login, it likely m
 ## Internal Server Error
 This error can be anything, but when you are using Directus for the first time and you are able to see the installation page or the login page, but as soon as you try to log in see this error, it might be that your hosting provider doesn't allow to use `Option SymLinksIfOwnerMatch` which can be solve by whether make your hosting allow you to use or simple remove that line in `api/.htaccess`. Make sure this is the issue by checking the apache logs, try looking for something like: `Option SymLinksIfOwnerMatch not allowed here`
 
+## Displaying a 404 page
+If you are getting 404 page while using the webapp or API, make sure you check the instructions below:
+
+### Using Apache
+- Include the `.htaccess` file located in the root directory and the api directory.
+- Install and enable `mod_rewrite`
+
+### Using NGINX
+- Include the directus locations block into your server config file. The file can be found [here](https://github.com/directus/directus-vagrant/blob/master/config/nginx/default)
+
 ## MySQL Strict Mode
 Directus does not fully support Strict Mode due to limitations with the PDO and MySQL Drivers. Please disable MySQL Strict Mode before installation.
 

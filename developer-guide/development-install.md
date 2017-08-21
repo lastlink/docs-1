@@ -25,10 +25,11 @@ This command updates your JSON file and your lock file without changing the vers
 
 * Apache HTTP Server / Nginx Server
 * MySQL Server / Percona Server / MariaDB or equivalent
-* PHP >= 5.5.0
+* PHP >= 5.6.0
 * Git
 * Composer
 
+Note: Directus may work with other HTTP Server solutions such as Lighttpd and Caddy, but it will need proper configurations and tests.
 
 ## Step 1: Setup a Development Environment
 You will need to setup a local \*AMP (Apache, MySQL and PHP) or \*EMP (nginx, MySQL and PHP) environment in order to test Directus. \*AMP packages can be found for different platforms:
