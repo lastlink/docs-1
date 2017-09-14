@@ -66,11 +66,9 @@ Adding a `sort(INT11)` column to a table turns on Directus' drag-and-drop sortin
 > **Developer Note:** Dragging items within long lists can be difficult – it is not advisable to use the manual sort feature on tables with many items.
 
 #### Status Column
-Adding an `active(INT11)` (default name) column enables "soft" deleting and "status" states for items within the table. A status could be used in many different ways, the default is: *Published*, *Draft*, or *Deleted* but you can customize this as needed in the `/api/configuration.php` file.
+Adding an `active(INT11)` (default name) column enables "soft" deleting and "status" states for items within the table. A status could be used in many different ways, the default is: *Published*, *Draft*, or *Deleted* but you can customize this as needed in the [`/api/configuration.php`](https://github.com/directus/directus/blob/master/api/configuration_sample.php#L137-L171) file.
 
 > **Developer Note:** It is important when fetching data for your project to honor the status of items. Typically this means only fetching published content. Assuming you are using the default Status options, that would mean limiting all SQL queries with: ```active = '1'```
-
-@TODO: Link to configuration
 
 #### Status Mapping
 @TODO
