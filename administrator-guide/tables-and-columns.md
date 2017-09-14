@@ -71,7 +71,8 @@ Adding an `active(INT11)` (default name) column enables "soft" deleting and "sta
 > **Developer Note:** It is important when fetching data for your project to honor the status of items. Typically this means only fetching published content. Assuming you are using the default Status options, that would mean limiting all SQL queries with: ```active = '1'```
 
 #### Status Mapping
-@TODO
+By default, Directus comes with a pre-defined set of item statusses: Deleted, Published and Draft. If you'd like to add additional statusses, or replace the default ones all together, you can modify the statusses in the [`/api/configuration.php`](https://github.com/directus/directus/blob/master/api/configuration_sample.php#L137-L171) file.
+
 
 #### Accountability
 While Directus uses the `directus_activity` table to store users/dates for creation/modification – you can also have it save these details into the actual table.
