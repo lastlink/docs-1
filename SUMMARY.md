@@ -25,8 +25,6 @@
 ## Interface Guide
   * [Core](interface-guide/core.md)
   * [Relational](interface-guide/relational.md)
-  * [Custom](interface-guide/custom.md)
-  * [System](interface-guide/system.md)
 
 ## Developer Guide
   * [Development Install](developer-guide/development-install.md)
@@ -46,4 +44,3 @@
   * [Billing](hosted-guide/billing.md)
   * [Instances](hosted-guide/instances.md)
   * [URLS & Access](hosted-guide/access.md)
-
