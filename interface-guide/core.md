@@ -271,3 +271,37 @@ Boolean style interface which allows the user to enable or disable a certain thi
 * `read_only`: Force this interface to be read only
 * `label`: Label to show next to the toggle
 * `show_as_checkbox`: Display a checkbox instead of the default switch style input
+
+## Date and Time Interfaces
+
+### Date
+*Supported Datatype: `DATE`*
+
+Saves a given or the current date.
+
+#### Options
+* `read_only`: Force this interface to be read only
+* `format`: What format (e.g. yyyy-mm-dd) to use for the date
+* `contextual_date_in_listview`: Show dates in relatively to now (eg: 3 days ago)
+* `populate_when_hidden_and_null`: Automatically fill this field with the current date if the input is hidden and empty
+
+### DateTime
+*Supported Datatypes: `DATETIME`, `TIMESTAMP`*
+
+Saves a given or the current date & time or just the time.
+
+#### Options
+* `read_only`: Force this interface to be read only
+* `format`: What format (e.g. yyyy-mm-dd) to use for the date
+* `contextual_date_in_listview`: Show dates in relatively to now (eg: 3 days ago)
+* `populate_when_hidden_and_null`: Automatically fill this field with the current date if the input is hidden and empty
+* `include_seconds`: Include the seconds in the saved value
+
+### Time
+*Supported Datatype: `TIME`*
+
+Saves a given or the current time.
+
+#### Options
+* `read_only`: Force this interface to be read only
+* `include_seconds`: Include the seconds in the saved value
