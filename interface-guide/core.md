@@ -221,3 +221,53 @@ A multi-line text field for longer HTML content with a more feature-rich WYSIWYG
 * `custom_wrapper`: Add custom html-element wrapper(s)
 * `max_height`: Set the max height the editor will resize to
 * `remove_unsafe_tags`: Have the editor remove potentially unsafe tags like iframe and script
+
+
+## Numeric interfaces
+
+### Color
+*Supported Datatypes: `VARCHAR`, `CHAR`, `TINYTEXT`, `TEXT`, `MEDIUMTEXT`, `LONGTEXT`*
+
+Lets the user select a color from a predefined set or enter a custom value. Supports entering and saving colors in multiple color formats.
+
+#### Options
+* `read_only`: Force this interface to be read only
+* `input`: The unit in which the user will enter the data
+* `output`: The unit in which the data gets saved to the DB
+* `list_view_formatting`: Set how the value is being displayed in the list views
+* `palette`: Color options for the user to pick from
+* `palette_only`: Only allow the user to pick from the palette
+* `allow_alpha`: Allow values with an alpha channel
+
+### Numeric
+*Supported Datatypes: `INT`, `TINYINT`, `SMALLINT`, `MEDIUMINT`, `BIGINT`, `YEAR`*
+
+Simple Interface which allows you to enter and edit numeric values.
+
+#### Options
+* `read_only`: Force this interface to be read only
+* `size`: What width to use for the input
+* `placeholder`: The placeholder value to use
+* `localized`: Whether or not to localized the numeric value, eg: currency format
+
+### Slider
+*Supported Datatypes: `INT`, `TINYINT`, `SMALLINT`, `MEDIUMINT`, `BIGINT`*
+
+Allow the user to select a numeric value in a range based on a slider input.
+
+#### Options
+* `read_only`: Force this interface to be read only
+* `minimum`: Minimum value
+* `maximum`: Maximum value
+* `step`: Specifies the allowed number intervals
+* `unit`: Show unit next to slider value, e.g.: 15 Pounds
+
+### Toggle
+*Supported Datatype: `TINYINT`*
+
+Boolean style interface which allows the user to enable or disable a certain thing.
+
+#### Options
+* `read_only`: Force this interface to be read only
+* `label`: Label to show next to the toggle
+* `show_as_checkbox`: Display a checkbox instead of the default switch style input
