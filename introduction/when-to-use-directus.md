@@ -1,6 +1,6 @@
 # When to Use Directus
 
-## WebSites
+## Websites
 Directus is an excellent alternative to traditional CMS. Small sites have less bloat to deal with and worry about. Large sites get total control over database architecture for optimizing performance. Complex sites are more attainable since you're no longer limited to the technologies, libraries, and languages of an all-in-one solution. And because everything's decoupled you'll be prepared for the future should you need to support additional clients such as a native app.
 
 ## Native Apps
