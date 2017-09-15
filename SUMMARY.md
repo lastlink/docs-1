@@ -25,6 +25,7 @@
 ## Interface Guide
   * [Core](interface-guide/core.md)
   * [Relational](interface-guide/relational.md)
+  * [Custom](interface-guide/custom.md)
 
 ## Developer Guide
   * [Development Install](developer-guide/development-install.md)

@@ -2,13 +2,6 @@
 
 User interfaces (Interfaces) are how your users will interact with the different types of content in your database. Each field in your database has a data-type that determines what kind of content can be stored there – Directus uses this information to determine a default Interface and any other Interfaces that are supported. In addition to the provided Core Interfaces, you can also easy create new Custom Interfaces for specific or complex use-cases.
 
-For most content types the Directus Core Interfaces should work well. However if you're looking for a specific interface or have proprietary or custom content types to manage – you may need or want to create something more tailored. Directus Interfaces are modular Javascript files (or dedicated sub-directories for complex interfaces) that allow you to create new ways of interfacing with database content. To learn more about creating your own Interface, checkout this Medium article on the subject: [How to Create a Custom Interface](https://medium.com/directus/how-to-create-a-custom-interface-ba8a4b7e72f4)
-
-# Core Interfaces
-
-Interfaces are how your users will interact with the different types of content in your database. Each field in your database has a data-type that determines what kind of content can be stored there – Directus uses this information to determine a default Interface and any other Interfaces that are supported. In addition to the provided Core Interfaces, you can also easy create new Custom Interfaces for specific or complex use-cases.
-
-
 ## String based interfaces
 
 ### Blob
