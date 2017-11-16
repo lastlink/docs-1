@@ -4,6 +4,7 @@ Since SQL is a relational database, Directus has several Interfaces that can hel
 
 > *Note:* For more information about setting up relational interfaces, checkout this [Medium article on the subject](https://medium.com/directus/understanding-relationships-it-isnt-complicated-35e0dcf78450).
 
+> **IMPORTANT:** Make sure that the interface data type and the relational table primary key type are the same, otherwise data may be saved but not returned.
 
 ### Single File (M2O)
 *Supported Datatypes: `INT`*
