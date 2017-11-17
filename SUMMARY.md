@@ -39,6 +39,7 @@
   * [NGINX](developer-guide/nginx.md)
   * [Directus Tables](developer-guide/directus-tables.md)
   * [Directus Files](developer-guide/directus-files.md)
+  * [Thumbnailer](developer-guide/thumbnailer.md)
 
 ## Hosted Guide
   * [Accounts](hosted-guide/accounts.md)
