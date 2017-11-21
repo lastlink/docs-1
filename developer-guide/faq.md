@@ -19,6 +19,11 @@ If you get "Server error occurred!" the first time you try to login, it likely m
 ## Internal Server Error
 This error can be anything, but when you are using Directus for the first time and you are able to see the installation page or the login page, but as soon as you try to log in see this error, it might be that your hosting provider doesn't allow to use `Option SymLinksIfOwnerMatch` which can be solve by whether make your hosting allow you to use or simple remove that line in `api/.htaccess`. Make sure this is the issue by checking the apache logs, try looking for something like: `Option SymLinksIfOwnerMatch not allowed here`
 
+## 403 Forbidden Error
+When HTTP Server threw a 403 error when making a `PATCH` request, it's worth noting that `PATCH` may not be supported by all firewalls, including `mod_security` Apache firewall module. You may be able to overwrite this in `.htaccess`, otherwise you may need to configure your rules manually.
+
+We have not example code for this yet, but at least this will give take you to the right direction.
+
 ## Displaying a 404 page
 If you are getting 404 page while using the webapp or API, make sure you check the instructions below:
 
