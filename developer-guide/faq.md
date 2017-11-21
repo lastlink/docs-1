@@ -173,3 +173,10 @@ sudo apt-get install php-curl
 ```
 
 Don't forget to run `sudo service apache2 restart` to restart if you are using apache or `sudo service php-fpm restart` if you are using PHP FPM.
+
+## Error: Class X not found
+If a class is missing is there a good chance, you are missing an PHP extension or a composer dependency package.
+
+Try to run `composer update` to fetch the latest dependencies.
+
+If you are updating from to `6.4.4` make sure to run `composer update`, as `Cache\Adapter\Void\VoidCachePool` is a strong dependency. 
