@@ -5,7 +5,7 @@ Directus is a forward-looking framework and therefore may not support certain le
 
 
 * Apache HTTP Server with mod_rewrite enabled ([help](/developer-guide/faq.md))
-* or NGINX HTTP Server
+* or NGINX HTTP Server*
 * MySQL Server 5.2+ / Percona Server / MariaDB or equivalent
 * PHP 5.6+
   * curl
@@ -15,6 +15,8 @@ Directus is a forward-looking framework and therefore may not support certain le
   * mbstring
 
 > **Optional Enhancement:** Installing *Imagick* adds thumbnail support for TIFF, PSD, and PDF files
+
+* _*Note*_: Any other web server could be supported, but unfortunately we don't have any official configuration and you are welcome to contribute to any web servers configuration.
 
 ## Server Preparation
 1. Check that your server meets the [requirements](/administrator-guide/installation.md#requirements) above
