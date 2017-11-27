@@ -12,6 +12,7 @@ Directus is a forward-looking framework and therefore may not support certain le
   * gd
   * finfo
   * pdo_mysql
+  * mbstring
 
 > **Optional Enhancement:** Installing *Imagick* adds thumbnail support for TIFF, PSD, and PDF files
 
