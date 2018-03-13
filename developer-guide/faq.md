@@ -114,7 +114,7 @@ If you want to still install the dependency, below are example how to do it.
 
 #### Ubuntu
 
-Look for the package with `apt`: 
+Look for the package with `apt`:
 
 ```
 apt-cache search php dom
@@ -172,11 +172,34 @@ Ubuntu:
 sudo apt-get install php-curl
 ```
 
-Don't forget to run `sudo service apache2 restart` to restart if you are using apache or `sudo service php-fpm restart` if you are using PHP FPM.
+### Installing PHP Multibyte String extension
+
+#### PHP 5.x
+
+Ubuntu:
+```
+sudo apt-get install php5.6-mbstring
+```
+
+#### PHP 7.x
+
+Ubuntu:
+```
+sudo apt-get install php7.0-mbstring
+```
+
+Without specifying a version will install the latest version.
+
+Ubuntu:
+```
+sudo apt-get install php-mbstring
+```
+
+Don't forget to restart the web server. Run `sudo service apache2 restart` if you are using apache or `sudo service php-fpm restart` if you are using PHP FPM.
 
 ## Error: Class X not found
 If a class is missing is there a good chance, you are missing an PHP extension or a composer dependency package.
 
 Try to run `composer update` to fetch the latest dependencies.
 
-If you are updating from to `6.4.4` make sure to run `composer update`, as `Cache\Adapter\Void\VoidCachePool` is a strong dependency. 
+If you are updating from to `6.4.4` make sure to run `composer update`, as `Cache\Adapter\Void\VoidCachePool` is a strong dependency.
