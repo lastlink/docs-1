@@ -4,5 +4,7 @@ This page provides a listing of all Directus users on the platform. Clicking on 
 
 > **Inviting New Users:** Only Administrators can add/invite new users.
 
+> **Public Registration using Rest Api:** See [issue 2102](https://github.com/directus/directus/issues/2102) on setting up the proper filter using the configuration.php, group permissions, and public user token. 
+
 > **Developer Note:** You can add additional columns to `directus_files` to extend and customize this system.
 
